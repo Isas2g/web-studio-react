@@ -1,4 +1,5 @@
-@import '../../../shared/styles/variables.scss';
+@import 'shared/styles/variables.scss';
+$action-button-text-color: #0d0d2b;
 
 .button {
   padding: 18px 44px;
@@ -8,14 +9,12 @@
   font-size: 20px;
   border: 1px solid #53587b;
   position: relative;
-  padding: 30% 2em;
   box-sizing: border-box;
 
-  $border: 5px;
+  $border: 2px;
   color: #fff;
-  background-clip: padding-box; /* !importanté */
-  border: solid $border transparent; /* !importanté */
-  border-radius: 1em;
+  background-clip: padding-box;
+  border: solid $border transparent;
 
   &:before {
     content: '';
@@ -25,8 +24,16 @@
     bottom: 0;
     left: 0;
     z-index: -1;
-    margin: -$border; /* !importanté */
-    border-radius: inherit; /* !importanté */
-    background: linear-gradient(to right, red, orange);
+    margin: -$border;
+    border-radius: inherit;
+    background: linear-gradient(to right, #554d7c, #525b7b);
   }
+}
+
+.action-button {
+  padding: 18px 44px;
+  background: linear-gradient(96.5deg, #f48af9 -74.81%, #b1d5ff 104.8%);
+  border-radius: 100px;
+  color: $action-button-text-color;
+  font-size: 20px;
 }

@@ -1,0 +1,35 @@
+@import 'shared/styles/variables.scss';
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 38px 100px;
+  position: relative;
+  margin-bottom: 120px;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 32px;
+  color: $main-text-color;
+  text-decoration: none;
+  position: absolute;
+  left: 100px;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  font-size: 20px;
+  padding: 0;
+
+  li {
+    margin-right: 65px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
