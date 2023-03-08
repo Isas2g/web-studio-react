@@ -1,5 +1,22 @@
+@import 'shared/styles/variables.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $bg-color;
+  color: $main-text-color;
+  font-family: 'Onest', sans-serif;
+  font-size: 20px;
+}
+
 .App {
   text-align: center;
+  max-width: 1920px;
+  margin: 0 auto;
 }
 
 .App-logo {

@@ -1,0 +1,29 @@
+.block-container {
+  max-width: 724px;
+  margin: 0 auto 190px;
+}
+
+.pink-gradient {
+  background: linear-gradient(to left, #D78DF4 0%, #A792EB 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.blue-gradient {
+  background: linear-gradient(to left, #9B93E9 0%, #9AC5F6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.main-block-text {
+  text-align: center;
+  max-width: 444px;
+  margin: 0 auto 80px;
+  line-height: 32px;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
