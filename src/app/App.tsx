@@ -1,6 +1,6 @@
 import React from 'react';
-import './App.css';
-import Projects from "../pages/Projects";
+import './App.scss';
+import Projects from '../pages/Projects';
 
 function App() {
   return (

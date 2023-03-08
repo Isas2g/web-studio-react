@@ -1,3 +1,9 @@
+@import 'shared/styles/variables.scss';
+
+body {
+  background-color: $bg-color;
+}
+
 .App {
   text-align: center;
 }
