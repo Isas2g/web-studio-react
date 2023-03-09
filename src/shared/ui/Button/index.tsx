@@ -8,7 +8,7 @@ interface Props {
   style?: any;
 }
 
-const Index = ({ text, onClick, isAction, style }: Props) => {
+const Button = ({ text, onClick, isAction, style }: Props) => {
   return (
     <button
       style={style}
@@ -20,4 +20,4 @@ const Index = ({ text, onClick, isAction, style }: Props) => {
   );
 };
 
-export default Index;
+export default Button;

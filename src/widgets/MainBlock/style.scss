@@ -1,16 +1,18 @@
+@import 'shared/styles/variables.scss';
+
 .block-container {
   max-width: 724px;
   margin: 0 auto 190px;
 }
 
 .pink-gradient {
-  background: linear-gradient(to left, #D78DF4 0%, #A792EB 100%);
+  background: $pink-gradient;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .blue-gradient {
-  background: linear-gradient(to left, #9B93E9 0%, #9AC5F6 100%);
+  background: $blue-gradient;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
