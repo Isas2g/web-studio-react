@@ -1,6 +1,1 @@
-import Project from "./components/ProjectMain"
-
-
-export {
-    Project
-}
+export {};
