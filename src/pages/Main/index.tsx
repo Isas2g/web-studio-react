@@ -1,13 +1,12 @@
 import Header from 'shared/ui/Header';
-import MainBlock from '../../widgets/MainBlock';
+import MainBlock from 'widgets/MainBlock';
 import './style.scss';
 import floatingImage1 from 'shared/assets/icons/floating-image-1.svg';
 import floatingImage2 from 'shared/assets/icons/floating-image-2.svg';
 import floatingImage3 from 'shared/assets/icons/floating-image-3.svg';
 import floatingImage4 from 'shared/assets/icons/floating-image-4.svg';
-import MainSecondBlock from '../../widgets/MainSecondBlock';
-
-import MainProjects from '../../widgets/MainProjects';
+import MainSecondBlock from 'widgets/MainSecondBlock';
+import MainProjects from 'widgets/MainProjects';
 
 const Main = () => {
   return (
