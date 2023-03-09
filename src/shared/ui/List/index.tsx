@@ -1,5 +1,5 @@
 import React, { ReactFragment, ReactPortal } from 'react';
-import './style.scss';
+import classes from './style.module.scss';
 import ListItems from '../ListItems';
 type ReactNode = ReactFragment | ReactPortal | boolean | null | undefined;
 

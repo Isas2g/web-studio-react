@@ -1,15 +1,15 @@
 import React from 'react';
-import './style.scss';
+import classes from './style.module.scss';
 import Button from '../Button';
 import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
-    <div className="header">
-      <Link to="/" className="logo">
+    <div className={classes['header']}>
+      <Link to="/" className={classes['logo']}>
         AW
       </Link>
-      <ul className="menu">
+      <ul className={classes['menu']}>
         <li>Проекты</li>
         <li>О студии</li>
         <li>Контакты</li>
