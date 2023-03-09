@@ -1,23 +1,27 @@
 @font-face {
   font-family: 'Onest';
-  src: local('../assets/onestregular1.ttf') format('truetype');
+  src: local('Onest'),
+    url('../assets/fonts/OnestRegular.ttf') format('truetype'),
+    url('../assets/fonts/OnestRegular.woff') format('woff');
   font-weight: 400;
 }
 
-// @font-face {
-//   font-family: 'Onest';
-//   src: local('../assets/onestmedium1.ttf') format('truetype');
-//   font-weight: 500;
-// }
+@font-face {
+  font-family: 'Onest';
+  src: local('Onest'), url('../assets/fonts/OnestMedium.ttf') format('truetype'),
+    url('../assets/fonts/OnestMedium.woff') format('woff');
+  font-weight: 500;
+}
 
-// @font-face {
-//   font-family: 'Onest';
-//   src: local('../assets/onestbold1.ttf') format('truetype');
-//   font-weight: 700;
-// }
+@font-face {
+  font-family: 'Onest';
+  src: local('Onest'), url('../assets/fonts/OnestBold.ttf') format('truetype'),
+    url('../assets/fonts/OnestBold.woff') format('woff');
+  font-weight: 700;
+}
 
 @font-face {
   font-family: 'Consolas';
-  src: local('../assets/Consolas.ttf') format('truetype');
+  src: local('Consolas'), url('../assets/fonts/Consolas.ttf') format('truetype');
   font-weight: 400;
 }
