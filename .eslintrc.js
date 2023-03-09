@@ -34,6 +34,8 @@ module.exports = {
           '.svg',
           '.png',
           '.jpg',
+          '.ttf',
+          '.woff',
         ],
         paths: ['src'],
       },
