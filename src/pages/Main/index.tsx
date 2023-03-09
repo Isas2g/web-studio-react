@@ -5,6 +5,7 @@ import floatingImage1 from 'shared/assets/icons/floating-image-1.svg';
 import floatingImage2 from 'shared/assets/icons/floating-image-2.svg';
 import floatingImage3 from 'shared/assets/icons/floating-image-3.svg';
 import floatingImage4 from 'shared/assets/icons/floating-image-4.svg';
+import MainSecondBlock from '../../widgets/MainSecondBlock';
 
 const Main = () => {
   return (
@@ -15,6 +16,7 @@ const Main = () => {
       <img alt="" src={floatingImage4} className="floating-image-4" />
       <Header />
       <MainBlock />
+      <MainSecondBlock />
     </div>
   );
 };
