@@ -1,0 +1,27 @@
+.second-block-container {
+  margin: 200px 0 0 100px;
+}
+
+.text-container {
+  text-align: start;
+  margin: 0 312px 0 0;
+}
+
+.list-container {
+  margin: 0 0 0 0;
+  position: relative;
+  left: 200px;
+  top: 80px;
+  display: flex;
+  flex-direction: column;
+}
+
+.subtitle {
+  margin: 15% 0 0 0;
+  max-width: 393px;
+}
+
+.second-part {
+  display: flex;
+  flex-direction: row;
+}
