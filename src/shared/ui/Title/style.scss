@@ -1,3 +1,5 @@
+@import 'shared/styles/variables.scss';
+
 .second-title {
   font-family: 'Consolas';
   font-style: normal;
@@ -6,6 +8,6 @@
   line-height: 23px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #8C96E7;
+  color: $title-color;
   margin-bottom: 2%;
 }

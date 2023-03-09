@@ -1,8 +1,11 @@
+@import '../../styles/variables.scss';
+
 .paragraph {
-  font-family: 'Onest';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 32px;
-  line-height: 140%;
-  color: #D8D8E3;
+    font-family: 'Onest';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 160%;
+    color: $main-text-color;
+    margin: 0 0 5% 0;
 }

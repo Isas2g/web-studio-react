@@ -5,8 +5,8 @@ type ReactNode = ReactFragment | ReactPortal | boolean | null | undefined;
 
 type PropsWithChildren<P> = P & { children?: ReactNode };
 
-const Paragraph = ({ children }: PropsWithChildren<unknown>) => {
-  return <p className="paragraph">{children}</p>;
+const Subtitle = ({ children }: PropsWithChildren<unknown>) => {
+  return <h4 className="subtitle">{children}</h4>;
 };
 
-export default Paragraph;
+export default Subtitle;
