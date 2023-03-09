@@ -36,7 +36,6 @@ module.exports = {
           '.jpg',
           '.ttf',
           '.woff',
-          '.module.scss',
         ],
         paths: ['src'],
       },
