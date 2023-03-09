@@ -1,10 +1,15 @@
-.list-container {
+.list-container1 {
   display: flex;
   flex-direction: column;
 }
 
 .tracing {
-  background: linear-gradient(96.99deg, rgba(244, 138, 249, 0.3) -77.06%, rgba(95, 154, 222, 0.3) 78.01%, rgba(177, 213, 255, 0.3) 207.41%);
+  background: linear-gradient(
+    96.99deg,
+    rgba(244, 138, 249, 0.3) -77.06%,
+    rgba(95, 154, 222, 0.3) 78.01%,
+    rgba(177, 213, 255, 0.3) 207.41%
+  );
   border-radius: 28px;
   width: 671px;
 }
@@ -14,9 +19,8 @@
   font-style: normal;
   font-weight: 400;
   font-size: 32px;
-  color: #EDEDF5;
+  color: #ededf5;
   padding: 5px 0 5px 50px;
-
 }
 
 .text {

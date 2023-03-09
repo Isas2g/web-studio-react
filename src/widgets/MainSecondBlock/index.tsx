@@ -3,6 +3,7 @@ import Title from '../../shared/ui/Title';
 import './style.scss';
 import Paragraph from '../../shared/ui/Paragraph';
 import ListItems from '../../shared/ui/ListItems';
+import List from 'shared/ui/List';
 
 const MainSecondBlock = () => {
   return (
@@ -25,11 +26,20 @@ const MainSecondBlock = () => {
             находиться на каждой странице.
           </p>
           <div className="list-container">
-            <ListItems>[исследуем, </ListItems>
+            {/* <ListItems>[исследуем, </ListItems>
             <ListItems isActive>проектируем, </ListItems>
             <ListItems>разрабатываем, </ListItems>
             <ListItems>тестируем, </ListItems>
-            <ListItems>запускаем] </ListItems>
+            <ListItems>запускаем] </ListItems> */}
+            <List
+              items={[
+                '[исследуем,',
+                'проектируем,',
+                'разрабатываем,',
+                'тестируем,',
+                'запускаем]',
+              ]}
+            />
           </div>
         </div>
       </div>
