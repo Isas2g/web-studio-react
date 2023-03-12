@@ -1,4 +1,4 @@
-import './style.scss';
+import classes from './style.module.scss';
 
 import React from 'react';
 
@@ -10,10 +10,10 @@ interface Props {
 
 const ProjectCard = ({ title, years, description }: Props) => {
   return (
-    <div className="card-container">
-      <p className="card-title">{title}</p>
-      <p className="card-years">{years}</p>
-      <p className="card-description">{description}</p>
+    <div className={classes['card-container']}>
+      <p className={classes['card-title']}>{title}</p>
+      <p className={classes['card-years']}>{years}</p>
+      <p className={classes['card-description']}>{description}</p>
     </div>
   );
 };

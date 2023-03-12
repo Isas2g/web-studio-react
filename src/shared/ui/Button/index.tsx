@@ -1,5 +1,5 @@
 import { MouseEventHandler } from 'react';
-import './style.scss';
+import classes from './style.module.scss';
 
 interface Props {
   text: string;
@@ -13,7 +13,7 @@ const Button = ({ text, onClick, isAction, style }: Props) => {
     <button
       style={style}
       onClick={onClick}
-      className={isAction ? 'action-button' : 'button'}
+      className={isAction ? classes['action-button'] : classes['button']}
     >
       {text}
     </button>
