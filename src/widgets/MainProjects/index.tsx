@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './style.scss';
+import classes from './style.module.scss';
 import Title from '../../shared/ui/Title';
 import Subtitle from '../../shared/ui/Subtitle';
 import ProjectCard from '../../entities/Project/components/ProjectCard';
@@ -8,14 +8,14 @@ import Button from '../../shared/ui/Button';
 
 const MainProjects = () => {
   return (
-    <div className="third-block-container">
-      <div className="text-project-container">
+    <div className={classes['third-block-container']}>
+      <div className={classes['text-project-container']}>
         <Title>Проекты</Title>
         <Subtitle>
           А вот последние решения, которые нам удалось успешно реализовать.
         </Subtitle>
       </div>
-      <div className="projects-list-container">
+      <div className={classes['projects-list-container']}>
         <ProjectCard
           title={'About Web'}
           years={'2021-2023'}
