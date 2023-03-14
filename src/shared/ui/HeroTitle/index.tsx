@@ -1,5 +1,5 @@
 import React, { ReactFragment, ReactPortal } from 'react';
-import './style.scss';
+import classes from './style.module.scss';
 type ReactNode = ReactFragment | ReactPortal | boolean | null | undefined;
 
 interface Props {
@@ -10,11 +10,11 @@ type PropsWithChildren<P> = P & { children?: ReactNode };
 
 const HeroTitle = ({ isMainTitle, children }: PropsWithChildren<Props>) => {
   return (
-    <div className="title-container">
+    <div className={classes['title-container']}>
       {isMainTitle ? (
-        <h1 className="title">{children}</h1>
+        <h1 className={classes['title']}>{children}</h1>
       ) : (
-        <h2 className="title">{children}</h2>
+        <h2 className={classes['title']}>{children}</h2>
       )}
     </div>
   );
