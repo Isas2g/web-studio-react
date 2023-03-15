@@ -9,7 +9,6 @@ $gradient-tracing: linear-gradient(
   rgba(177, 213, 255, 0.3) 207.41%
 );
 $paragraph-text-color: rgba(237, 237, 245, 0.5);
-$paragraph-text-color: rgba(237, 237, 245, 0.5);
 $card-background: linear-gradient(
   120deg,
   rgba(244, 138, 249, 0.1) -11.68%,
@@ -18,6 +17,7 @@ $card-background: linear-gradient(
 );
 $pink-gradient: linear-gradient(to left, #d78df4 0%, #a792eb 100%);
 $blue-gradient: linear-gradient(to left, #9b93e9 0%, #9ac5f6 100%);
+$pink-blue: linear-gradient(to left, rgba(200, 138, 249, 0.4) -77.06%, rgba(177, 255, 241, 0.4) 207.41%);
 $border-card-color: linear-gradient(
   96.99deg,
   rgba(200, 138, 249, 0.4) -77.06%,
