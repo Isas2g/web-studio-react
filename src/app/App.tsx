@@ -10,6 +10,7 @@ import Authorization from 'pages/Authorization';
 import AdminProjects from 'pages/AdminProjects';
 import EditProject from 'pages/EditProject';
 import EditUsers from 'pages/EditUsers';
+import Footer from 'shared/ui/Footer';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route path="/project" element={<Project />} />
           <Route path="*" element={<Main />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </div>
   );
