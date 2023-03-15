@@ -1,18 +1,12 @@
-.second-block-container {
-  margin: 200px 0 0 100px;
-}
-
 .text-container {
   text-align: start;
-  margin: 0 312px 0 0;
+  padding: 5% 0 0 0;
+  max-width: 1028px;
 }
 
 .list-container {
-  margin: 0 0 0 0;
-  position: relative;
-  left: 450px;
-  top: 100px;
   display: flex;
+  padding: 40px 0 0 0;
   flex-direction: column;
 }
 
@@ -24,4 +18,12 @@
 .second-part {
   display: flex;
   flex-direction: row;
+}
+
+.block {
+  display: flex;
+  flex-direction: row;
+  //justify-content: space-between;
+  gap: 350px;
+  text-align: start;
 }

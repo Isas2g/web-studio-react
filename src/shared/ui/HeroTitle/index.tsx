@@ -4,13 +4,19 @@ type ReactNode = ReactFragment | ReactPortal | boolean | null | undefined;
 
 interface Props {
   isMainTitle?: boolean;
+  //TODO: исправить тип any
+  style?: any;
 }
 
 type PropsWithChildren<P> = P & { children?: ReactNode };
 
-const HeroTitle = ({ isMainTitle, children }: PropsWithChildren<Props>) => {
+const HeroTitle = ({
+  isMainTitle,
+  children,
+  style,
+}: PropsWithChildren<Props>) => {
   return (
-    <div className={classes['title-container']}>
+    <div style={style} className={classes['title-container']}>
       {isMainTitle ? (
         <h1 className={classes['title']}>{children}</h1>
       ) : (
