@@ -3,6 +3,7 @@ import 'shared/styles/fonts.scss';
 import './App.scss';
 import Main from 'pages/Main';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Project from '../pages/Project';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
           <Route path="/" element={<Main />} />
           <Route path="/about" element={<About />} />
           <Route path="*" element={<Main />} />
+          <Route path="/project" element={<Project />} />
         </Routes>
       </BrowserRouter>
     </div>
