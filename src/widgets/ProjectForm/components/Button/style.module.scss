@@ -1,0 +1,57 @@
+@import 'shared/styles/variables.scss';
+
+.btn {
+  padding: 13px 37px;
+  border: none;
+  outline: none;
+  position: relative;
+  z-index: 1;
+  border-radius: 100px;
+  background: $form-button-gradient;
+  cursor: pointer;
+  font-family: 'Consolas';
+  font-size: 20px;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  left: 1px;
+  right: 1px;
+  top: 1px;
+  bottom: 1px;
+  border-radius: 100px;
+  background-color: $bg-color;
+  z-index: -1;
+  transition: 200ms;
+}
+
+.btn::after {
+  content: attr(title);
+  font-size: 20px;
+  background: $form-button-text-gradient;
+  -webkit-background-clip: text;
+  color: transparent;
+  transition: 200ms;
+}
+
+.btn:hover::before {
+  opacity: 50%;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+}
+.btn.active::before {
+  opacity: 50%;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+}
+.btn.active::after {
+  color: $dark-text-color;
+}
+.btn:hover::after {
+  color: $dark-text-color;
+}
