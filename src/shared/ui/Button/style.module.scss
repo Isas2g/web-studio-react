@@ -9,6 +9,7 @@
   border: 1px solid #53587b;
   position: relative;
   box-sizing: border-box;
+  cursor: pointer;
 
   $border: 2px;
   color: #fff;
@@ -35,4 +36,5 @@
   border-radius: 100px;
   color: $action-button-text-color;
   font-size: 20px;
+  cursor: pointer;
 }
