@@ -6,7 +6,7 @@ import Paragraph from '../../shared/ui/Paragraph';
 
 const MainTechnologies = () => {
   return (
-    <div className={classes['container']}>
+    <div className={'container'}>
       <div className={classes['container-technologies']}>
         <Title>
           <span className={classes['square-brackets']}>&#123;</span>Используемые

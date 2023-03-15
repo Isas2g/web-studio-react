@@ -7,7 +7,7 @@ import Subtitle from '../../shared/ui/Subtitle';
 
 const MainSecondBlock = () => {
   return (
-    <div className={classes['second-block-container']}>
+    <div className={'container'}>
       <div className={classes['text-container']}>
         <Title>What about &#34;About Web&#34;?</Title>
         <Subtitle>
@@ -16,6 +16,8 @@ const MainSecondBlock = () => {
           творчество и обмен знаниями — главные инструменты для достижения наших
           целей.
         </Subtitle>
+      </div>
+      <div className={classes['block']}>
         <div className={classes['second-part']}>
           <div className={classes['paragraphs']}>
             <Paragraph>
@@ -28,17 +30,17 @@ const MainSecondBlock = () => {
               находиться на каждой странице.
             </Paragraph>
           </div>
-          <div className={classes['list-container']}>
-            <List
-              items={[
-                '[исследуем,',
-                'проектируем,',
-                'разрабатываем,',
-                'тестируем,',
-                'запускаем]',
-              ]}
-            />
-          </div>
+        </div>
+        <div className={classes['list-container']}>
+          <List
+            items={[
+              '[исследуем,',
+              'проектируем,',
+              'разрабатываем,',
+              'тестируем,',
+              'запускаем]',
+            ]}
+          />
         </div>
       </div>
     </div>

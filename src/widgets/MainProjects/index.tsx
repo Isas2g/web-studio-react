@@ -8,7 +8,7 @@ import Button from '../../shared/ui/Button';
 
 const MainProjects = () => {
   return (
-    <div className={classes['third-block-container']}>
+    <div className={'container'}>
       <div className={classes['text-project-container']}>
         <Title>Проекты</Title>
         <Subtitle>
