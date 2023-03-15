@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
-    <div className={classes['header']}>
+    <div className={`${classes['header']} container`}>
       <Link to="/" className={classes['logo']}>
         AW
       </Link>
@@ -15,7 +15,7 @@ const Header = () => {
         <li>Контакты</li>
       </ul>
       <Button
-        style={{ position: 'absolute', right: '100px' }}
+        style={{ position: 'absolute', right: '0px' }}
         text={'Заполнить бриф'}
       />
     </div>
