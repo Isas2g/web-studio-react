@@ -8,6 +8,7 @@ import Authorization from 'pages/Authorization';
 import AdminProjects from 'pages/AdminProjects';
 import EditProject from 'pages/EditProject';
 import EditUsers from 'pages/EditUsers';
+import Project from '../pages/Project';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/admin-projects" element={<AdminProjects />} />
           <Route path="/edit-project" element={<EditProject />} />
           <Route path="/edit-users" element={<EditUsers />} />
+          <Route path="/project" element={<Project />} />
           <Route path="*" element={<Main />} />
         </Routes>
       </BrowserRouter>

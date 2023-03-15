@@ -1,4 +1,3 @@
-import Header from '../../shared/ui/Header';
 import AboutBlock from '../../widgets/AboutBlock';
 import AboutWhyUs from '../../widgets/AboutWhyUs';
 

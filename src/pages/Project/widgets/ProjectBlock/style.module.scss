@@ -1,0 +1,88 @@
+@import 'shared/styles/variables.scss';
+
+.project-container {
+  text-align: start;
+  padding: 0 0 500px 0;
+}
+
+.left-block {
+  width: 408px;
+  height: 541px;
+  background: $card-background;
+  backdrop-filter: blur(10px);
+  border-radius: 50px;
+}
+
+.project-info {
+  display: flex;
+  flex-direction: row;
+  column-gap: 123px;
+}
+
+.right-block {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  max-width: 690px;
+}
+
+.project-title {
+  font-family: 'Onest';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 41px;
+  color: $main-text-color;
+  padding: 0 0 5% 0;
+}
+
+.project-years {
+  font-family: 'Onest';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 25px;
+  color: $paragraph-text-color;
+  padding: 0 0 5% 0;
+}
+
+.project-description {
+  font-family: 'Onest';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 25px;
+  color: $main-text-color;
+  padding: 0 0 3% 0;
+}
+
+.project-stack {
+  display: flex;
+  flex-direction: row;
+  column-gap: 25px;
+  padding: 7% 0 3% 0;
+}
+
+.btn-container {
+  align-self: center;
+  position: absolute;
+  bottom: 0px;
+}
+
+.floating-image-6 {
+  position: absolute;
+  top: 815px;
+  left: 20%;
+}
+
+.floating-image-7 {
+  position: absolute;
+  top: 52px;
+  right: 8%;
+}
+
+.floating-image-8 {
+  position: absolute;
+  top: 786px;
+  right: 0;
+}

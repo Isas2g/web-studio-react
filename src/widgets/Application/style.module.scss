@@ -1,0 +1,25 @@
+@import 'shared/styles/variables.scss';
+
+.container-application {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8% 0 0 0;
+}
+
+.blue-pink-gradient {
+  background: $blue-pink-gradient;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.application-title {
+  max-width: 900px;
+}
+
+.application-text {
+  text-align: center;
+  max-width: 625px;
+  margin: 0 auto 80px;
+  line-height: 32px;
+}
