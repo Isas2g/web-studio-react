@@ -1,10 +1,16 @@
 @import 'shared/styles/variables.scss';
 
+.footer-wrapper {
+  margin-top: 100px;
+  border-top: 2px solid rgba(255, 255, 255, 0.1);
+}
+
 .footer-container {
-  padding: 5% 0 5% 0;
+  padding: 70px 100px;
   display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
   flex-direction: row;
-  column-gap: 150px;
 }
 
 .line {
@@ -17,8 +23,6 @@
   font-size: 32px;
   color: $main-text-color;
   text-decoration: none;
-  position: absolute;
-  right: 100px;
 }
 
 .first-block {
@@ -38,7 +42,7 @@
   text-align: start;
   li {
     cursor: pointer;
-    padding: 15% 0 0 0;
+    margin-bottom: 20px;
   }
 }
 
@@ -53,7 +57,6 @@
 }
 
 .text-bold {
-
   font-family: 'Onest';
   font-style: normal;
   font-weight: 500;

@@ -1,5 +1,4 @@
 .about-block {
-  padding: 45px 0 200px 0;
 
   &__list {
     margin: 40px 0 40px 0;
@@ -37,4 +36,20 @@
 
 
   }
+}
+
+.wrapper {
+  position: relative;
+  padding: 45px 0 200px 0;
+}
+
+.floating-image-1 {
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+}
+.floating-image-2 {
+  position: absolute;
+  right: 15%;
+  bottom: 0px;
 }
