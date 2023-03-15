@@ -7,6 +7,8 @@ import floatingImage3 from 'shared/assets/icons/floating-image-3.svg';
 import floatingImage4 from 'shared/assets/icons/floating-image-4.svg';
 import MainSecondBlock from 'widgets/MainSecondBlock';
 import MainProjects from 'widgets/MainProjects';
+import MainTechnologies from '../../widgets/MainTechnologies';
+import Application from '../../widgets/Application';
 
 const Main = () => {
   return (
@@ -34,8 +36,9 @@ const Main = () => {
       <Header />
       <MainBlock />
       <MainSecondBlock />
-
       <MainProjects />
+      <MainTechnologies />
+      <Application />
     </div>
   );
 };
