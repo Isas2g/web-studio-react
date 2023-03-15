@@ -6,7 +6,6 @@ import floatingImage5 from 'shared/assets/icons/floating-image-5.svg';
 import floatingImage2 from 'shared/assets/icons/floating-image-2.svg';
 import floatingImage4 from 'shared/assets/icons/floating-image-4.svg';
 
-// 2 5 1 4
 const Authorization = () => {
   return (
     <main className={classes['auth']}>
