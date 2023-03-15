@@ -1,0 +1,36 @@
+@import 'shared/styles/variables.scss';
+
+.user-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  position: relative;
+}
+.user-container::after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: -2px;
+  left: -100px;
+  right: -100px;
+  background-color: $dark-background;
+  height: 2px;
+}
+
+.username {
+  font-size: 20px;
+}
+
+.role {
+  font-size: 20px;
+  font-family: 'Consolas';
+}
+
+.btns {
+  display: flex;
+  justify-content: center;
+  gap: 83px;
+  align-items: center;
+}

@@ -10,13 +10,16 @@ interface Props {
 
 const Button = ({ text, onClick, isAction, style }: Props) => {
   return (
-    <button
-      style={style}
-      onClick={onClick}
-      className={isAction ? classes['action-button'] : classes['button']}
-    >
-      {text}
-    </button>
+    <div>
+      <button
+        onClick={onClick}
+        style={style}
+        className={
+          isAction ? classes['btn'] + ' ' + classes['active'] : classes['btn']
+        }
+        title={text}
+      ></button>
+    </div>
   );
 };
 

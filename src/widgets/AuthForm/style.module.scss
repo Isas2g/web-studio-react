@@ -1,0 +1,45 @@
+@import 'shared/styles/variables.scss';
+
+.container {
+  max-width: 940px;
+  max-height: 625px;
+  background: $dark-container-background;
+  margin: 100px auto;
+  backdrop-filter: blur(10px);
+  /* Note: backdrop-filter has minimal browser support */
+
+  border-radius: 50px;
+  padding: 42px 15px 170px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.auth-title {
+  font-weight: 500;
+  font-size: 32px;
+  margin-bottom: 50px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 48%;
+}
+
+.forgot-pass-btn {
+  border: none;
+  outline: none;
+  margin-bottom: 50px;
+  display: block;
+  text-align: right;
+  text-transform: uppercase;
+  background: $forgot-pass-gradient;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: 'Consolas';
+  font-size: 20px;
+  cursor: pointer;
+}
