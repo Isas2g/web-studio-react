@@ -7,13 +7,14 @@
   padding: 278px 45px 45px;
   gap: 10px;
   width: 400px;
-  height: 500px;
+  max-height: 500px;
   background: $card-background;
   backdrop-filter: blur(10px);
   border-radius: 50px;
   border: 2px solid;
   border-color: $border-card-color;
   text-align: start;
+  transition: 0.3s;
 }
 
 .card-title {
@@ -40,4 +41,26 @@
   font-size: 20px;
   line-height: 25px;
   color: $main-text-color;
+}
+
+.buttons-container {
+  transition: 0.4s;
+  max-height: 0;
+  opacity: 0;
+  pointer-events: none;
+  margin: 45px auto 0;
+  display: flex;
+  width: 80%;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.card-container:hover {
+  max-height: 1000px;
+
+  .buttons-container {
+    max-height: 400px;
+    opacity: 1;
+    pointer-events: unset;
+  }
 }
