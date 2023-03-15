@@ -33,7 +33,6 @@ const Main = () => {
         src={floatingImage4}
         className={classes['floating-image-4']}
       />
-      <Header />
       <MainBlock />
       <MainSecondBlock />
       <MainProjects />

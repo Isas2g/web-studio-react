@@ -1,0 +1,68 @@
+@import 'shared/styles/variables.scss';
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  font-family: 'Consolas';
+  font-size: 20px;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.input {
+  // needs to be relative so the :focus span is positioned correctly
+  position: relative;
+
+  // bigger font size for demo purposes
+  font-size: 20px;
+
+  // the border gradient
+  background: $input-gradient;
+
+  // the width of the input border
+  padding: 2px;
+
+  // we want inline fields by default
+  display: inline-block;
+
+  // we want rounded corners no matter the size of the field
+  border-radius: 9999em;
+
+  // style of the actual input field
+  *:not(span) {
+    background-color: $bg-color;
+    font-family: 'Consolas';
+    color: #fff;
+    position: relative;
+    display: inherit;
+    width: 100%;
+    border-radius: inherit;
+    margin: 0;
+    border: none;
+    outline: none;
+    padding: 9px 27px 13px;
+    transition: background 0.5s;
+    z-index: 1; // needs to be above the :focus span
+
+    // summon fancy shadow styles when focussed
+    &:focus {
+      background: $focus-input-gradient;
+    }
+    &:focus::-webkit-input-placeholder {
+      color: #fff;
+    }
+    &:focus::-moz-placeholder {
+      color: #fff;
+    }
+    &:focus:-moz-placeholder {
+      color: #fff;
+    }
+    &:focus:-ms-input-placeholder {
+      color: #fff;
+    }
+  }
+}
