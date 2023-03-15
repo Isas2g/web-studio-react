@@ -1,7 +1,7 @@
 import React from 'react';
-import HeroTitle from '../../shared/ui/HeroTitle';
+import HeroTitle from 'shared/ui/HeroTitle';
 import classes from './style.module.scss';
-import Button from '../../shared/ui/Button';
+import Button from 'shared/ui/Button';
 
 const MainBlock = () => {
   return (

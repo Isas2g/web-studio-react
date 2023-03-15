@@ -1,10 +1,10 @@
 import React from 'react';
 
 import classes from './style.module.scss';
-import Title from '../../shared/ui/Title';
-import Subtitle from '../../shared/ui/Subtitle';
-import ProjectCard from '../../entities/Project/components/ProjectCard';
-import Button from '../../shared/ui/Button';
+import Title from 'shared/ui/Title';
+import Subtitle from 'shared/ui/Subtitle';
+import ProjectCard from 'entities/Project/components/ProjectCard';
+import Button from 'shared/ui/Button';
 
 const MainProjects = () => {
   return (

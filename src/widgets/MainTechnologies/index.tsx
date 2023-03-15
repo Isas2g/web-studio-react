@@ -1,8 +1,8 @@
 import React from 'react';
-import Title from '../../shared/ui/Title';
+import Title from 'shared/ui/Title';
 import classes from './style.module.scss';
-import Subtitle from '../../shared/ui/Subtitle';
-import Paragraph from '../../shared/ui/Paragraph';
+import Subtitle from 'shared/ui/Subtitle';
+import Paragraph from 'shared/ui/Paragraph';
 
 const MainTechnologies = () => {
   return (

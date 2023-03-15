@@ -1,7 +1,7 @@
 import React from 'react';
 import classes from './style.module.scss';
-import HeroTitle from '../../shared/ui/HeroTitle';
-import Button from '../../shared/ui/Button';
+import HeroTitle from 'shared/ui/HeroTitle';
+import Button from 'shared/ui/Button';
 
 const Application = () => {
   return (

@@ -1,9 +1,9 @@
 import React from 'react';
-import Title from '../../shared/ui/Title';
+import Title from 'shared/ui/Title';
 import classes from './style.module.scss';
-import Paragraph from '../../shared/ui/Paragraph';
+import Paragraph from 'shared/ui/Paragraph';
 import List from 'shared/ui/List';
-import Subtitle from '../../shared/ui/Subtitle';
+import Subtitle from 'shared/ui/Subtitle';
 
 const MainSecondBlock = () => {
   return (
