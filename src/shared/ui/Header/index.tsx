@@ -1,6 +1,5 @@
-import React from 'react';
 import classes from './style.module.scss';
-import Button from '../Button';
+import Button from 'shared/ui/Button';
 import { Link } from 'react-router-dom';
 
 const Header = () => {
@@ -10,9 +9,15 @@ const Header = () => {
         AW
       </Link>
       <ul className={classes['menu']}>
-        <li>Проекты</li>
-        <li>О студии</li>
-        <li>Контакты</li>
+        <li>
+          <Link to="/projects">Проекты</Link>
+        </li>
+        <li>
+          <Link to="/about">О студии</Link>
+        </li>
+        <li>
+          <Link to="/about">Контакты</Link>
+        </li>
       </ul>
       <Button
         style={{ position: 'absolute', right: '0px' }}
