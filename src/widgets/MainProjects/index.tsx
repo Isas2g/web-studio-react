@@ -11,7 +11,7 @@ const MainProjects = () => {
     <div className={'container'}>
       <div className={classes['text-project-container']}>
         <Title>Проекты</Title>
-        <Subtitle>
+        <Subtitle style={{ maxWidth: '850px' }}>
           А вот последние решения, которые нам удалось успешно реализовать.
         </Subtitle>
       </div>
