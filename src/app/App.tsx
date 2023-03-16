@@ -27,7 +27,6 @@ function App() {
           <Route path="/edit-users" element={<EditUsers />} />
           <Route path="/project" element={<Project />} />
           <Route path="*" element={<Main />} />
-          <Route path="/project" element={<Project />} />
         </Routes>
         <Footer />
       </BrowserRouter>

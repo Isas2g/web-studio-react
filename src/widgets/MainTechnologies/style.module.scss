@@ -1,8 +1,16 @@
 @import 'shared/styles/variables.scss';
 
+.page-container {
+  display: flex;
+  flex-direction: row;
+  gap: 300px;
+}
+
 .container-technologies {
   text-align: start;
   padding: 8% 0 0 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .subtitle-container {
@@ -15,4 +23,26 @@
 
 .square-brackets {
   color: $main-text-color;
+}
+
+.pictures {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 100px 0 0 0;
+}
+
+.line {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.picture {
+  width: 150px;
+  height: 150px;
+  background: linear-gradient(120deg, rgba(244, 138, 249, 0.1) -11.68%, rgba(95, 154, 222, 0.1) 45.66%, rgba(177, 213, 255, 0.1) 93.52%);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
 }
