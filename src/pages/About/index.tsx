@@ -9,7 +9,7 @@ const About = () => {
       <AboutBlock />
       <AboutWhyUs />
       <MainSecondBlock />
-      <Application />
+      <Application style={{ margin: '40px 0 0 0' }} />
     </main>
   );
 };
