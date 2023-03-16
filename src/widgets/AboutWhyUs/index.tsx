@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import TitleCenter from 'shared/ui/TitleCenter';
 import classes from './style.module.scss';
 import floatingImage1 from 'shared/assets/icons/floating-image-1.svg';
