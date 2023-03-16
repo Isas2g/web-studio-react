@@ -2,6 +2,7 @@
 
 .our-projects {
   position: relative;
+  margin: 60px auto 0 auto;
 }
 .floating-image {
   position: absolute;
@@ -46,11 +47,4 @@
 
 .arrow {
   max-width: 20px;
-}
-
-.projects-container {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  -ms-flex-line-pack: 3;
 }

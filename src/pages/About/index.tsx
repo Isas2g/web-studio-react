@@ -1,6 +1,7 @@
 import AboutBlock from 'widgets/AboutBlock';
 import AboutWhyUs from 'widgets/AboutWhyUs';
 import MainSecondBlock from 'widgets/MainSecondBlock';
+import Application from 'widgets/Application';
 
 const About = () => {
   return (
@@ -8,6 +9,7 @@ const About = () => {
       <AboutBlock />
       <AboutWhyUs />
       <MainSecondBlock />
+      <Application />
     </main>
   );
 };
