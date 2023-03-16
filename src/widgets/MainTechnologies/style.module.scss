@@ -42,7 +42,9 @@
 .picture {
   width: 150px;
   height: 150px;
-  background: linear-gradient(120deg, rgba(244, 138, 249, 0.1) -11.68%, rgba(95, 154, 222, 0.1) 45.66%, rgba(177, 213, 255, 0.1) 93.52%);
+  background: $card-background;
   backdrop-filter: blur(10px);
   border-radius: 20px;
+  border: 2px solid $border-card-color;
 }
+
