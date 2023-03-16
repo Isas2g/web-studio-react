@@ -4,8 +4,7 @@ type ReactNode = ReactFragment | ReactPortal | boolean | null | undefined;
 
 interface Props {
   isMainTitle?: boolean;
-  //TODO: исправить тип any
-  style?: any;
+  style?: React.CSSProperties;
 }
 
 type PropsWithChildren<P> = P & { children?: ReactNode };

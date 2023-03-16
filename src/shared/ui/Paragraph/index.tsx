@@ -5,8 +5,16 @@ type ReactNode = ReactFragment | ReactPortal | boolean | null | undefined;
 
 type PropsWithChildren<P> = P & { children?: ReactNode };
 
-const Paragraph = ({ children }: PropsWithChildren<unknown>) => {
-  return <p className={classes['paragraph']}>{children}</p>;
+interface Props {
+  style?: React.CSSProperties;
+}
+
+const Paragraph = ({ children, style }: PropsWithChildren<Props>) => {
+  return (
+    <p className={classes['paragraph']} style={style}>
+      {children}
+    </p>
+  );
 };
 
 export default Paragraph;
