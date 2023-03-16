@@ -2,7 +2,7 @@ import React from 'react';
 import classes from './style.module.scss';
 import ProjectCard from 'entities/Project/components/ProjectCard';
 
-const Index = () => {
+const ProjectsList = () => {
   return (
     <div className={classes['projects-container']}>
       <ProjectCard
@@ -33,4 +33,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default ProjectsList;
