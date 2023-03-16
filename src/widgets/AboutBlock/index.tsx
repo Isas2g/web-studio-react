@@ -49,7 +49,11 @@ const AboutBlock = () => {
           внедряем в проекты новшества и тренды
         </Paragraph>
 
-        <Button text={'Заказать проект'} isAction />
+        <Button
+          text={'Заказать проект'}
+          style={{ margin: '0 auto', display: 'block' }}
+          isAction
+        />
       </div>
     </div>
   );

@@ -31,7 +31,9 @@ const ProjectCard = ({
               <Button text={'Удалить'} />
             </>
           )}
-          {isProjectsPage && <Button text={'Смотреть проект'} />}
+          {isProjectsPage && (
+            <Button text={'Смотреть проект'} style={{ whiteSpace: 'nowrap' }} />
+          )}
         </div>
       )}
     </div>

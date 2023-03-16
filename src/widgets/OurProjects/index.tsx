@@ -4,7 +4,7 @@ import Title from 'shared/ui/Title';
 import Subtitle from 'shared/ui/Subtitle';
 import arrow from 'shared/assets/icons/arrow.svg';
 import floatingImage from 'shared/assets/icons/floating-image-2.svg';
-import ProjectCard from 'entities/Project/components/ProjectCard';
+import ProjectsList from './components/ProjectsList';
 
 const OurProjects = () => {
   return (
@@ -18,33 +18,7 @@ const OurProjects = () => {
         Готовые проекты
         <img src={arrow} className={classes['arrow']} alt={''} />
       </div>
-
-      <div className={classes['projects-container']}>
-        <ProjectCard
-          isProjectsPage
-          title={'About Web'}
-          years={'2020 — 2021'}
-          description={
-            'Информационный портал для заказчиков и сотрудников веб-студии. Вы сейчас здесь.'
-          }
-        />
-        <ProjectCard
-          isProjectsPage
-          title={'About Web'}
-          years={'2020 — 2021'}
-          description={
-            'Информационный портал для заказчиков и сотрудников веб-студии. Вы сейчас здесь.'
-          }
-        />
-        <ProjectCard
-          isProjectsPage
-          title={'About Web'}
-          years={'2020 — 2021'}
-          description={
-            'Информационный портал для заказчиков и сотрудников веб-студии. Вы сейчас здесь.'
-          }
-        />
-      </div>
+      <ProjectsList />
     </div>
   );
 };
