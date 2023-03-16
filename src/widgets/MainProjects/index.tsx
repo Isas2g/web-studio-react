@@ -41,7 +41,9 @@ const MainProjects = () => {
           }
         />
       </div>
-      <Button text={'Смотреть все проекты'} />
+      <div style={{ textAlign: 'center' }}>
+        <Button text={'Смотреть все проекты'} />
+      </div>
     </div>
   );
 };
