@@ -5,6 +5,7 @@ import Title from 'shared/ui/Title';
 import Subtitle from 'shared/ui/Subtitle';
 import ProjectCard from 'entities/Project/components/ProjectCard';
 import Button from 'shared/ui/Button';
+import { Link } from 'react-router-dom';
 
 const MainProjects = () => {
   return (
@@ -41,9 +42,9 @@ const MainProjects = () => {
           }
         />
       </div>
-      <div style={{ textAlign: 'center' }}>
+      <Link to="/projects">
         <Button text={'Смотреть все проекты'} />
-      </div>
+      </Link>
     </div>
   );
 };
