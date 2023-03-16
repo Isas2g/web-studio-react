@@ -23,15 +23,17 @@ const ProjectCard = ({
       <p className={classes['card-title']}>{title}</p>
       <p className={classes['card-years']}>{years}</p>
       <p className={classes['card-description']}>{description}</p>
-      <div className={classes['buttons-container']}>
-        {isAdminPage && (
-          <>
-            <Button text={'Редактировать'} style={{ marginBottom: 30 }} />
-            <Button text={'Удалить'} />
-          </>
-        )}
-        {isProjectsPage && <Button text={'Смотреть проект'} />}
-      </div>
+      {(isAdminPage || isProjectsPage) && (
+        <div className={classes['buttons-container']}>
+          {isAdminPage && (
+            <>
+              <Button text={'Редактировать'} style={{ marginBottom: 30 }} />
+              <Button text={'Удалить'} />
+            </>
+          )}
+          {isProjectsPage && <Button text={'Смотреть проект'} />}
+        </div>
+      )}
     </div>
   );
 };
