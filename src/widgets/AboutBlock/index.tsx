@@ -85,7 +85,7 @@ const AboutBlock = () => {
         {list.map((item) => {
           return (
             item.title === selectedButton && (
-              <Paragraph style={{ textAlign: 'center' }}>
+              <Paragraph key={item.title} style={{ textAlign: 'center' }}>
                 {item.description}
               </Paragraph>
             )
