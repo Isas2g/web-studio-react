@@ -7,8 +7,8 @@
 }
 
 .projects-container {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
   -ms-flex-line-pack: 3;
+  grid-gap: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }

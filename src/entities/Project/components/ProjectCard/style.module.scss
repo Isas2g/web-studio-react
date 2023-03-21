@@ -6,7 +6,6 @@
   align-items: flex-start;
   padding: 278px 45px 45px;
   gap: 10px;
-  width: 400px;
   max-height: 500px;
   background: $card-background;
   backdrop-filter: blur(10px);
@@ -15,6 +14,7 @@
   border-color: $border-card-color;
   text-align: start;
   transition: 0.3s;
+  max-width: 450px;
 }
 
 .card-title {

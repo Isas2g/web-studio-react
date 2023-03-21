@@ -1,7 +1,6 @@
 .text-container {
   text-align: start;
   padding: 5% 0 0 0;
-  max-width: 1028px;
 }
 
 .list-container {
@@ -23,7 +22,7 @@
 .block {
   display: flex;
   flex-direction: row;
-  //justify-content: space-between;
-  gap: 350px;
+  justify-content: space-between;
   text-align: start;
+  padding-right: 150px;
 }
