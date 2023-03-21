@@ -9,3 +9,10 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
+
+a {
+  text-decoration: none;
+  max-width: fit-content;
+  margin: 0 auto;
+  display: block;
+}
