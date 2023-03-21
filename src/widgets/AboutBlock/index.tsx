@@ -13,10 +13,10 @@ interface List {
 }
 
 const AboutBlock = () => {
-  const [selectedButton, chooseButton] = useState('Кто мы');
+  const [selectedButton, setSelectedButton] = useState('Кто мы');
 
   const selectButton = (name: string) => {
-    chooseButton(name);
+    setSelectedButton(name);
     console.log(name);
   };
 
