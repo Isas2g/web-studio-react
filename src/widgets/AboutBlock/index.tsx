@@ -17,7 +17,6 @@ const AboutBlock = () => {
 
   const selectButton = (name: string) => {
     setSelectedButton(name);
-    console.log(name);
   };
 
   const list: Array<List> = [
