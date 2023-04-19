@@ -3,10 +3,17 @@ import classes from './style.module.scss';
 
 type ReactNode = ReactFragment | ReactPortal | boolean | null | undefined;
 
-type PropsWithChildren<P> = P & { children?: ReactNode };
+type PropsWithChildren<P> = P & {
+  children?: ReactNode;
+  style?: React.CSSProperties;
+};
 
-const Subtitle = ({ children }: PropsWithChildren<unknown>) => {
-  return <h4 className={classes['subtitle']}>{children}</h4>;
+const Subtitle = ({ children, style }: PropsWithChildren<unknown>) => {
+  return (
+    <h4 className={classes['subtitle']} style={style}>
+      {children}
+    </h4>
+  );
 };
 
 export default Subtitle;

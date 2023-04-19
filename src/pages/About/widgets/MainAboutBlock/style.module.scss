@@ -1,0 +1,21 @@
+@import 'shared/styles/variables.scss';
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  padding: 120px 0 150px 0;
+}
+.sea-color {
+  color: $new-main-color;
+}
+
+.title {
+  max-width: 480px;
+  align-self: center;
+}
+
+.paragraph {
+  max-width: 575px;
+  align-self: center;
+  text-align: center;
+}

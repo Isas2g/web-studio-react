@@ -32,7 +32,9 @@
 
 .action-button {
   padding: 18px 44px;
-  background: linear-gradient(96.5deg, #f48af9 -74.81%, #b1d5ff 104.8%);
+  //background: linear-gradient(96.5deg, #f48af9 -74.81%, #b1d5ff 104.8%);
+  background: $new-main-color;
+  border: none;
   border-radius: 100px;
   color: $action-button-text-color;
   font-size: 20px;

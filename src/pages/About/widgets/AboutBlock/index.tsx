@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import TitleCenter from '../../shared/ui/TitleCenter';
+import TitleCenter from '../../../../shared/ui/TitleCenter';
 import classes from './style.module.scss';
 import Button from 'shared/ui/Button';
 import Paragraph from 'shared/ui/Paragraph';
