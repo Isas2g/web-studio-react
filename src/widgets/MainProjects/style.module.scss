@@ -4,10 +4,15 @@
 }
 
 .projects-list-container {
-  display: flex;
-  flex-direction: row;
   gap: 40px;
-  flex-wrap: wrap;
   margin: 5% 0 5% 0;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+a {
+  text-decoration: none;
+  max-width: fit-content;
+  margin: 0 auto;
+  display: block;
 }

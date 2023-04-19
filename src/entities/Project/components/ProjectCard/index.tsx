@@ -23,6 +23,7 @@ const ProjectCard = ({
       <p className={classes['card-title']}>{title}</p>
       <p className={classes['card-years']}>{years}</p>
       <p className={classes['card-description']}>{description}</p>
+
       {(isAdminPage || isProjectsPage) && (
         <div className={classes['buttons-container']}>
           {isAdminPage && (

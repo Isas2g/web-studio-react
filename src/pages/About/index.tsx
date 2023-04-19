@@ -6,13 +6,14 @@ import MainAboutBlock from './widgets/MainAboutBlock';
 
 const About = () => {
   return (
-    <main className={'about'}>
+    <div className={'about'}>
       <MainAboutBlock />
       <ValuesBlock />
       <BoardBlock />
       <HistoryBlock />
       <Application />
-    </main>
+    </div>
   );
 };
+
 export default About;

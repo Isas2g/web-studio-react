@@ -3,10 +3,14 @@ import classes from './style.module.scss';
 import HeroTitle from 'shared/ui/HeroTitle';
 import Button from 'shared/ui/Button';
 
-const Application = () => {
+interface Props {
+  style?: React.CSSProperties;
+}
+
+const Application = ({ style }: Props) => {
   return (
     <div className={'container'}>
-      <div className={classes['container-application']}>
+      <div className={classes['container-application']} style={style}>
         <div className={classes['application-title']}>
           <HeroTitle style={{ maxWidth: '100%' }}>
             Стань частью команды, просто &#123;

@@ -5,10 +5,13 @@ type ReactNode = ReactFragment | ReactPortal | boolean | null | undefined;
 
 type PropsWithChildren<P> = P & {
   children?: ReactNode;
-  style?: React.CSSProperties;
 };
 
-const Subtitle = ({ children, style }: PropsWithChildren<unknown>) => {
+interface Props {
+  style?: React.CSSProperties;
+}
+
+const Subtitle = ({ children, style }: PropsWithChildren<Props>) => {
   return (
     <h4 className={classes['subtitle']} style={style}>
       {children}
