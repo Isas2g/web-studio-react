@@ -25,3 +25,18 @@
   top: 560px;
   left: 5%;
 }
+
+@media (max-width: 480px) {
+  .floating-image-1 {
+    display: none;
+  }
+  .floating-image-2 {
+    display: none;
+  }
+  .floating-image-3 {
+    display: none;
+  }
+  .floating-image-4 {
+    display: none;
+  }
+}

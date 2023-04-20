@@ -11,3 +11,11 @@
   color: $new-main-color;
   margin-bottom: 2%;
 }
+
+@media (max-width: 480px) {
+  .second-title {
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+  }
+}
