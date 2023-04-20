@@ -1,8 +1,5 @@
 import Button from 'shared/ui/Button';
 import classes from './style.module.scss';
-
-import React from 'react';
-
 interface Props {
   title: string;
   years: string;
