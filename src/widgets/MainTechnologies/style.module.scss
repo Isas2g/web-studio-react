@@ -1,4 +1,5 @@
 @import 'shared/styles/variables.scss';
+@import 'shared/styles/screens.scss';
 
 .page-container {
   display: flex;
@@ -25,13 +26,7 @@
   color: $main-text-color;
 }
 
-.pictures {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 20px;
-  padding: 100px 0 0 0;
-}
+
 
 .line {
   display: flex;
@@ -48,3 +43,21 @@
   border: 2px solid $border-card-color;
 }
 
+@media (min-width: 0) {
+  .pictures {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 100px 0 0 0;
+    
+    // Удалить этот стиль после проверки)))
+    display: none;
+  }
+}
+
+@media (min-width: $tablet-landscape) {
+  .pictures {
+    display: flex;
+  }
+}
