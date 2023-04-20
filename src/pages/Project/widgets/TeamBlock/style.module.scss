@@ -1,0 +1,30 @@
+@import 'shared/styles/variables.scss';
+.team-container {
+  padding: 0 0 150px 0;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  column-gap: 430px;
+}
+
+.right-side {
+  display: flex;
+  flex-direction: column;
+}
+
+.left-side {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0 0 0;
+}
+
+.team-items {
+  font-family: 'Onest';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 160%;
+  color: $main-text-color;
+}

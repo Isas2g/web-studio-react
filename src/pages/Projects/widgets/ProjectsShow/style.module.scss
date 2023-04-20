@@ -1,0 +1,15 @@
+.projects-show {
+
+}
+
+.btns-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-basis: 20%;
+  column-gap: 20px;
+  row-gap: 20px;
+  padding: 0 0 85px 0;
+}

@@ -3,7 +3,9 @@ import classes from './style.module.scss';
 
 type ReactNode = ReactFragment | ReactPortal | boolean | null | undefined;
 
-type PropsWithChildren<P> = P & { children?: ReactNode };
+type PropsWithChildren<P> = P & {
+  children?: ReactNode;
+};
 
 interface Props {
   style?: React.CSSProperties;

@@ -27,3 +27,29 @@
   gap: 350px;
   text-align: start;
 }
+
+@media (max-width: 480px) {
+  .text-container {
+    max-width: 402px;
+  }
+
+  .block {
+    display: grid;
+    grid-template-areas: "list"
+                          "sc";
+    gap: 0;
+  }
+
+  .second-part {
+    grid-area: sc;
+    max-width: 400px;
+    padding: 0 0 150px 0;
+  }
+
+  .list-container {
+    grid-area: list;
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
+  }
+}

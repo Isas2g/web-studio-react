@@ -1,10 +1,17 @@
 import classes from './style.module.scss';
-import React from 'react';
+import React, { MouseEventHandler } from 'react';
 
-const SecondButton = () => {
+interface Props {
+  text: string;
+  onClick?: MouseEventHandler<HTMLButtonElement>;
+}
+
+const SecondButton = ({ text, onClick }: Props) => {
   return (
     <div>
-      <button className={classes['back-btn']}>&#60; К проектам</button>
+      <button className={classes['back-btn']} onClick={onClick}>
+        &#60;&#60;&#60; {text}
+      </button>
     </div>
   );
 };

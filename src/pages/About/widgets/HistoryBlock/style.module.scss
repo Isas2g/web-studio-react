@@ -1,0 +1,23 @@
+.history-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.first-row {
+  align-content: start;
+  max-width: 605px;
+  padding: 0 0 60px 0;
+}
+
+.second-row {
+  display: flex;
+  flex-direction: column;
+  align-self: end;
+  max-width: 605px;
+  padding: 0 0 70px 0;
+}
+
+.third-row {
+  align-content: start;
+  max-width: 605px;
+}
