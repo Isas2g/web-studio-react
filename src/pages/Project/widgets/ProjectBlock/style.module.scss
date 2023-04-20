@@ -2,12 +2,12 @@
 
 .project-container {
   text-align: start;
-  padding: 0 0 500px 0;
+  padding: 0 0 190px 0;
 }
 
 .left-block {
-  width: 408px;
-  height: 541px;
+  width: 500px;
+  height: 550px;
   background: $card-background;
   backdrop-filter: blur(10px);
   border-radius: 50px;
@@ -23,7 +23,7 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  max-width: 690px;
+  max-width: 605px;
 }
 
 .project-title {
@@ -33,7 +33,7 @@
   font-size: 32px;
   line-height: 41px;
   color: $main-text-color;
-  padding: 0 0 5% 0;
+  padding: 5% 0 5% 0;
 }
 
 .project-years {
@@ -64,7 +64,7 @@
 }
 
 .btn-container {
-  align-self: center;
+  align-self: start;
   position: absolute;
   bottom: 0px;
 }

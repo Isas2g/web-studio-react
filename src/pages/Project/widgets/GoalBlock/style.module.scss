@@ -1,0 +1,18 @@
+.goals-container {
+  display: flex;
+  flex-direction: row;
+  column-gap: 136px;
+  padding: 0 0 190px 0;
+}
+
+.left-block {
+  display: flex;
+  flex-direction: column;
+  max-width: 605px;
+  align-content: start;
+}
+
+
+.right-block {
+  max-width: 495px;
+}

@@ -6,13 +6,13 @@
 }
 
 .pink-gradient {
-  background: $pink-gradient;
+  background: $pink-color;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .blue-gradient {
-  background: $blue-gradient;
+  background: $new-main-color;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -28,4 +28,21 @@
   display: flex;
   justify-content: center;
   gap: 50px;
+}
+
+@media (max-width: 480px) {
+  .block-container {
+    display: flex;
+    flex-direction: column;
+    margin: 90px auto 150px;
+  }
+
+  .main-block-text {
+    max-width: 333px;
+    font-size: 15px;
+  }
+
+  .buttons-container {
+    gap: 20px;
+  }
 }

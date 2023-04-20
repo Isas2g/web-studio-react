@@ -64,3 +64,9 @@
     pointer-events: unset;
   }
 }
+
+@media (max-width: 480px) {
+  .card-container {
+    height: fit-content;
+  }
+}

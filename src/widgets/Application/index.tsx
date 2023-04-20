@@ -23,7 +23,7 @@ const Application = ({ style }: Props) => {
           остались вопросы, ты можешь задать их на почту.
         </p>
         <div className={classes['buttons-container']}>
-          <Button isAction text={'Перейти на форму с заявкой'} />
+          <Button isAction text={'Перейти к форме с заявкой'} />
         </div>
       </div>
     </div>
