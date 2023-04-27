@@ -1,4 +1,5 @@
 @import 'shared/styles/variables.scss';
+@import 'shared/styles/screens.scss';
 
 .footer-wrapper {
   margin-top: 100px;
@@ -37,31 +38,54 @@
   justify-content: center;
 }
 
-.list {
-  list-style: none;
-  font-size: 20px;
-  text-align: start;
-  li {
-    cursor: pointer;
-    margin-bottom: 20px;
+
+
+
+
+@media (min-width: 0) {
+  .text {
+    font-family: 'Onest';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 160%;
+    color: $main-text-color;
+    padding: 0 0 5% 0;
+  }
+  
+  .text-bold {
+    font-family: 'Onest';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 160%;
+    color: $main-text-color;
+  }
+
+  .list {
+    list-style: none;
+    font-size: 10px;
+    text-align: start;
+    li {
+      cursor: pointer;
+      margin-bottom: 10px;
+    }
   }
 }
 
-.text {
-  font-family: 'Onest';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 160%;
-  color: $main-text-color;
-  padding: 0 0 5% 0;
-}
+@media (min-width: $tablet-landscape) {
+  .text {
+    font-size: 20px;
+  }
+  
+  .text-bold {
+    font-size: 20px;
+  }
 
-.text-bold {
-  font-family: 'Onest';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 160%;
-  color: $main-text-color;
+  .list {
+    font-size: 20px;
+    li {
+      margin-bottom: 20px;
+    }
+  }
 }
