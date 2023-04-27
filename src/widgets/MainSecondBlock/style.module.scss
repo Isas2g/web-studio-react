@@ -1,3 +1,5 @@
+@import '/src/shared/styles/screens.scss';
+
 .text-container {
   text-align: start;
   padding: 5% 0 0 0;
@@ -20,12 +22,22 @@
   flex-direction: row;
 }
 
-.block {
-  display: flex;
-  flex-direction: row;
-  //justify-content: space-between;
-  gap: 350px;
-  text-align: start;
+
+@media (min-width: 0) {
+  .block {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+  }
+}
+
+@media (min-width: $tablet-landscape) {
+  .block {
+    flex-direction: row;
+    //justify-content: space-between;
+    gap: 350px;
+    text-align: start;
+  }
 }
 
 @media (max-width: 480px) {
@@ -50,6 +62,7 @@
     grid-area: list;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     column-gap: 10px;
   }
 }
