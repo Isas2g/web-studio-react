@@ -1,3 +1,6 @@
+@import 'shared/styles/screens.scss';
+@import 'shared/styles/variables.scss';
+
 .tasks-container {
   padding: 0 0 190px 0;
   display: flex;
@@ -21,4 +24,14 @@
 .third-row {
   align-content: start;
   max-width: 605px;
+}
+
+@media (max-width: $mobile) {
+  .tasks-container {
+    max-width: 400px;
+    padding: 0 0 150px 0;
+  }
+  .second-row {
+    align-self: start;
+  }
 }

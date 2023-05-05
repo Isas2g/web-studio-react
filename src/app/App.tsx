@@ -13,11 +13,13 @@ import EditUsers from 'pages/EditUsers';
 import Footer from 'shared/ui/Footer';
 import Error from '../pages/Error';
 
+//TODO: вернуть хэдер на место
+
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Header />
+        {/*<Header />*/}
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="/about" element={<About />} />

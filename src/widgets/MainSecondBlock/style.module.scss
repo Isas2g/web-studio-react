@@ -29,27 +29,11 @@
   //justify-content: space-between;
   gap: 350px;
   text-align: start;
-
-@media (min-width: 0) {
-  .block {
-    display: flex;
-    flex-direction: column;
-    text-align: start;
-  }
 }
 
-@media (min-width: $tablet-landscape) {
-  .block {
-    flex-direction: row;
-    //justify-content: space-between;
-    gap: 350px;
-    text-align: start;
-  }
-}
-
-@media (max-width: 480px) {
+@media (max-width: $mobile) {
   .text-container {
-    max-width: 402px;
+    max-width: 400px;
   }
 
   .block {
@@ -69,7 +53,5 @@
     grid-area: list;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    column-gap: 10px;
   }
 }
