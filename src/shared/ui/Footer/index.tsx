@@ -18,8 +18,11 @@ const Footer = () => {
             Остались вопросы или предложения? Напишите нам в любое время!
           </p>
           <p className={classes['text-bold']}>aboutweb@gmail.com</p>
-          <Button style={socialsStyle} text={'VK'} />
-          <Button style={socialsStyle} text={'Telegram'} />
+          <div className={classes['btn-container']}>
+            <Button style={socialsStyle} text={'VK'} />
+
+            <Button style={socialsStyle} text={'Telegram'} />
+          </div>
         </div>
         <div className={classes['second-block']}>
           <ul className={classes['list']}>
@@ -28,7 +31,7 @@ const Footer = () => {
             <li>О студии</li>
           </ul>
         </div>
-        <div className={classes['second-block']}>
+        <div className={classes['third-block']}>
           <ul className={classes['list']}>
             <li>Контакты</li>
             <li>Хочу в команду</li>

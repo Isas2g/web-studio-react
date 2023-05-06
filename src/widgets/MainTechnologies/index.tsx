@@ -29,16 +29,16 @@ const MainTechnologies = () => {
         </div>
 
         <div className={classes['pictures']}>
-          <div className={classes['line']}>
-            <div className={classes['picture']}></div>
-            <div className={classes['picture']}></div>
-            <div className={classes['picture']}></div>
-          </div>
-          <div className={classes['line']}>
-            <div className={classes['picture']}></div>
-            <div className={classes['picture']}></div>
-            <div className={classes['picture']}></div>
-          </div>
+          {/*<div className={classes['line']}>*/}
+          <div className={classes['picture']}></div>
+          <div className={classes['picture']}></div>
+          <div className={classes['picture']}></div>
+          {/*</div>*/}
+          {/*<div className={classes['line']}>*/}
+          <div className={classes['picture']}></div>
+          <div className={classes['picture']}></div>
+          <div className={classes['picture']}></div>
+          {/*</div>*/}
         </div>
       </div>
     </div>

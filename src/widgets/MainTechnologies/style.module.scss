@@ -16,6 +16,7 @@
 
 .subtitle-container {
   max-width: 605px;
+  padding: 0 0 30px 0;
 }
 
 .paragraph-container {
@@ -26,11 +27,19 @@
   color: $main-text-color;
 }
 
-.line {
+.pictures {
   display: flex;
   flex-direction: row;
-  gap: 20px;
+  column-gap: 20px;
+  row-gap: 20px;
+  flex-wrap: wrap;
 }
+
+//.line {
+//  display: flex;
+//  flex-direction: row;
+//  gap: 20px;
+//}
 
 .picture {
   width: 150px;
@@ -62,6 +71,7 @@
     max-width: 400px;
     flex-direction: column;
     gap: 0;
+    padding: 0 0 150px 0;
   }
 
   .paragraph-container {
@@ -70,5 +80,6 @@
 
   .pictures {
     flex-direction: row;
+    flex-wrap: nowrap;
   }
 }
