@@ -29,7 +29,6 @@ const MainTechnologies = () => {
             </Paragraph>
           </div>
         </div>
-
         <div className={classes['pictures']}>
           <div className={classes['picture']}></div>
           <div className={classes['picture']}></div>
