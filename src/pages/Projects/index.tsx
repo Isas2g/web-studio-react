@@ -1,5 +1,4 @@
 import React from 'react';
-import Application from 'widgets/Application';
 import ProjectsMain from './widgets/ProjectsMain';
 import ProjectsShow from './widgets/ProjectsShow';
 
@@ -8,7 +7,6 @@ const Projects = () => {
     <div>
       <ProjectsMain />
       <ProjectsShow />
-      <Application />
     </div>
   );
 };

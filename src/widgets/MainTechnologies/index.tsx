@@ -22,23 +22,21 @@ const MainTechnologies = () => {
           </div>
           <div className={classes['paragraph-container']}>
             <Paragraph>
-              Среди технологий могут быть JavaScript. Мы создаем проекты на
-              различных стеках технологий, в зависимости от потребностей.
+              Мы можем использовать различные языки программирования,
+              фреймворки, библиотеки и инструменты для создания наших проектов,
+              что дает нам свободу выбора и креатива. А еще мы постоянно изучаем
+              новые технологии, чтобы расширять наши возможности.
             </Paragraph>
           </div>
         </div>
 
         <div className={classes['pictures']}>
-          {/*<div className={classes['line']}>*/}
           <div className={classes['picture']}></div>
           <div className={classes['picture']}></div>
           <div className={classes['picture']}></div>
-          {/*</div>*/}
-          {/*<div className={classes['line']}>*/}
           <div className={classes['picture']}></div>
           <div className={classes['picture']}></div>
           <div className={classes['picture']}></div>
-          {/*</div>*/}
         </div>
       </div>
     </div>

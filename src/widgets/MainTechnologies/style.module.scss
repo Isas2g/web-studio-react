@@ -4,12 +4,13 @@
 .page-container {
   display: flex;
   flex-direction: row;
-  gap: 300px;
+  justify-content: space-between;
+  padding: 0 0 220px 0;
 }
 
 .container-technologies {
   text-align: start;
-  padding: 8% 0 0 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
 }
@@ -31,15 +32,12 @@
   display: flex;
   flex-direction: row;
   column-gap: 20px;
+  max-height: 150px;
   row-gap: 20px;
   flex-wrap: wrap;
+  flex-basis: 40%;
+  padding: 30px 0 0 0;
 }
-
-//.line {
-//  display: flex;
-//  flex-direction: row;
-//  gap: 20px;
-//}
 
 .picture {
   width: 150px;
@@ -68,10 +66,13 @@
 
 @media (max-width: $mobile) {
   .page-container {
-    max-width: 400px;
     flex-direction: column;
     gap: 0;
     padding: 0 0 150px 0;
+  }
+
+  .container-technologies {
+    max-width: 400px;
   }
 
   .paragraph-container {
@@ -81,5 +82,6 @@
   .pictures {
     flex-direction: row;
     flex-wrap: nowrap;
+    flex-basis: 100%;
   }
 }
