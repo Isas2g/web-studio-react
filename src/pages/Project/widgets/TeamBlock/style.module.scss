@@ -1,0 +1,72 @@
+@import 'shared/styles/variables.scss';
+@import 'shared/styles/screens.scss';
+
+.team-container {
+  padding: 0 0 150px 0;
+}
+
+.team-subtitle {
+  max-width: 1028px;
+  padding: 0 0 115px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  column-gap: 430px;
+}
+
+.right-side {
+  display: flex;
+  flex-direction: column;
+}
+
+.left-side {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0 0 0;
+}
+
+.team-items {
+  font-family: 'Onest';
+  padding: 0 0 20px 0;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 160%;
+  color: $main-text-color;
+}
+
+@media (max-width: $mobile) {
+  .team-container {
+    max-width: 400px;
+  }
+
+  .row {
+    display: grid;
+    grid-template-areas: "listroles"
+  "listmem";
+  }
+
+  .team-items {
+    font-size: 24px;
+  }
+
+  .left-side {
+    grid-area: listmem;
+  }
+
+  .right-side {
+    flex-direction: row;
+    grid-area: listroles;
+    padding: 0 0 40px 0;
+  }
+
+  .team-subtitle {
+    padding: 0 0 85px 0;
+  }
+
+  .team-items {
+    padding: 0 0 10px 0;
+  }
+}

@@ -1,20 +1,19 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import classes from './style.module.scss';
 import Title from 'shared/ui/Title';
 import Subtitle from 'shared/ui/Subtitle';
 import arrow from 'shared/assets/icons/arrow.svg';
 import floatingImage from 'shared/assets/icons/floating-image-2.svg';
 import ProjectsList from './components/ProjectsList';
-import { useAppDispatch, useAppSelector } from 'shared/store';
-import { fetchProjects } from 'entities/Project/store';
+import { useAppDispatch } from 'shared/store';
+import { fetchAPIProjects } from 'entities/Project/store';
 
 const OurProjects = () => {
-  const projects = useAppSelector((state) => state.projects.value);
   const dispatch = useAppDispatch();
 
-  const addProject = () => {
-    dispatch(fetchProjects());
-  };
+  useEffect(() => {
+    dispatch(fetchAPIProjects());
+  }, [dispatch]);
 
   return (
     <div className={`${classes['our-projects']} container`}>
@@ -23,7 +22,10 @@ const OurProjects = () => {
       <Subtitle>
         Последние решения, которые нам удалось успешно реализовать.
       </Subtitle>
-      <button onClick={addProject} className={classes['filter']}>
+      <button
+        // onClick={addProject}
+        className={classes['filter']}
+      >
         Готовые проекты
         <img src={arrow} className={classes['arrow']} alt={''} />
       </button>

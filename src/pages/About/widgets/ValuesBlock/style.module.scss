@@ -1,0 +1,56 @@
+@import 'shared/styles/screens.scss';
+@import 'shared/styles/variables.scss';
+
+.values-container {
+  padding: 0 0 190px 0;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  column-gap: 438px;
+}
+
+.left-side {
+  display: flex;
+  flex-direction: column;
+  max-width: 393px;
+  padding: 10px 0 0 0;
+}
+
+.right-side {
+  display: flex;
+  flex-direction: column;
+}
+
+.subtitle {
+  max-width: 1028px;
+  padding: 0 0 112px 0;
+}
+
+@media (max-width: $mobile) {
+  .values-container {
+    padding: 0 0 150px 0;
+  }
+
+  .row {
+    display: grid;
+    grid-template-areas: "right"
+  "left";
+  }
+
+  .left-side {
+    grid-area: left;
+  }
+
+  .right-side {
+    grid-area: right;
+    display: flex;
+    flex-direction: row;
+    padding: 0 0 40px 0;
+  }
+
+  .subtitle {
+    padding: 0 0 85px 0;
+  }
+}

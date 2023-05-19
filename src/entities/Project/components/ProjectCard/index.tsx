@@ -1,11 +1,13 @@
 import Button from 'shared/ui/Button';
 import classes from './style.module.scss';
+import { Link } from 'react-router-dom';
 interface Props {
   title: string;
   years: string;
   description: string;
   isAdminPage?: boolean;
   isProjectsPage?: boolean;
+  id: number;
 }
 
 const ProjectCard = ({
@@ -14,6 +16,7 @@ const ProjectCard = ({
   description,
   isAdminPage,
   isProjectsPage,
+  id,
 }: Props) => {
   return (
     <div className={classes['card-container']}>
@@ -25,12 +28,19 @@ const ProjectCard = ({
         <div className={classes['buttons-container']}>
           {isAdminPage && (
             <>
-              <Button text={'Редактировать'} style={{ marginBottom: 30 }} />
+              <Link to={'/edit-project/' + id}>
+                <Button text={'Редактировать'} style={{ marginBottom: 30 }} />
+              </Link>
               <Button text={'Удалить'} />
             </>
           )}
           {isProjectsPage && (
-            <Button text={'Смотреть проект'} style={{ whiteSpace: 'nowrap' }} />
+            <Link to={'/projects/' + id}>
+              <Button
+                text={'Смотреть проект'}
+                style={{ whiteSpace: 'nowrap' }}
+              />
+            </Link>
           )}
         </div>
       )}

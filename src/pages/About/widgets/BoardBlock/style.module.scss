@@ -1,0 +1,28 @@
+@import 'shared/styles/variables.scss';
+@import 'shared/styles/screens.scss';
+
+.board-container {
+  display: flex;
+  flex-direction: column;
+  padding: 0 0 190px 0;
+}
+
+.board {
+  width: 1240px;
+  height: 506px;
+  background: $board-gradient;
+  backdrop-filter: blur(10px);
+  border-radius: 50px;
+  align-self: center;
+}
+
+@media (max-width: $mobile) {
+  .board {
+    width: 393px;
+    height: 506px;
+  }
+
+  .board-container {
+    padding: 0 0 150px 0;
+  }
+}

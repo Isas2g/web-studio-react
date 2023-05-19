@@ -1,12 +1,12 @@
 import React from 'react';
-import OurProjects from 'widgets/OurProjects';
-import Application from 'widgets/Application';
+import ProjectsMain from './widgets/ProjectsMain';
+import ProjectsShow from './widgets/ProjectsShow';
 
 const Projects = () => {
   return (
     <div>
-      <OurProjects />
-      <Application />
+      <ProjectsMain />
+      <ProjectsShow />
     </div>
   );
 };

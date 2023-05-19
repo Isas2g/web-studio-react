@@ -9,8 +9,10 @@ interface Props {
   containerStyle?: React.CSSProperties;
   id: string;
   label?: string;
+  value?: string;
   isMultiline?: boolean;
   name: string;
+  defaultValue?: string;
 }
 
 const Input = ({
@@ -23,6 +25,8 @@ const Input = ({
   label,
   name,
   isMultiline,
+  value,
+  defaultValue,
 }: Props) => {
   return (
     <div style={containerStyle} className={classes['input-container']}>
@@ -40,6 +44,8 @@ const Input = ({
             style={style}
             placeholder={placeholder}
             name={name}
+            value={value}
+            defaultValue={defaultValue}
           ></textarea>
         ) : (
           <input
@@ -49,6 +55,8 @@ const Input = ({
             type={type}
             placeholder={placeholder}
             name={name}
+            value={value}
+            defaultValue={defaultValue}
           />
         )}
       </span>

@@ -8,6 +8,15 @@
   line-height: 23px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: $title-color;
+  color: $new-main-color;
   margin-bottom: 2%;
+}
+
+@media (max-width: 480px) {
+  .second-title {
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    padding: 0 0 20px 0;
+  }
 }

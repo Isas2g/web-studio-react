@@ -4,11 +4,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 8% 0 0 0;
+  padding: 0 0 190px 0;
 }
 
 .blue-pink-gradient {
-  background: $blue-pink-gradient;
+  background: $pink-color;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

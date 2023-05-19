@@ -1,3 +1,5 @@
+@import '/src/shared/styles/screens.scss';
+
 .text-container {
   text-align: start;
   padding: 5% 0 0 0;
@@ -22,7 +24,32 @@
 .block {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  gap: 350px;
   text-align: start;
-  padding-right: 150px;
+}
+
+@media (max-width: $mobile) {
+  .text-container {
+    max-width: 400px;
+  }
+
+  .block {
+    display: grid;
+    grid-template-areas:
+      'list'
+      'sc';
+    gap: 0;
+  }
+
+  .second-part {
+    grid-area: sc;
+    max-width: 400px;
+    padding: 0 0 150px 0;
+  }
+
+  .list-container {
+    grid-area: list;
+    display: flex;
+    flex-direction: row;
+  }
 }

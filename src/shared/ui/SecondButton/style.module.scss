@@ -1,4 +1,5 @@
 @import 'shared/styles/variables.scss';
+@import 'shared/styles/screens.scss';
 
 .back-btn {
   font-family: 'Consolas';
@@ -8,8 +9,14 @@
   line-height: 23px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: $title-color;
+  color: $new-main-color;
   background: none;
   border: none  ;
   padding: 3% 0 3% 0;
+}
+
+@media (max-width: $mobile) {
+  .back-btn {
+    font-size: 15px;
+  }
 }

@@ -1,10 +1,9 @@
 import classes from './style.module.scss';
 import ProjectCard from 'entities/Project/components/ProjectCard';
-import { useAppDispatch, useAppSelector } from 'shared/store';
+import { useAppSelector } from 'shared/store';
 
 const ProjectsList = () => {
   const projects = useAppSelector((state) => state.projects.value);
-  const dispatch = useAppDispatch();
 
   return (
     <div className={classes['projects-container']}>
@@ -34,6 +33,7 @@ const ProjectsList = () => {
       /> */}
       {projects.map((item, index) => (
         <ProjectCard
+          id={index + 1}
           key={index}
           title={item.title}
           description={item.description}

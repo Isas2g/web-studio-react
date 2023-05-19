@@ -1,4 +1,5 @@
 @import 'shared/styles/variables.scss';
+@import 'shared/styles/screens.scss';
 
 .card-container {
   display: flex;
@@ -62,5 +63,24 @@
     max-height: 400px;
     opacity: 1;
     pointer-events: unset;
+  }
+}
+
+@media (max-width: $mobile) {
+  .card-container {
+    height: fit-content;
+    max-width: 400px;
+  }
+
+  .card-title {
+    font-size: 24px;
+  }
+
+  .card-years {
+    font-size: 15px;
+  }
+
+  .card-description {
+    font-size: 15px;
   }
 }

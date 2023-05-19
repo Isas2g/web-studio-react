@@ -1,0 +1,39 @@
+@import 'shared/styles/screens.scss';
+
+.history-container {
+  display: flex;
+  flex-direction: column;
+  padding: 0 0 190px 0;
+}
+
+.first-row {
+  align-content: start;
+  max-width: 605px;
+  padding: 0 0 60px 0;
+}
+
+.second-row {
+  display: flex;
+  flex-direction: column;
+  align-self: end;
+  max-width: 605px;
+  padding: 0 0 70px 0;
+}
+
+.third-row {
+  align-content: start;
+  max-width: 605px;
+}
+
+@media (max-width: $mobile) {
+  .history-container {
+    padding: 0 0 150px 0;
+  }
+  .second-row {
+    padding: 0;
+    align-self: start;
+  }
+  .third-row {
+    padding: 60px 0 0 0;
+  }
+}
