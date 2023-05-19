@@ -24,9 +24,9 @@ function App() {
           <Route path="/projects" element={<Projects />} />
           <Route path="/auth" element={<Authorization />} />
           <Route path="/admin-projects" element={<AdminProjects />} />
-          <Route path="/edit-project" element={<EditProject />} />
-          <Route path="/edit-users" element={<EditUsers />} />
-          <Route path="/project" element={<Project />} />
+          <Route path="/edit-project/:id" element={<EditProject />} />
+          <Route path="/edit-users/:id" element={<EditUsers />} />
+          <Route path="/projects/:id" element={<Project />} />
           <Route path="/error" element={<Error />} />
           <Route path="*" element={<Main />} />
         </Routes>

@@ -19,6 +19,7 @@ const MainProjects = () => {
         </div>
         <div className={classes['projects-list-container']}>
           <ProjectCard
+            id={1}
             title={'About Web'}
             years={'2021-2023'}
             description={
@@ -27,6 +28,7 @@ const MainProjects = () => {
             }
           />
           <ProjectCard
+            id={2}
             title={'About Web'}
             years={'2021-2023'}
             description={
@@ -35,6 +37,7 @@ const MainProjects = () => {
             }
           />
           <ProjectCard
+            id={3}
             title={'About Web'}
             years={'2021-2023'}
             description={
