@@ -4,18 +4,20 @@
 .page-container {
   display: flex;
   flex-direction: row;
-  gap: 300px;
+  justify-content: space-between;
+  padding: 0 0 220px 0;
 }
 
 .container-technologies {
   text-align: start;
-  padding: 8% 0 0 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
 }
 
 .subtitle-container {
   max-width: 605px;
+  padding: 0 0 30px 0;
 }
 
 .paragraph-container {
@@ -26,12 +28,15 @@
   color: $main-text-color;
 }
 
-
-
-.line {
+.pictures {
   display: flex;
   flex-direction: row;
-  gap: 20px;
+  column-gap: 20px;
+  max-height: 150px;
+  row-gap: 20px;
+  flex-wrap: wrap;
+  flex-basis: 40%;
+  padding: 30px 0 0 0;
 }
 
 .picture {
@@ -43,21 +48,40 @@
   border: 2px solid $border-card-color;
 }
 
-@media (min-width: 0) {
-  .pictures {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 20px;
-    padding: 100px 0 0 0;
-    
-    // Удалить этот стиль после проверки)))
-    display: none;
-  }
-}
+//@media (min-width: 0) {
+//  .pictures {
+//    display: flex;
+//    flex-direction: column;
+//    align-items: flex-start;
+//    gap: 20px;
+//    padding: 100px 0 0 0;
+//  }
+//}
+//
+//@media (min-width: $tablet-landscape) {
+//  .pictures {
+//    display: flex;
+//  }
+//}
 
-@media (min-width: $tablet-landscape) {
+@media (max-width: $mobile) {
+  .page-container {
+    flex-direction: column;
+    gap: 0;
+    padding: 0 0 150px 0;
+  }
+
+  .container-technologies {
+    max-width: 400px;
+  }
+
+  .paragraph-container {
+    padding: 30px 0 80px 0;
+  }
+
   .pictures {
-    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    flex-basis: 100%;
   }
 }

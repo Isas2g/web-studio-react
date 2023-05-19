@@ -1,4 +1,5 @@
 @import 'shared/styles/variables.scss';
+@import 'shared/styles/screens.scss';
 
 .board-container {
   display: flex;
@@ -13,4 +14,15 @@
   backdrop-filter: blur(10px);
   border-radius: 50px;
   align-self: center;
+}
+
+@media (max-width: $mobile) {
+  .board {
+    width: 393px;
+    height: 506px;
+  }
+
+  .board-container {
+    padding: 0 0 150px 0;
+  }
 }
