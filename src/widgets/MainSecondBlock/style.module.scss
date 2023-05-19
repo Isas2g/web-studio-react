@@ -3,7 +3,6 @@
 .text-container {
   text-align: start;
   padding: 5% 0 0 0;
-  max-width: 1028px;
 }
 
 .list-container {
@@ -22,22 +21,6 @@
   flex-direction: row;
 }
 
-@media (min-width: 0) {
-  .block {
-    display: flex;
-    flex-direction: column;
-    text-align: start;
-  }
-}
-
-@media (min-width: $tablet-landscape) {
-  .block {
-    flex-direction: row;
-    //justify-content: space-between;
-    gap: 350px;
-    text-align: start;
-  }
-}
 .block {
   display: flex;
   flex-direction: row;

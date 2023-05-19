@@ -1,12 +1,21 @@
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import classes from './style.module.scss';
 import Input from 'shared/ui/Input';
 import ProjectForm from 'widgets/ProjectForm';
+import { useEffect } from 'react';
+import { fetchProject } from 'entities/Project/store';
+import { useAppDispatch } from 'shared/store';
 
 const EditProject = () => {
+  const { id } = useParams();
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    dispatch(fetchProject(Number(id)));
+  }, [dispatch, id]);
   return (
     <div className={classes['container']}>
-      <ProjectForm />
+      <ProjectForm id={Number(id)} />
     </div>
   );
 };

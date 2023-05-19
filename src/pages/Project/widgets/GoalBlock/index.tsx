@@ -3,8 +3,13 @@ import classes from './style.module.scss';
 import Title from 'shared/ui/Title';
 import Subtitle from 'shared/ui/Subtitle';
 import Paragraph from 'shared/ui/Paragraph';
+import { Project } from 'entities/Project/types';
 
-const GoalBlock = () => {
+interface Props {
+  project: Project;
+}
+
+const GoalBlock = ({ project }: Props) => {
   return (
     <div>
       <Title>Цель()</Title>
