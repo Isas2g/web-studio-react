@@ -5,7 +5,7 @@ import Button from 'shared/ui/Button';
 
 const MainBlock = () => {
   return (
-    <div className={classes['block-container']}>
+    <div className={`${classes['block-container']} container`}>
       <HeroTitle>
         Разрабатываем сайты от &#123;
         <span className={classes['pink-gradient']}>идеи</span>

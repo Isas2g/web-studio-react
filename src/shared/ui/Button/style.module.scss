@@ -42,7 +42,8 @@
 
 @media (max-width: 480px) {
   .button {
-    width: 400px;
+    max-width: 400px;
+    width: 100%;
     font-size: 15px;
     height: fit-content;
     line-height: 19px;
@@ -50,7 +51,8 @@
   }
 
   .action-button {
-    width: 400px;
+    max-width: 400px;
+    width: 100%;
     font-size: 15px;
     height: fit-content;
     line-height: 19px;

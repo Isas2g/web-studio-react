@@ -1,3 +1,5 @@
+@import 'shared/styles/screens.scss';
+
 .auth {
   position: relative;
 }
@@ -22,4 +24,13 @@
   position: absolute;
   left: 0;
   top: 15%;
+}
+
+@media (max-width: $mobile) {
+  .floating-image-5 {
+    width: 50%;
+  }
+  .auth {
+    padding: 60px 0 0 0;
+  }
 }
