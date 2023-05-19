@@ -78,7 +78,7 @@ const Header = () => {
           }
 
           <Button
-            style={{ alignSelf: 'center', margin: '40px 0 0 0' }}
+            style={{ alignSelf: 'center', margin: '40px 0 0 -7%' }}
             text={'Заполнить бриф'}
           />
         </ul>

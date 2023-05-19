@@ -4,7 +4,7 @@ import Button from 'shared/ui/Button';
 
 const AuthForm = () => {
   return (
-    <div className={classes['container']}>
+    <div className={`${classes['container']} container`}>
       <h2 className={classes['auth-title']}>Авторизация</h2>
       <div className={classes['form']}>
         <Input
