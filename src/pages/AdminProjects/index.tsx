@@ -33,33 +33,6 @@ const AdminProjects = () => {
             description={project.description}
           />
         ))}
-        {/* <ProjectCard
-          id={1}
-          isAdminPage
-          title={'Stories Home'}
-          years={'2021 — 2021'}
-          description={
-            'Интернет-магазин товаров для дома. Все самые уютные подушки, одеяла и полотенца для вас!'
-          }
-        />
-        <ProjectCard
-          id={2}
-          isAdminPage
-          title={'2045 studio'}
-          years={'2022 — 2022'}
-          description={
-            'Лендинг для cg-студии 2045, работающей с крупными артистами.'
-          }
-        />
-        <ProjectCard
-          id={3}
-          isAdminPage
-          title={'About Web'}
-          years={'2022 — 2022'}
-          description={
-            'Информационный портал для заказчиков и сотрудников веб-студии. Вы сейчас здесь.'
-          }
-        /> */}
       </div>
     </main>
   );
