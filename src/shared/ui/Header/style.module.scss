@@ -39,7 +39,11 @@
   }
 }
 
-@media (min-width: 0) {
+.header-mob {
+  display: none;
+}
+
+@media (max-width: 768px) {
   .header {
     display: none;
   }
@@ -72,7 +76,6 @@
       padding: 20px 0 0 7%;
       list-style: none;
 
-
       &--active {
         transform: translateY(0);
         transition: 300ms;
@@ -82,7 +85,7 @@
         font-family: 'Onest';
         font-weight: 400;
         font-size: 24px;
-        color: #EDEDF5;
+        color: #ededf5;
       }
       li:not(:first-of-type) {
         margin: 20px 0 0 0;
