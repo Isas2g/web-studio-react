@@ -6,7 +6,7 @@ import Paragraph from 'shared/ui/Paragraph';
 
 const GoalBlock = () => {
   return (
-    <div className={'container'}>
+    <div>
       <Title>Цель()</Title>
       <div className={classes['goals-container']}>
         <div className={classes['left-block']}>

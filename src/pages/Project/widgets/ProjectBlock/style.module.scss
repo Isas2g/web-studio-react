@@ -1,4 +1,5 @@
 @import 'shared/styles/variables.scss';
+@import 'shared/styles/screens.scss';
 
 .project-container {
   text-align: start;
@@ -69,20 +70,61 @@
   bottom: 0px;
 }
 
-.floating-image-6 {
-  position: absolute;
-  top: 815px;
-  left: 20%;
-}
-
-.floating-image-7 {
-  position: absolute;
-  top: 52px;
-  right: 8%;
-}
-
-.floating-image-8 {
-  position: absolute;
-  top: 786px;
-  right: 0;
+@media (max-width: $mobile) {
+  .project-container {
+    padding: 0 0 150px 0;
+    margin: 0;
+  }
+  .project-info {
+    display: block;
+  }
+  .right-block {
+    display: grid;
+    grid-area: right;
+    row-gap: 0;
+    grid-template-areas: "title . years"
+                        "desc desc desc"
+                        "stack stack stack"
+                        "btn btn btn";
+  }
+  .left-block {
+    gap: 10px;
+    position: absolute;
+    width: 400px;
+    height: 439px;
+    left: 40px;
+    top: 230px;
+  }
+  .project-title {
+    grid-area: title;
+    font-size: 24px;
+    margin: 0 0 450px 0;
+    padding: 0 0 60px 0;
+  }
+  .project-years {
+    grid-area: years;
+    font-size: 15px;
+    margin: 0;
+    padding: 8px 30px 0 0;
+    text-align: end;
+  }
+  .project-description {
+    grid-area: desc;
+    font-size: 15px;
+    max-width: 400px;
+    padding: 0 0 35px 0;
+    margin: 0;
+  }
+  .project-stack {
+    grid-area: stack;
+    font-size: 15px;
+    padding: 0 0 80px 0;
+  }
+  .btn-container {
+    grid-area: btn;
+    width: 400px;
+  }
+  .btn-back {
+    padding: 60px 0 50px 0px;
+  }
 }

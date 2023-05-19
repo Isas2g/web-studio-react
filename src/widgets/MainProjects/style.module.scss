@@ -1,8 +1,12 @@
 @import '/src/shared/styles/screens.scss';
 
+.main-projects-container {
+  padding: 190px 0 213px 0;
+}
+
 .text-project-container {
   text-align: start;
-  padding: 8% 0 0 0;
+  padding: 0;
 }
 
 .projects-list-container {
@@ -19,7 +23,6 @@ a {
   display: block;
 }
 
-
 @media (max-width: 480px) {
   .projects-list-container {
     display: flex;
@@ -32,4 +35,3 @@ a {
     padding: 0 0 150px 0;
   }
 }
-

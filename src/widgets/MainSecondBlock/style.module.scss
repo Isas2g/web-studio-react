@@ -22,7 +22,6 @@
   flex-direction: row;
 }
 
-
 @media (min-width: 0) {
   .block {
     display: flex;
@@ -39,16 +38,23 @@
     text-align: start;
   }
 }
+.block {
+  display: flex;
+  flex-direction: row;
+  gap: 350px;
+  text-align: start;
+}
 
-@media (max-width: 480px) {
+@media (max-width: $mobile) {
   .text-container {
-    max-width: 402px;
+    max-width: 400px;
   }
 
   .block {
     display: grid;
-    grid-template-areas: "list"
-                          "sc";
+    grid-template-areas:
+      'list'
+      'sc';
     gap: 0;
   }
 

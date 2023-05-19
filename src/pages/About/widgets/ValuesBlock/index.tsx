@@ -10,10 +10,12 @@ const ValuesBlock = () => {
     <div className={'container'}>
       <div className={classes['values-container']}>
         <Title>Принципы_работы()</Title>
-        <Subtitle style={{ maxWidth: '1028px', paddingBottom: '112px' }}>
-          Мы верим в эти принципы и применяем их на практике, чтобы достичь
-          самых высоких результатов.
-        </Subtitle>
+        <div className={classes['subtitle']}>
+          <Subtitle>
+            Мы верим в эти принципы и применяем их на практике, чтобы достичь
+            самых высоких результатов.
+          </Subtitle>
+        </div>
         <div className={classes['row']}>
           <div className={classes['left-side']}>
             <Paragraph>
