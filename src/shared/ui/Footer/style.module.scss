@@ -58,7 +58,7 @@
     color: $main-text-color;
     padding: 0 0 5% 0;
   }
-  
+
   .text-bold {
     font-family: 'Onest';
     font-style: normal;
@@ -83,7 +83,7 @@
   .text {
     font-size: 20px;
   }
-  
+
   .text-bold {
     font-size: 20px;
   }
@@ -111,9 +111,10 @@
     align-items: start;
     justify-content: start;
     display: grid;
-    grid-template-areas: "logo ."
-            "second third"
-                          "first first";
+    grid-template-areas:
+      'logo .'
+      'second third'
+      'first first';
   }
 
   .second-block {
@@ -133,7 +134,7 @@
 
   .logo {
     grid-area: logo;
-    padding:  0 0 40px 0;
+    padding: 0 0 40px 0;
   }
 
   .list {

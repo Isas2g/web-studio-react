@@ -1,5 +1,5 @@
 import React from 'react';
-import ProjectsList from 'widgets/OurProjects/components/ProjectsList';
+import ProjectsList from 'widgets/OurProjects';
 import classes from './style.module.scss';
 import Button from 'shared/ui/Button';
 

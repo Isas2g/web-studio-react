@@ -3,7 +3,6 @@
 .text-container {
   text-align: start;
   padding: 5% 0 0 0;
-  max-width: 1028px;
 }
 
 .list-container {
@@ -22,7 +21,6 @@
   flex-direction: row;
 }
 
-
 .block {
   display: flex;
   flex-direction: row;
@@ -37,8 +35,9 @@
 
   .block {
     display: grid;
-    grid-template-areas: "list"
-                          "sc";
+    grid-template-areas:
+      'list'
+      'sc';
     gap: 0;
   }
 
@@ -52,5 +51,7 @@
     grid-area: list;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 10px;
   }
 }
