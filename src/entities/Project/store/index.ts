@@ -7,7 +7,8 @@ export const fetchAPIProjects = createAsyncThunk(
   async () => {
     const res = await instance.get('/projects');
     const data = await res.data;
-    return data.data;
+    console.log(data);
+    return data;
   }
 );
 
@@ -20,7 +21,7 @@ export const updateProject = createAsyncThunk(
       },
     });
     const data = await res.data;
-    return data.data;
+    return data;
   }
 );
 
@@ -29,7 +30,7 @@ export const fetchProject = createAsyncThunk(
   async (id: number) => {
     const res = await instance.get(`/projects/${id}`);
     const data = await res.data;
-    return data.data;
+    return data;
   }
 );
 
