@@ -17,18 +17,18 @@ const OurProjects = () => {
 
   return (
     <div className={`${classes['our-projects']} container`}>
-      <img className={classes['floating-image']} src={floatingImage} alt={''} />
-      <Title>проекты</Title>
-      <Subtitle>
-        Последние решения, которые нам удалось успешно реализовать.
-      </Subtitle>
-      <button
-        // onClick={addProject}
-        className={classes['filter']}
-      >
-        Готовые проекты
-        <img src={arrow} className={classes['arrow']} alt={''} />
-      </button>
+      {/*<img className={classes['floating-image']} src={floatingImage} alt={''} />*/}
+      {/*<Title>проекты</Title>*/}
+      {/*<Subtitle>*/}
+      {/*  Последние решения, которые нам удалось успешно реализовать.*/}
+      {/*</Subtitle>*/}
+      {/*<button*/}
+      {/*  // onClick={addProject}*/}
+      {/*  className={classes['filter']}*/}
+      {/*>*/}
+      {/*  Готовые проекты*/}
+      {/*  <img src={arrow} className={classes['arrow']} alt={''} />*/}
+      {/*</button>*/}
       <ProjectsList />
     </div>
   );

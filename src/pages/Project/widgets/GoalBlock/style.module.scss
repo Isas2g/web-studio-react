@@ -3,7 +3,8 @@
 .goals-container {
   display: flex;
   flex-direction: row;
-  column-gap: 136px;
+  //column-gap: 136px;
+  justify-content: space-between;
   padding: 0 0 190px 0;
 }
 
