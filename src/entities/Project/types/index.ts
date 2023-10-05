@@ -1,5 +1,6 @@
 export interface Project {
-  id: number;
+  id?: number;
+  teamID?: number;
   title: string;
   description: string;
   startedAt: string;

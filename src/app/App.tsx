@@ -12,6 +12,7 @@ import EditProject from 'pages/EditProject';
 import EditUsers from 'pages/EditUsers';
 import Footer from 'shared/ui/Footer';
 import Error from '../pages/Error';
+import CreateProject from '../pages/CreateProject';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           <Route path="/edit-users/:id" element={<EditUsers />} />
           <Route path="/projects/:id" element={<Project />} />
           <Route path="/error" element={<Error />} />
+          <Route path="/create-project" element={<CreateProject />} />
           <Route path="*" element={<Main />} />
         </Routes>
         <Footer />

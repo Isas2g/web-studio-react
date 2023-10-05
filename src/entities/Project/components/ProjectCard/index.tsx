@@ -8,7 +8,7 @@ interface Props {
   description: string;
   isAdminPage?: boolean;
   isProjectsPage?: boolean;
-  id: number;
+  id?: number;
 }
 
 const ProjectCard = ({

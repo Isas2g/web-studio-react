@@ -25,6 +25,26 @@ export const updateProject = createAsyncThunk(
   }
 );
 
+export const createProject = createAsyncThunk(
+  'projects/createProject',
+  async (project: Project) => {
+    if (!localStorage.getItem('csrfToken')) {
+      alert('Авторизация не выполнена');
+    } else {
+      const res = await instance.post(`/projects`, project, {
+        headers: {
+          'x-csrf-token': localStorage.getItem('csrfToken'),
+          // 'x-csrf-token': 'uSkqy74hT+F7DEYLnzb66/GdRUVYNVmaF2AV6cI+SJw=',
+          'Content-Type': 'Application/json',
+        },
+      });
+      console.log(localStorage.getItem('csrfToken'));
+      const data = await res.data;
+      return data;
+    }
+  }
+);
+
 export const fetchProject = createAsyncThunk(
   'projects/fetchProject',
   async (id: number) => {
@@ -72,6 +92,13 @@ export const projectsSlice = createSlice({
     });
     builder.addCase(fetchProject.pending, (state) => {
       state.isLoading = true;
+    });
+    builder.addCase(createProject.pending, (state) => {
+      state.isLoading = true;
+    });
+    builder.addCase(createProject.fulfilled, (state, action) => {
+      state.isLoading = false;
+      state.project = action.payload;
     });
   },
 });

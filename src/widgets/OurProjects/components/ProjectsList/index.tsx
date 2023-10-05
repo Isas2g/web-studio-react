@@ -37,7 +37,9 @@ const ProjectsList = () => {
           key={index}
           title={item.title}
           description={item.description}
-          years={`${new Date(item.startedAt)} - ${new Date(item.endedAt)}`}
+          years={`${new Date(item.startedAt).getFullYear()} - ${new Date(
+            item.endedAt
+          ).getFullYear()}`}
           isProjectsPage
         />
       ))}

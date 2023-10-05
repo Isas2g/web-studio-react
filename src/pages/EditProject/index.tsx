@@ -3,7 +3,7 @@ import classes from './style.module.scss';
 import Input from 'shared/ui/Input';
 import ProjectForm from 'widgets/ProjectForm';
 import { useEffect } from 'react';
-import { fetchProject } from 'entities/Project/store';
+import { fetchProject, updateProject } from 'entities/Project/store';
 import { useAppDispatch } from 'shared/store';
 
 const EditProject = () => {
