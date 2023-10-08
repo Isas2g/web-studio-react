@@ -33,11 +33,13 @@ const ProjectsList = () => {
       /> */}
       {projects.map((item, index) => (
         <ProjectCard
-          id={index + 1}
+          id={item.id}
           key={index}
           title={item.title}
           description={item.description}
-          years={'2020 — 2021'}
+          years={`${new Date(item.startedAt).getFullYear()} - ${new Date(
+            item.endedAt
+          ).getFullYear()}`}
           isProjectsPage
         />
       ))}

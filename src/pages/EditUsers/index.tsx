@@ -1,6 +1,6 @@
-import Button from 'shared/ui/Button';
+import { Button } from 'shared/ui';
 import classes from './style.module.scss';
-import UserLine from 'entities/User/components/UserLine';
+import { UserLine } from 'entities/User';
 
 const EditUsers = () => {
   const users: {

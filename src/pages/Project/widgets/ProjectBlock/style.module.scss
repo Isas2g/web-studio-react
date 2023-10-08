@@ -4,20 +4,35 @@
 .project-container {
   text-align: start;
   padding: 0 0 190px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.btn-back {
+  display: flex;
+  align-self: flex-start;
+  padding: 3% 0 3% 0;
+}
+
+.lnk {
+  display: flex;
+  align-self: flex-start;
 }
 
 .left-block {
   width: 500px;
   height: 550px;
   background: $card-background;
-  backdrop-filter: blur(10px);
   border-radius: 50px;
+  border: 2px solid var(--back, rgba(200, 138, 249, 0.2));
+  backdrop-filter: blur(10px);
 }
 
 .project-info {
   display: flex;
   flex-direction: row;
-  column-gap: 123px;
+  //column-gap: 123px;
+  justify-content: space-between;
 }
 
 .right-block {
@@ -69,6 +84,7 @@
   position: absolute;
   bottom: 0px;
 }
+
 
 @media (max-width: $mobile) {
   .project-container {

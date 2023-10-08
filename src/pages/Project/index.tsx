@@ -1,12 +1,14 @@
-import ProjectBlock from './widgets/ProjectBlock';
-import Application from 'widgets/Application';
-import GoalBlock from './widgets/GoalBlock';
-import TasksBlock from './widgets/TasksBlock';
-import TeamBlock from './widgets/TeamBlock';
+import {
+  ProjectBlock,
+  GoalBlock,
+  TasksBlock,
+  TeamBlock,
+} from './widgets';
+import { Application } from 'widgets/index';
 import { useParams } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from 'shared/store';
 import { useEffect } from 'react';
-import { fetchProject } from 'entities/Project/store';
+import { fetchProject } from 'entities/Project';
 
 const Project = () => {
   const { id } = useParams();
