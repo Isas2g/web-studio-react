@@ -8,7 +8,7 @@
 .row {
   display: flex;
   flex-direction: row;
-  column-gap: 438px;
+  justify-content: space-between;
 }
 
 .left-side {
@@ -21,6 +21,7 @@
 .right-side {
   display: flex;
   flex-direction: column;
+  padding: 0 20% 0 0;
 }
 
 .subtitle {

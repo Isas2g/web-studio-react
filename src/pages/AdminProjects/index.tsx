@@ -1,14 +1,16 @@
-import Button from 'shared/ui/Button';
+import { Button } from 'shared/ui';
 import classes from './style.module.scss';
-import ProjectCard from 'entities/Project/components/ProjectCard';
+import { ProjectCard, fetchAPIProjects } from 'entities/Project';
 import { useAppDispatch, useAppSelector } from 'shared/store';
 import { useEffect } from 'react';
-import { fetchAPIProjects } from 'entities/Project/store';
+import { Link } from 'react-router-dom';
 
 const AdminProjects = () => {
   const projects = useAppSelector((state) => state.projects.value);
   const isLoading = useAppSelector((state) => state.projects.isLoading);
   const dispatch = useAppDispatch();
+
+  console.log(localStorage.getItem('csrfToken'));
 
   useEffect(() => {
     dispatch(fetchAPIProjects());
@@ -20,7 +22,9 @@ const AdminProjects = () => {
 
   return (
     <main className={classes['admin-projects-container']}>
-      <Button isAction text={'Создать проект'} style={{ marginBottom: 62 }} />
+      <Link to={'/create-project'}>
+        <Button isAction text={'Создать проект'} style={{ marginBottom: 62 }} />
+      </Link>
 
       <div className={classes['projects-container']}>
         {projects.map((project) => (

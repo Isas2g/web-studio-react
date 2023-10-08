@@ -1,4 +1,4 @@
-import AuthForm from 'widgets/AuthForm';
+import { AuthForm }from 'widgets/index';
 import classes from './style.module.scss';
 
 import floatingImage1 from 'shared/assets/icons/floating-image-1.svg';
@@ -6,8 +6,7 @@ import floatingImage5 from 'shared/assets/icons/floating-image-5.svg';
 import floatingImage2 from 'shared/assets/icons/floating-image-2.svg';
 import floatingImage4 from 'shared/assets/icons/floating-image-4.svg';
 import { useAppDispatch } from 'shared/store';
-import { useState } from 'react';
-import { Credentials, signIn } from 'entities/User/store';
+import { Credentials, signIn } from 'entities/User';
 import { useNavigate } from "react-router-dom";
 
 
