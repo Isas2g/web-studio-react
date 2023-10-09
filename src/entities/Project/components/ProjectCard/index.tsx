@@ -1,4 +1,4 @@
-import Button from 'shared/ui/Button';
+import { Button } from 'shared/ui';
 import classes from './style.module.scss';
 import { Link } from 'react-router-dom';
 
@@ -25,24 +25,24 @@ const ProjectCard = ({
         <p className={classes['card-title']}>{title}</p>
         <p className={classes['card-years']}>{years}</p>
         <p className={classes['card-description']}>{description}</p>
-        {/*{(isAdminPage || isProjectsPage) && (*/}
-        {/*  <div className={classes['buttons-container']}>*/}
-        {/*    {isAdminPage && (*/}
-        {/*      <>*/}
-        {/*        <Link to={'/edit-project/' + id}>*/}
-        {/*          <Button text={'Редактировать'} style={{ marginBottom: 30 }} />*/}
-        {/*        </Link>*/}
-        {/*        <Button text={'Удалить'} />*/}
-        {/*      </>*/}
-        {/*    )}*/}
-        {/*    {isProjectsPage && (*/}
-        {/*        <Button*/}
-        {/*          text={'Смотреть проект'}*/}
-        {/*          style={{ whiteSpace: 'nowrap' }}*/}
-        {/*        />*/}
-        {/*    )}*/}
-        {/*  </div>*/}
-        {/*)}*/}
+        {(isAdminPage || isProjectsPage) && (
+          <div className={classes['buttons-container']}>
+            {isAdminPage && (
+              <>
+                <Link to={'/edit-project/' + id}>
+                  <Button text={'Редактировать'} style={{ marginBottom: 30 }} />
+                </Link>
+                <Button text={'Удалить'} />
+              </>
+            )}
+            {isProjectsPage && (
+              <Button
+                text={'Смотреть проект'}
+                style={{ whiteSpace: 'nowrap' }}
+              />
+            )}
+          </div>
+        )}
       </div>
     </Link>
   );

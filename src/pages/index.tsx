@@ -1,8 +1,6 @@
-import 'shared/styles/fonts.scss';
-import './App.scss';
-
+import About from 'pages/About';
 import Main from 'pages/Main';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import Projects from 'pages/Projects';
 import Project from 'pages/Project';
 import Authorization from 'pages/Authorization';
@@ -10,16 +8,10 @@ import AdminProjects from 'pages/AdminProjects';
 import EditProject from 'pages/EditProject';
 import EditUsers from 'pages/EditUsers';
 import Error from '../pages/Error';
-// import CreateProject from '../pages/CreateProject';
-import { Header, Footer } from 'shared/ui';
-import { Routing } from 'pages/index';
-import About from '../pages/About';
+import CreateProject from '../pages/CreateProject';
 
-function App() {
+export const Routing = () => {
   return (
-    <div className="App">
-      <BrowserRouter>
-        <Header />
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="/about" element={<About />} />
@@ -30,14 +22,8 @@ function App() {
           <Route path="/edit-users/:id" element={<EditUsers />} />
           <Route path="/projects/:id" element={<Project />} />
           <Route path="/error" element={<Error />} />
-          {/*<Route path="/create-project" element={<CreateProject />} />*/}
+          <Route path="/create-project" element={<CreateProject />} />
           <Route path="*" element={<Main />} />
         </Routes>
-        <Routing />
-        <Footer />
-      </BrowserRouter>
-    </div>
   );
 }
-
-export default App;

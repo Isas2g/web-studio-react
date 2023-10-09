@@ -5,23 +5,57 @@ import { Project } from '../types';
 export const fetchAPIProjects = createAsyncThunk(
   'projects/fetchProjects',
   async () => {
-    const res = await instance.get('/projects');
-    const data = await res.data;
-    console.log(data);
-    return data;
+    try {
+      const res = await instance.get('/projects');
+      const data = await res.data;
+      
+      return data;
+    } catch (e) {
+      console.log('Произошла ошибка');
+      console.log(e);
+    }
   }
 );
 
 export const updateProject = createAsyncThunk(
   'projects/updateProject',
   async (project: Project) => {
-    const res = await instance.put(`/projects/${project.id}`, project, {
-      headers: {
-        'Content-Type': 'Application/json',
-      },
-    });
-    const data = await res.data;
-    return data;
+    try {
+      const res = await instance.put(`/projects/${project.id}`, project, {
+        headers: {
+          'Content-Type': 'Application/json',
+        },
+      });
+      const data = await res.data;
+      return data;
+    } catch (e) {
+      console.log('Произошла ошибка');
+      console.log(e);
+    }
+  }
+);
+
+export const createProject = createAsyncThunk(
+  'projects/createProject',
+  async (project: Project) => {
+    if (!localStorage.getItem('csrfToken')) {
+      alert('Авторизация не выполнена');
+      return;
+    }
+    try {
+      const res = await instance.post(`/projects`, project, {
+        headers: {
+          'x-csrf-token': localStorage.getItem('csrfToken'),
+          'Content-Type': 'Application/json',
+        },
+      });
+      console.log(localStorage.getItem('csrfToken'));
+      const data = await res.data;
+      return data;
+    } catch (e) {
+      console.log('Произошла ошибка');
+      console.log(e);
+    }
   }
 );
 
@@ -48,9 +82,14 @@ export const createProject = createAsyncThunk(
 export const fetchProject = createAsyncThunk(
   'projects/fetchProject',
   async (id: number) => {
-    const res = await instance.get(`/projects/${id}`);
-    const data = await res.data;
-    return data;
+    try {
+      const res = await instance.get(`/projects/${id}`);
+      const data = await res.data;
+      return data;
+    } catch (e) {
+      console.log('Произошла ошибка');
+      console.log(e);
+    }
   }
 );
 

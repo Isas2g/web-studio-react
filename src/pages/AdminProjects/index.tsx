@@ -1,9 +1,8 @@
-import Button from 'shared/ui/Button';
+import { Button } from 'shared/ui';
 import classes from './style.module.scss';
-import ProjectCard from 'entities/Project/components/ProjectCard';
+import { ProjectCard, fetchAPIProjects } from 'entities/Project';
 import { useAppDispatch, useAppSelector } from 'shared/store';
 import { useEffect } from 'react';
-import { fetchAPIProjects } from 'entities/Project/store';
 import { Link } from 'react-router-dom';
 
 const AdminProjects = () => {

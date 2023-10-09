@@ -1,39 +1,25 @@
 import classes from './style.module.scss';
-import Input from 'shared/ui/Input';
-import Button from 'shared/ui/Button';
-import ProjectFormButton from './components/Button';
-import Document from './components/Document';
 import { useAppDispatch, useAppSelector } from 'shared/store';
-import { useEffect, useState } from 'react';
 import {
   fetchProject,
   updateProject,
   createProject,
 } from 'entities/Project/store';
+import { Button, Input } from 'shared/ui';
+import { Button as ProjectFormButton, Document } from './components';
+import { useState } from 'react';
+
 import { Project } from 'entities/Project/types';
 
 interface Props {
-  id: number;
+  handler: (project: Project) => void;
+  project?: Project;
 }
 
-const ProjectForm = ({ id }: Props) => {
-  const dispatch = useAppDispatch();
-  const project = useAppSelector((state) => state.projects.project);
-  const [newProject, setNewProject] = useState<Project>(project);
-  const isLoading = useAppSelector((state) => state.projects.isLoading);
-
-  if (isLoading) {
-    return <p style={{ marginTop: 200 }}>{'loading...'}</p>;
-  }
-  // console.log(isLoading);
-  // if (!isLoading) {
-  //   setNewProject(project);
-  // }
-
-  const updateProjectHandler = () => {
-    console.log(newProject);
-    dispatch(updateProject({ ...newProject, id }));
-  };
+const ProjectForm = ({ handler, project }: Props) => {
+  const [newProject, setNewProject] = useState<
+    Project | Record<string, string>
+  >(project || {});
 
   return (
     <div className={classes['']}>
@@ -44,7 +30,7 @@ const ProjectForm = ({ id }: Props) => {
         id="project-title"
         name="project-title"
         containerStyle={{ marginBottom: 33 }}
-        defaultValue={project.title}
+        defaultValue={project?.title || ''}
         onChange={(event) => {
           setNewProject({
             ...newProject,
@@ -59,9 +45,13 @@ const ProjectForm = ({ id }: Props) => {
         id="project-years"
         name="project-years"
         containerStyle={{ marginBottom: 33 }}
-        value={`${new Date(project.startedAt).getFullYear()} - ${new Date(
-          project.endedAt
-        ).getFullYear()}`}
+        value={
+          project
+            ? `${new Date(project.startedAt).getFullYear()} - ${new Date(
+                project.endedAt
+              ).getFullYear()}`
+            : ''
+        }
         onChange={(event) => {
           // setNewProject({
           //   ...newProject,
@@ -78,7 +68,7 @@ const ProjectForm = ({ id }: Props) => {
         containerStyle={{ marginBottom: 33 }}
         style={{ minHeight: 200 }}
         isMultiline
-        defaultValue={project.description}
+        defaultValue={project?.description || ''}
         onChange={(event) => {
           setNewProject({
             ...newProject,
@@ -111,7 +101,7 @@ const ProjectForm = ({ id }: Props) => {
         id="project-link"
         name="project-link"
         containerStyle={{ marginBottom: 40 }}
-        defaultValue={project.link}
+        defaultValue={project?.link || ''}
         onChange={(event) => {
           setNewProject({
             ...newProject,
@@ -129,7 +119,11 @@ const ProjectForm = ({ id }: Props) => {
         <Document title={'doc2.docx'} />
       </div>
       <div className={classes['buttons-container']}>
-        <Button onClick={updateProjectHandler} text={'Сохранить'} isAction />
+        <Button
+          onClick={() => handler(newProject as Project)}
+          text={'Сохранить'}
+          isAction
+        />
       </div>
     </div>
   );

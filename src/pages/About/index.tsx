@@ -1,8 +1,10 @@
-import ValuesBlock from './widgets/ValuesBlock';
-import Application from 'widgets/Application';
-import BoardBlock from './widgets/BoardBlock';
-import HistoryBlock from './widgets/HistoryBlock';
-import MainAboutBlock from './widgets/MainAboutBlock';
+import { Application } from 'widgets/index';
+import {
+  ValuesBlock,
+  BoardBlock,
+  HistoryBlock,
+  MainAboutBlock,
+} from './widgets';
 
 const About = () => {
   return (
