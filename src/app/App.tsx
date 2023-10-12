@@ -1,10 +1,7 @@
 import 'shared/styles/fonts.scss';
 import './App.scss';
-import { BrowserRouter} from 'react-router-dom';
-import {
-  Header,
-  Footer,
-} from 'shared/ui';
+import { BrowserRouter } from 'react-router-dom';
+import { Header, Footer } from 'shared/ui';
 import { Routing } from 'pages/index';
 
 function App() {

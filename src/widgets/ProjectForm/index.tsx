@@ -1,13 +1,8 @@
 import classes from './style.module.scss';
-import { 
-  Button,
-  Input,
-} from 'shared/ui';
-import { 
-  Button as ProjectFormButton,
-  Document
-} from './components';
+import { Button, Input } from 'shared/ui';
+import { Button as ProjectFormButton, Document } from './components';
 import { useState } from 'react';
+
 import { Project } from 'entities/Project/types';
 
 interface Props {
@@ -16,7 +11,9 @@ interface Props {
 }
 
 const ProjectForm = ({ handler, project }: Props) => {
-  const [newProject, setNewProject] = useState<Project | Record<string, string>>(project || {});
+  const [newProject, setNewProject] = useState<
+    Project | Record<string, string>
+  >(project || {});
 
   return (
     <div className={classes['']}>
@@ -43,8 +40,10 @@ const ProjectForm = ({ handler, project }: Props) => {
         name="project-years"
         containerStyle={{ marginBottom: 33 }}
         value={
-          project 
-            ? `${new Date(project.startedAt).getFullYear()} - ${new Date(project.endedAt).getFullYear()}` 
+          project
+            ? `${new Date(project.startedAt).getFullYear()} - ${new Date(
+                project.endedAt
+              ).getFullYear()}`
             : ''
         }
         onChange={(event) => {
@@ -114,7 +113,11 @@ const ProjectForm = ({ handler, project }: Props) => {
         <Document title={'doc2.docx'} />
       </div>
       <div className={classes['buttons-container']}>
-        <Button onClick={() => handler(newProject as Project)} text={'Сохранить'} isAction />
+        <Button
+          onClick={() => handler(newProject as Project)}
+          text={'Сохранить'}
+          isAction
+        />
       </div>
     </div>
   );

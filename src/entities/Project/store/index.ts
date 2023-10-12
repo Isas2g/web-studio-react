@@ -8,7 +8,7 @@ export const fetchAPIProjects = createAsyncThunk(
     try {
       const res = await instance.get('/projects');
       const data = await res.data;
-      
+
       return data;
     } catch (e) {
       console.log('Произошла ошибка');
