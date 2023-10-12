@@ -1,10 +1,4 @@
 import classes from './style.module.scss';
-import { useAppDispatch, useAppSelector } from 'shared/store';
-import {
-  fetchProject,
-  updateProject,
-  createProject,
-} from 'entities/Project/store';
 import { Button, Input } from 'shared/ui';
 import { Button as ProjectFormButton, Document } from './components';
 import { useState } from 'react';

@@ -8,7 +8,7 @@ export const fetchAPIProjects = createAsyncThunk(
     try {
       const res = await instance.get('/projects');
       const data = await res.data;
-      
+
       return data;
     } catch (e) {
       console.log('Произошла ошибка');
@@ -55,26 +55,6 @@ export const createProject = createAsyncThunk(
     } catch (e) {
       console.log('Произошла ошибка');
       console.log(e);
-    }
-  }
-);
-
-export const createProject = createAsyncThunk(
-  'projects/createProject',
-  async (project: Project) => {
-    if (!localStorage.getItem('csrfToken')) {
-      alert('Авторизация не выполнена');
-    } else {
-      const res = await instance.post(`/projects`, project, {
-        headers: {
-          'x-csrf-token': localStorage.getItem('csrfToken'),
-          // 'x-csrf-token': 'uSkqy74hT+F7DEYLnzb66/GdRUVYNVmaF2AV6cI+SJw=',
-          'Content-Type': 'Application/json',
-        },
-      });
-      console.log(localStorage.getItem('csrfToken'));
-      const data = await res.data;
-      return data;
     }
   }
 );

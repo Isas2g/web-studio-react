@@ -20,10 +20,6 @@ const EditProject = () => {
   if (isLoading) {
     return <p style={{ marginTop: 200 }}>{'loading...'}</p>;
   }
-  // console.log(isLoading);
-  // if (!isLoading) {
-  //   setNewProject(project);
-  // }
 
   const updateProjectHandler = (newProject: Project) => {
     dispatch(updateProject({ ...newProject, id: Number(id) }));

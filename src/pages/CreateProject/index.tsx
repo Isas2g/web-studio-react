@@ -1,5 +1,5 @@
 import React from 'react';
-import classes from '../EditProject/style.module.scss';
+import classes from './style.module.scss';
 import { ProjectForm } from 'widgets/index';
 import { useAppDispatch } from 'shared/store';
 import { Project, createProject } from 'entities/Project';
