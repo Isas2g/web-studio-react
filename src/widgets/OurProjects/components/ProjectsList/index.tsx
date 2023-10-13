@@ -40,7 +40,6 @@ const ProjectsList = () => {
           years={`${new Date(item.startedAt).getFullYear()} - ${new Date(
             item.endedAt
           ).getFullYear()}`}
-          isProjectsPage
         />
       ))}
     </div>
