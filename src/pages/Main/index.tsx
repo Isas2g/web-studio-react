@@ -17,22 +17,22 @@ const Main = () => {
       <img
         alt=""
         src={floatingImage1}
-        className={classes['floating-image-1']}
+        className={classes['floating-image']}
       />
       <img
         alt=""
         src={floatingImage2}
-        className={classes['floating-image-2']}
+        className={classes['floating-image']}
       />
       <img
         alt=""
         src={floatingImage3}
-        className={classes['floating-image-3']}
+        className={classes['floating-image']}
       />
       <img
         alt=""
         src={floatingImage4}
-        className={classes['floating-image-4']}
+        className={classes['floating-image']}
       />
       <MainBlock />
       <MainSecondBlock />
