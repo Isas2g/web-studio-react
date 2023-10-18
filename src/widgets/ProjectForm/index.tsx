@@ -18,7 +18,9 @@ const ProjectForm = ({ handler, project }: Props) => {
 
   return (
     <div>
-      <Link className={classes['return-link']} to="/admin-projects">&lt; к проектам</Link>
+      <Link className={classes['return-link']} to="/admin-projects">
+        &lt; к проектам
+      </Link>
       <Input
         label="Название проекта"
         placeholder="Название проекта"
@@ -54,19 +56,23 @@ const ProjectForm = ({ handler, project }: Props) => {
 
       <p className={classes['sub-title']}>стек технологий</p>
       <div className={classes['buttons-container']}>
-        <ProjectFormButton identifier='vue' text={'VUE.JS'} />
-        <ProjectFormButton identifier='react' text={'REACT.JS'} isAction />
-        <ProjectFormButton identifier='angular' text={'ANGULAR.JS'} />
-        <ProjectFormButton identifier='docker' text={'DOCKER'} isAction />
-        <ProjectFormButton identifier='figma' text={'FIGMA'} isAction />
-        <ProjectFormButton identifier='ts' text={'TYPESCRIPT'} isAction />
-        <ProjectFormButton identifier='redux' text={'REDUX'} isAction />
-        <ProjectFormButton identifier='redux-tk' text={'REDUX TOOLKIT'} isAction />
-        <ProjectFormButton identifier='rtk' text={'RTK QUERY'} />
-        <ProjectFormButton identifier='fsd' text={'FSD ARCHITECHTURE'} />
-        <ProjectFormButton identifier='vuetify' text={'VUETIFY'} />
-        <ProjectFormButton identifier='psql' text={'POSTGRESQL'} />
-        <ProjectFormButton identifier='go' text={'GOLANG'} />
+        <ProjectFormButton identifier="vue" text={'VUE.JS'} />
+        <ProjectFormButton identifier="react" text={'REACT.JS'} isAction />
+        <ProjectFormButton identifier="angular" text={'ANGULAR.JS'} />
+        <ProjectFormButton identifier="docker" text={'DOCKER'} isAction />
+        <ProjectFormButton identifier="figma" text={'FIGMA'} isAction />
+        <ProjectFormButton identifier="ts" text={'TYPESCRIPT'} isAction />
+        <ProjectFormButton identifier="redux" text={'REDUX'} isAction />
+        <ProjectFormButton
+          identifier="redux-tk"
+          text={'REDUX TOOLKIT'}
+          isAction
+        />
+        <ProjectFormButton identifier="rtk" text={'RTK QUERY'} />
+        <ProjectFormButton identifier="fsd" text={'FSD ARCHITECHTURE'} />
+        <ProjectFormButton identifier="vuetify" text={'VUETIFY'} />
+        <ProjectFormButton identifier="psql" text={'POSTGRESQL'} />
+        <ProjectFormButton identifier="go" text={'GOLANG'} />
       </div>
 
       <Input
