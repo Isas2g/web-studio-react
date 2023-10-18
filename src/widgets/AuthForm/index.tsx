@@ -26,18 +26,14 @@ const AuthForm = ({
           label={'Логин'}
           type={'text'}
           placeholder="Логин"
-          containerStyle={{ marginBottom: 19 }}
           name="login"
-          onChange={(e) => setCredentials({...credentials, login: e.target.value})}
         />
         <Input
           id="password"
           label={'Пароль'}
           type={'password'}
           placeholder="Пароль"
-          containerStyle={{ marginBottom: 19 }}
           name="password"
-          onChange={(e) => setCredentials({...credentials, password: e.target.value})}
         />
         <span className={classes['forgot-pass-btn']}>забыли пароль?</span>
         <Button

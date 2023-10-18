@@ -26,13 +26,6 @@ const ProjectCreateForm = () => {
         type="text"
         id="project-title"
         name="project-title"
-        containerStyle={{ marginBottom: 33 }}
-        onChange={(event) => {
-          setNewProject({
-            ...newProject,
-            title: event.target.value,
-          });
-        }}
       />
       <Input
         label="ПЕРИОД РАЗРАБОТКИ"
@@ -40,13 +33,6 @@ const ProjectCreateForm = () => {
         type="text"
         id="project-years"
         name="project-years"
-        containerStyle={{ marginBottom: 33 }}
-        onChange={(event) => {
-          // setNewProject({
-          //   ...newProject,
-          //   title: event.target.value
-          // })
-        }}
       />
       <Input
         label="ОПИСАНИЕ ПРОЕКТА"
@@ -54,15 +40,6 @@ const ProjectCreateForm = () => {
         type="text"
         id="project-description"
         name="project-description"
-        containerStyle={{ marginBottom: 33 }}
-        style={{ minHeight: 200 }}
-        isMultiline
-        onChange={(event) => {
-          setNewProject({
-            ...newProject,
-            description: event.target.value,
-          });
-        }}
       />
 
       <Input
@@ -71,32 +48,23 @@ const ProjectCreateForm = () => {
         type="text"
         id="teamID"
         name="teamID"
-        containerStyle={{ marginBottom: 33 }}
-        style={{ minHeight: 200 }}
-        isMultiline
-        onChange={(event) => {
-          setNewProject({
-            ...newProject,
-            teamID: Number(event.target.value),
-          });
-        }}
       />
 
       <p className={classes['sub-title']}>стек технологий</p>
       <div className={classes['buttons-container']}>
-        <ProjectFormButton text={'VUE.JS'} />
-        <ProjectFormButton text={'REACT.JS'} isAction />
-        <ProjectFormButton text={'ANGULAR.JS'} />
-        <ProjectFormButton text={'DOCKER'} isAction />
-        <ProjectFormButton text={'FIGMA'} isAction />
-        <ProjectFormButton text={'TYPESCRIPT'} isAction />
-        <ProjectFormButton text={'REDUX'} isAction />
-        <ProjectFormButton text={'REDUX TOOLKIT'} isAction />
-        <ProjectFormButton text={'RTK QUERY'} />
-        <ProjectFormButton text={'FSD ARCHITECHTURE'} />
-        <ProjectFormButton text={'VUETIFY'} />
-        <ProjectFormButton text={'POSTGRESQL'} />
-        <ProjectFormButton text={'GOLANG'} />
+        <ProjectFormButton identifier='vue' text={'VUE.JS'} />
+        <ProjectFormButton identifier='react' text={'REACT.JS'} isAction />
+        <ProjectFormButton identifier='angular' text={'ANGULAR.JS'} />
+        <ProjectFormButton identifier='docker' text={'DOCKER'} isAction />
+        <ProjectFormButton identifier='figma' text={'FIGMA'} isAction />
+        <ProjectFormButton identifier='ts' text={'TYPESCRIPT'} isAction />
+        <ProjectFormButton identifier='redux' text={'REDUX'} isAction />
+        <ProjectFormButton identifier='redux-tk' text={'REDUX TOOLKIT'} isAction />
+        <ProjectFormButton identifier='rtk' text={'RTK QUERY'} />
+        <ProjectFormButton identifier='fsd' text={'FSD ARCHITECHTURE'} />
+        <ProjectFormButton identifier='vuetify' text={'VUETIFY'} />
+        <ProjectFormButton identifier='psql' text={'POSTGRESQL'} />
+        <ProjectFormButton identifier='go' text={'GOLANG'} />
       </div>
 
       <Input
@@ -105,13 +73,6 @@ const ProjectCreateForm = () => {
         type="text"
         id="project-link"
         name="project-link"
-        containerStyle={{ marginBottom: 40 }}
-        onChange={(event) => {
-          setNewProject({
-            ...newProject,
-            link: event.target.value,
-          });
-        }}
       />
 
       <p className={classes['sub-title']}>документы</p>

@@ -1,8 +1,20 @@
 .sub-title {
-  font-family: 'Consolas';
+  color: #fff;
   text-transform: uppercase;
   font-size: 20px;
   margin-bottom: 40px;
+  margin-top: 33px;
+}
+
+.return-link {
+  margin: 40px 0;
+  font-family: 'Consolas';
+  font-size: 20px;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #8C96E7;
 }
 
 .buttons-container {
