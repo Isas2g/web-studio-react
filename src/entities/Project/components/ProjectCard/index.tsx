@@ -22,8 +22,15 @@ const ProjectCard = ({ title, years, description, isAdminPage, id }: Props) => {
         <div className={classes['buttons-container']}>
           {isAdminPage && (
             <>
-              <Link className={classes['card-button']} to={'/edit-project/' + id}>Редактировать</Link>
-              <Link className={classes['card-button']} to={'#'}>Удалить</Link>
+              <Link
+                className={classes['card-button']}
+                to={'/edit-project/' + id}
+              >
+                Редактировать
+              </Link>
+              <Link className={classes['card-button']} to={'#'}>
+                Удалить
+              </Link>
             </>
           )}
         </div>
