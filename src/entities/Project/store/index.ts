@@ -38,7 +38,7 @@ export const updateProject = createAsyncThunk(
 export const createProject = createAsyncThunk(
   'projects/createProject',
   async (project: Project) => {
-    if (!localStorage.getItem('csrfToken')) {
+    if (!localStorage.getItem('csrfToken') || !localStorage.getItem('sessionID')) {
       alert('Авторизация не выполнена');
       return;
     }
@@ -46,6 +46,7 @@ export const createProject = createAsyncThunk(
       const res = await instance.post(`/projects`, project, {
         headers: {
           'x-csrf-token': localStorage.getItem('csrfToken'),
+          'X-Session-ID': localStorage.getItem('sessionID'),
           'Content-Type': 'Application/json',
         },
       });

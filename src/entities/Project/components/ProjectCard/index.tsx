@@ -16,7 +16,6 @@ const ProjectCard = ({
   years,
   description,
   isAdminPage,
-  isProjectsPage,
   id,
 }: Props) => {
   return (
@@ -25,7 +24,7 @@ const ProjectCard = ({
         <p className={classes['card-title']}>{title}</p>
         <p className={classes['card-years']}>{years}</p>
         <p className={classes['card-description']}>{description}</p>
-        {(isAdminPage || isProjectsPage) && (
+        {(isAdminPage) && (
           <div className={classes['buttons-container']}>
             {isAdminPage && (
               <>
@@ -34,12 +33,6 @@ const ProjectCard = ({
                 </Link>
                 <Button text={'Удалить'} />
               </>
-            )}
-            {isProjectsPage && (
-                <Button
-                  text={'Смотреть проект'}
-                  style={{ whiteSpace: 'nowrap' }}
-                />
             )}
           </div>
         )}
