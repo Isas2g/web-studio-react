@@ -3,23 +3,21 @@ import classes from './style.module.scss';
 
 interface Props {
   text: string;
+  identifier: string;
   onClick?: MouseEventHandler<HTMLButtonElement>;
   isAction?: boolean;
   style?: React.CSSProperties;
 }
 
-const Button = ({ text, onClick, isAction, style }: Props) => {
+const Button = (props: Props) => {
+  const id = props.identifier
   return (
-    <div>
-      <button
-        onClick={onClick}
-        style={style}
-        className={
-          isAction ? classes['btn'] + ' ' + classes['active'] : classes['btn']
-        }
-        title={text}
-      ></button>
-    </div>
+    <label className={classes['check-button']} htmlFor={id}>
+      <input type="checkbox" className={classes['input-element']} value={props.text} id={id} name={id} />
+      <div className={classes['gradient-wrapper']}>
+        <span className={classes['check-text']}>{props.text}</span>
+      </div>
+    </label>
   );
 };
 

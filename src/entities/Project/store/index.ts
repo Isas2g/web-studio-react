@@ -5,31 +5,71 @@ import { Project } from '../types';
 export const fetchAPIProjects = createAsyncThunk(
   'projects/fetchProjects',
   async () => {
-    const res = await instance.get('/projects');
-    const data = await res.data;
-    return data.data;
+    try {
+      const res = await instance.get('/projects');
+      const data = await res.data;
+      return data;
+    } catch (e) {
+      console.log('Произошла ошибка');
+      console.log(e);
+    }
   }
 );
 
 export const updateProject = createAsyncThunk(
   'projects/updateProject',
   async (project: Project) => {
-    const res = await instance.put(`/projects/${project.id}`, project, {
-      headers: {
-        'Content-Type': 'Application/json',
-      },
-    });
-    const data = await res.data;
-    return data.data;
+    try {
+      const res = await instance.put(`/projects/${project.id}`, project, {
+        headers: {
+          'Content-Type': 'Application/json',
+        },
+      });
+      const data = await res.data;
+      return data;
+    } catch (e) {
+      console.log('Произошла ошибка');
+      console.log(e);
+    }
+  }
+);
+
+export const createProject = createAsyncThunk(
+  'projects/createProject',
+  async (project: Project) => {
+    if (!localStorage.getItem('csrfToken')) {
+      alert('Авторизация не выполнена');
+      return;
+    }
+    try {
+      const res = await instance.post(`/projects`, project, {
+        headers: {
+          'x-csrf-token': localStorage.getItem('csrfToken'),
+          'X-Session-ID': localStorage.getItem('sessionID'),
+          'Content-Type': 'Application/json',
+        },
+      });
+      console.log(localStorage.getItem('csrfToken'));
+      const data = await res.data;
+      return data;
+    } catch (e) {
+      console.log('Произошла ошибка');
+      console.log(e);
+    }
   }
 );
 
 export const fetchProject = createAsyncThunk(
   'projects/fetchProject',
   async (id: number) => {
-    const res = await instance.get(`/projects/${id}`);
-    const data = await res.data;
-    return data.data;
+    try {
+      const res = await instance.get(`/projects/${id}`);
+      const data = await res.data;
+      return data;
+    } catch (e) {
+      console.log('Произошла ошибка');
+      console.log(e);
+    }
   }
 );
 
@@ -71,6 +111,13 @@ export const projectsSlice = createSlice({
     });
     builder.addCase(fetchProject.pending, (state) => {
       state.isLoading = true;
+    });
+    builder.addCase(createProject.pending, (state) => {
+      state.isLoading = true;
+    });
+    builder.addCase(createProject.fulfilled, (state, action) => {
+      state.isLoading = false;
+      state.project = action.payload;
     });
   },
 });

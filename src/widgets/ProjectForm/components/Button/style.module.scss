@@ -1,57 +1,35 @@
 @import 'shared/styles/variables.scss';
 
-.btn {
-  padding: 13px 37px;
-  border: none;
-  outline: none;
-  position: relative;
-  z-index: 1;
-  border-radius: 100px;
-  background: $form-button-gradient;
-  cursor: pointer;
-  font-family: 'Consolas';
-  font-size: 20px;
+.input-element {
+    display: none;
+
+    &:checked {
+        + .gradient-wrapper {
+            background: $form-button-gradient;
+
+            .check-text {
+                -webkit-text-fill-color: $bg-color;
+            }
+        }
+    }
 }
 
-.btn::before {
-  content: '';
-  position: absolute;
-  left: 1px;
-  right: 1px;
-  top: 1px;
-  bottom: 1px;
-  border-radius: 100px;
-  background-color: $bg-color;
-  z-index: -1;
-  transition: 200ms;
+.check-button {
+    background: $form-button-gradient;
+    padding: 2px;
+    border-radius: 30px;
+    cursor: pointer;
 }
 
-.btn::after {
-  content: attr(title);
-  font-size: 20px;
-  background: $form-button-text-gradient;
-  -webkit-background-clip: text;
-  color: transparent;
-  transition: 200ms;
+.gradient-wrapper {
+    background: $bg-color;
+    padding: 12px 36px;
+    border-radius: 30px;
 }
 
-.btn:hover::before {
-  opacity: 50%;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
-}
-.btn.active::before {
-  opacity: 50%;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
-}
-.btn.active::after {
-  color: $dark-text-color;
-}
-.btn:hover::after {
-  color: $dark-text-color;
+.check-text {
+    background: $form-button-text-gradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    user-select: none;
 }

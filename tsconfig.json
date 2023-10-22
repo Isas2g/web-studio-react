@@ -18,10 +18,10 @@
     "baseUrl": "src",
     "paths": {
       "@": ["src"],
-      "shared": ["src/shared"],
-      "pages": ["src/pages"],
-      "widgets": ["src/widgets"],
-      "entities": ["src/entities"]
+      "shared": ["src/shared/*"],
+      "pages": ["src/pages/*"],
+      "widgets": ["src/widgets/*"],
+      "entities": ["src/entities/*"]
     }
   },
   "include": ["src", "src/shared/types/custom.d.ts"]

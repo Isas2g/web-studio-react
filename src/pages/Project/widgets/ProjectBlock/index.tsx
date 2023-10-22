@@ -3,6 +3,7 @@ import classes from './style.module.scss';
 import Button from 'shared/ui/Button';
 import SecondButton from 'shared/ui/SecondButton';
 import { Project } from 'entities/Project/types';
+import { Link } from 'react-router-dom';
 
 interface Props {
   project: Project;
@@ -15,7 +16,9 @@ const ProjectBlock = ({ project }: Props) => {
   return (
     <div className={classes['project-container']}>
       <div className={classes['btn-back']}>
-        <SecondButton text={'Назад к проектам'} />
+        <Link to={'/projects'} className={classes['lnk']}>
+          <SecondButton text={'Назад к проектам'} />
+        </Link>
       </div>
       <div className={classes['project-info']}>
         <div className={classes['right-block']}>
