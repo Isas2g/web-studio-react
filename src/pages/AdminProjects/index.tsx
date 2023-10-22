@@ -22,8 +22,8 @@ const AdminProjects = () => {
 
   return (
     <main className={classes['admin-projects-container']}>
-      <Link to={'/create-project'}>
-        <Button isAction text={'Создать проект'} style={{ marginBottom: 62 }} />
+      <Link className={classes['gradient-link']} to={'/create-project'}>
+        <Button isAction text={'Добавить проект'} />
       </Link>
 
       <div className={classes['projects-container']}>

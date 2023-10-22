@@ -10,11 +10,9 @@ export const signIn = createAsyncThunk('auth/sign-in', async (credentials: Crede
     try {
       const res = await instance.post('/auth/sign-in', credentials);
       const data = await res.data;
-      console.log(data);
       if (data.csrfToken) {
         console.log('success');
-        localStorage.setItem('csrfToken', data.csrfToken);
-        localStorage.setItem('sessionID', data.sessionID);
+        localStorage.setItem('csrfToken', data.csrfToken)
       }
       return data;
     } catch (e) {

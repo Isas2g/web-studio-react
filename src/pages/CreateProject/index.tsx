@@ -1,6 +1,6 @@
+import React from 'react';
+import classes from './style.module.scss';
 import { ProjectForm } from 'widgets/index';
-import classes from '../EditProject/style.module.scss';
-import { useEffect } from 'react';
 import { useAppDispatch } from 'shared/store';
 import { Project, createProject } from 'entities/Project';
 

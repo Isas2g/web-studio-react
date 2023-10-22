@@ -8,7 +8,6 @@ export const fetchAPIProjects = createAsyncThunk(
     try {
       const res = await instance.get('/projects');
       const data = await res.data;
-      
       return data;
     } catch (e) {
       console.log('Произошла ошибка');
@@ -38,7 +37,7 @@ export const updateProject = createAsyncThunk(
 export const createProject = createAsyncThunk(
   'projects/createProject',
   async (project: Project) => {
-    if (!localStorage.getItem('csrfToken') || !localStorage.getItem('sessionID')) {
+    if (!localStorage.getItem('csrfToken')) {
       alert('Авторизация не выполнена');
       return;
     }

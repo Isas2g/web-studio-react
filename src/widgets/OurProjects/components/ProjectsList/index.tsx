@@ -3,7 +3,7 @@ import ProjectCard from 'entities/Project/components/ProjectCard';
 import { useAppSelector } from 'shared/store';
 
 const ProjectsList = () => {
-  const projects = useAppSelector((state) => state.projects.value);
+  const projects = useAppSelector((state) => state.projects.value) || [];
 
   return (
     <div className={classes['projects-container']}>
@@ -40,7 +40,6 @@ const ProjectsList = () => {
           years={`${new Date(item.startedAt).getFullYear()} - ${new Date(
             item.endedAt
           ).getFullYear()}`}
-          isProjectsPage
         />
       ))}
     </div>

@@ -7,37 +7,35 @@ interface Props {
   years: string;
   description: string;
   isAdminPage?: boolean;
-  isProjectsPage?: boolean;
   id?: number;
 }
 
-const ProjectCard = ({
-  title,
-  years,
-  description,
-  isAdminPage,
-  id,
-}: Props) => {
+const ProjectCard = ({ title, years, description, isAdminPage, id }: Props) => {
   return (
-    <Link to={'/projects/' + id} style={{ color: '#d8d8e3' }}>
-      <div className={classes['card-container']}>
+    <div className={classes['card-container']}>
+      <Link className={classes['card-body']} to={`/projects/${id}`}>
         <p className={classes['card-title']}>{title}</p>
         <p className={classes['card-years']}>{years}</p>
         <p className={classes['card-description']}>{description}</p>
-        {(isAdminPage) && (
-          <div className={classes['buttons-container']}>
-            {isAdminPage && (
-              <>
-                <Link to={'/edit-project/' + id}>
-                  <Button text={'Редактировать'} style={{ marginBottom: 30 }} />
-                </Link>
-                <Button text={'Удалить'} />
-              </>
-            )}
-          </div>
-        )}
-      </div>
-    </Link>
+      </Link>
+      {isAdminPage && (
+        <div className={classes['buttons-container']}>
+          {isAdminPage && (
+            <>
+              <Link
+                className={classes['card-button']}
+                to={'/edit-project/' + id}
+              >
+                Редактировать
+              </Link>
+              <Link className={classes['card-button']} to={'#'}>
+                Удалить
+              </Link>
+            </>
+          )}
+        </div>
+      )}
+    </div>
   );
 };
 

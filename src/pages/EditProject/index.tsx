@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom';
 import classes from './style.module.scss';
 import ProjectForm from 'widgets/ProjectForm';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { fetchProject, updateProject } from 'entities/Project';
 import { useAppDispatch, useAppSelector } from 'shared/store';
 import { Project } from 'entities/Project';
@@ -13,18 +13,13 @@ const EditProject = () => {
 
   const isLoading = useAppSelector((state) => state.projects.isLoading);
 
-
   useEffect(() => {
     dispatch(fetchProject(Number(id)));
   }, [dispatch, id]);
-  
+
   if (isLoading) {
     return <p style={{ marginTop: 200 }}>{'loading...'}</p>;
   }
-  // console.log(isLoading);
-  // if (!isLoading) {
-  //   setNewProject(project);
-  // }
 
   const updateProjectHandler = (newProject: Project) => {
     dispatch(updateProject({ ...newProject, id: Number(id) }));
@@ -37,7 +32,7 @@ const EditProject = () => {
       <ProjectForm 
         handler={updateProjectHandler}
         project={project}
-         />
+      />
     </div>
   );
 };
