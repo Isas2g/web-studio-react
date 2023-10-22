@@ -1,6 +1,6 @@
 import classes from './style.module.scss';
 import Button from 'shared/ui/Button';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useState } from 'react';
 
 const Header = () => {
@@ -15,7 +15,7 @@ const Header = () => {
     },
     {
       text: 'Контакты',
-      link: '/about',
+      link: 'https://vk.com/aboutweb',
     },
   ];
 
@@ -24,6 +24,8 @@ const Header = () => {
   const changeMenuStatus = (status: boolean) => {
     setActiveMenu(status);
   };
+
+  const location = useLocation();
 
   return (
     <header className={`${classes['header__wrapper']} container`}>
@@ -35,15 +37,28 @@ const Header = () => {
           {menu.map((item) => {
             return (
               <li key={item.text}>
-                <Link to={item.link}>{item.text}</Link>
+                {location.pathname === item.link ? (
+                  <Link to={item.link} style={{ fontWeight: 'bold' }}>
+                    {item.text}
+                  </Link>
+                ) : (
+                  <Link to={item.link}>{item.text}</Link>
+                )}
               </li>
             );
           })}
         </ul>
-        <Button
-          style={{ position: 'absolute', right: '0px' }}
-          text={'Заполнить бриф'}
-        />
+        <div className={classes['link-style']}>
+          <Link
+            to={'https://forms.gle/Bu5C4LxvTiaNn6wUA'}
+            className={classes['lnk']}
+          >
+            <Button
+              style={{ position: 'absolute', right: '0px', top: '20px' }}
+              text={'Обсудить проект'}
+            />
+          </Link>
+        </div>
       </div>
       <div className={classes['header-mob']}>
         <div className={classes['header-mob__logo']}>

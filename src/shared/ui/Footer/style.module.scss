@@ -14,6 +14,16 @@
   flex-direction: row;
 }
 
+.btn-container {
+  display: flex;
+}
+
+.lnk {
+  display: flex;
+  align-self: flex-start;
+  margin: 0;
+}
+
 .line {
   border-top-width: 2px;
   border-top-color: $footer-border;
