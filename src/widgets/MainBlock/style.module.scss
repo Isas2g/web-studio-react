@@ -11,6 +11,13 @@
   -webkit-text-fill-color: transparent;
 }
 
+
+.lnk {
+  display: flex;
+  align-self: flex-start;
+  margin: 0;
+}
+
 .blue-gradient {
   background: $new-main-color;
   -webkit-background-clip: text;

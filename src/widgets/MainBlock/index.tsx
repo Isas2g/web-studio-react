@@ -2,6 +2,7 @@ import React from 'react';
 import HeroTitle from 'shared/ui/HeroTitle';
 import classes from './style.module.scss';
 import Button from 'shared/ui/Button';
+import { Link } from 'react-router-dom';
 
 const MainBlock = () => {
   return (
@@ -17,8 +18,18 @@ const MainBlock = () => {
         Политеха
       </p>
       <div className={classes['buttons-container']}>
-        <Button isAction text={'Заказать проект'} />
-        <Button text={'Хочу в команду!'} />
+        <Link
+          to={'https://forms.gle/Bu5C4LxvTiaNn6wUA'}
+          className={classes['lnk']}
+        >
+          <Button isAction text={'Заказать проект'} />
+        </Link>
+        <Link
+          to={'https://forms.gle/ZvEJqXSKFJtUHABb6'}
+          className={classes['lnk']}
+        >
+          <Button text={'Хочу в команду!'} />
+        </Link>
       </div>
     </div>
   );
