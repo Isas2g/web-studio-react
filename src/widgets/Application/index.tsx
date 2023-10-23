@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import classes from './style.module.scss';
 import HeroTitle from 'shared/ui/HeroTitle';
 import Button from 'shared/ui/Button';
+import Modal from '../../shared/ui/Modal';
 
 interface Props {
   style?: React.CSSProperties;
 }
 
 const Application = ({ style }: Props) => {
+  const [activeModal, setActiveModal] = useState(false);
+
   return (
     <div className={'container'}>
       <div className={classes['container-application']} style={style}>
@@ -23,9 +26,18 @@ const Application = ({ style }: Props) => {
           остались вопросы, ты можешь задать их на почту.
         </p>
         <div className={classes['buttons-container']}>
-          <Button isAction text={'Перейти к форме с заявкой'} />
+          <Button
+            isAction
+            text={'Перейти к форме с заявкой'}
+            onClick={() => setActiveModal(true)}
+          />
         </div>
       </div>
+      <Modal
+        active={activeModal}
+        setActive={setActiveModal}
+        isCommission={false}
+      />
     </div>
   );
 };

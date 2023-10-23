@@ -27,8 +27,6 @@ const Header = () => {
     setActiveMenu(status);
   };
 
-  console.log(activeModal);
-
   const location = useLocation();
 
   return (
@@ -136,7 +134,11 @@ const Header = () => {
           />
         </ul>
       </div>
-      <Modal active={activeModal} setActive={setActiveModal} />
+      <Modal
+        active={activeModal}
+        setActive={setActiveModal}
+        isCommission={true}
+      />
     </header>
   );
 };

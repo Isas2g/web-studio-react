@@ -21,6 +21,29 @@
   pointer-events: none;
   transition: .3s;
 
+  //для Firefox
+  * {
+    scrollbar-width: none;
+    //scrollbar-color: rgb(90 101 136 / 40%);
+  }
+
+  //для Chrome, Safari и т.д.
+  *::-webkit-scrollbar {
+    //height: 12px;
+    //width: 10px;
+    //margin: 5px;
+    display: none;
+  }
+  //*::-webkit-scrollbar-track {
+  //  background: none;
+  //}
+  //*::-webkit-scrollbar-thumb {
+  //  background-color: $bg-color;
+  //  border-radius: 30px;
+  //  border: 2px solid rgb(90 101 136 / 40%);
+  //}
+
+
   &__content {
     padding: 40px;
     border-radius: 20px;
@@ -30,6 +53,7 @@
     height: 650px;
     overflow-y: auto;
     text-transform: none;
+
   }
 }
 
