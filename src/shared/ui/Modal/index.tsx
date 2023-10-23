@@ -2,7 +2,7 @@ import React from 'react';
 import classes from './style.module.scss';
 import Input from '../Input';
 import Button from '../Button';
-import ModalCommission from '../../../widgets/ModalCommssion';
+import ModalCommission from '../../../widgets/ModalCommission';
 import ModalJoin from '../../../widgets/ModalJoin';
 
 interface Props {
