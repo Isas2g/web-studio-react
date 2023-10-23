@@ -3,6 +3,7 @@ import classes from './style.module.scss';
 import { Link } from 'react-router-dom';
 import Button from 'shared/ui/Button';
 import Modal from '../Modal';
+import ModalJoin from '../../../widgets/ModalJoin';
 
 const Footer = () => {
   const [activeModal, setActiveModal] = useState(false);
@@ -98,11 +99,7 @@ const Footer = () => {
           AW
         </Link>
       </div>
-      <Modal
-        active={activeModal}
-        setActive={setActiveModal}
-        isCommission={false}
-      />
+      <ModalJoin active={activeModal} setActive={setActiveModal} />
     </div>
   );
 };

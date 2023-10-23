@@ -1,17 +1,13 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import classes from './style.module.scss';
-import Input from '../Input';
-import Button from '../Button';
-import ModalCommission from '../../../widgets/ModalCommission';
-import ModalJoin from '../../../widgets/ModalJoin';
 
 interface Props {
   active: boolean;
   setActive: React.Dispatch<React.SetStateAction<boolean>>;
-  isCommission: boolean;
+  children: ReactNode;
 }
 
-const Modal = ({ active, setActive, isCommission }: Props) => {
+const Modal = ({ active, setActive, children }: Props) => {
   return (
     <div
       onClick={() => setActive(false)}
@@ -25,7 +21,14 @@ const Modal = ({ active, setActive, isCommission }: Props) => {
         role="presentation"
         onClick={(e) => e.stopPropagation()}
       >
-        {isCommission ? <ModalCommission /> : <ModalJoin />}
+        <div
+          className={classes['modal__close']}
+          onClick={() => setActive(false)}
+          role="presentation"
+        >
+          &#10006;
+        </div>
+        {children}
       </div>
     </div>
   );

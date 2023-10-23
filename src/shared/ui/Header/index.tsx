@@ -3,6 +3,7 @@ import Button from 'shared/ui/Button';
 import { Link, useLocation } from 'react-router-dom';
 import { useState } from 'react';
 import Modal from '../Modal';
+import ModalCommission from '../../../widgets/ModalCommission';
 
 const Header = () => {
   const menu = [
@@ -134,11 +135,7 @@ const Header = () => {
           />
         </ul>
       </div>
-      <Modal
-        active={activeModal}
-        setActive={setActiveModal}
-        isCommission={true}
-      />
+      <ModalCommission active={activeModal} setActive={setActiveModal} />
     </header>
   );
 };

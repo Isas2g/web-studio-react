@@ -3,6 +3,7 @@ import classes from './style.module.scss';
 import HeroTitle from 'shared/ui/HeroTitle';
 import Button from 'shared/ui/Button';
 import Modal from '../../shared/ui/Modal';
+import ModalJoin from '../ModalJoin';
 
 interface Props {
   style?: React.CSSProperties;
@@ -33,11 +34,7 @@ const Application = ({ style }: Props) => {
           />
         </div>
       </div>
-      <Modal
-        active={activeModal}
-        setActive={setActiveModal}
-        isCommission={false}
-      />
+      <ModalJoin active={activeModal} setActive={setActiveModal} />
     </div>
   );
 };
