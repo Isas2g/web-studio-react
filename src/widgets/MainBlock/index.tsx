@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 const MainBlock = () => {
   return (
-    <div className={`${classes['block-container']} container`}>
+    <div className={`${classes['block-container']} `}>
       <HeroTitle>
         Разрабатываем сайты от &#123;
         <span className={classes['pink-gradient']}>идеи</span>
@@ -21,12 +21,14 @@ const MainBlock = () => {
         <Link
           to={'https://forms.gle/Bu5C4LxvTiaNn6wUA'}
           className={classes['lnk']}
+          target="_blank"
         >
           <Button isAction text={'Заказать проект'} />
         </Link>
         <Link
           to={'https://forms.gle/ZvEJqXSKFJtUHABb6'}
           className={classes['lnk']}
+          target="_blank"
         >
           <Button text={'Хочу в команду!'} />
         </Link>

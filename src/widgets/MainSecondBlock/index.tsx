@@ -4,10 +4,11 @@ import classes from './style.module.scss';
 import Paragraph from 'shared/ui/Paragraph';
 import List from 'shared/ui/List';
 import Subtitle from 'shared/ui/Subtitle';
+import { SliderBlock } from 'widgets/';
 
 const MainSecondBlock = () => {
   return (
-    <div className={'container'}>
+    <div className={`${classes['block-container']} container`}>
       <div className={classes['text-container']}>
         <Title>What about &#34;About Web&#34;?</Title>
         <Subtitle>
@@ -17,32 +18,61 @@ const MainSecondBlock = () => {
           целей.
         </Subtitle>
       </div>
-      <div className={classes['block']}>
-        <div className={classes['second-part']}>
-          <div className={classes['paragraphs']}>
+      <SliderBlock
+        menuList={['[исследуем,', 'проектируем,', 'разрабатываем,', 'тестируем,', 'запускаем]']}
+        textContents={[
+          <>
             <Paragraph>
-              Проектируем структуру сайта, определяем дизайн и внешний вид,
+              исследуем структуру сайта, определяем дизайн и внешний вид,
               выбираем цветовую гамму и разрабатываем логотип.
             </Paragraph>
-            <div></div>
             <Paragraph>
               Мы также планируем интерфейсы и определяем, какие элементы будут
               находиться на каждой странице.
             </Paragraph>
-          </div>
-        </div>
-        <div className={classes['list-container']}>
-          <List
-            items={[
-              '[исследуем,',
-              'проектируем,',
-              'разрабатываем,',
-              'тестируем,',
-              'запускаем]',
-            ]}
-          />
-        </div>
-      </div>
+          </>,
+          <>
+            <Paragraph>
+                Проектируем структуру сайта, определяем дизайн и внешний вид,
+                выбираем цветовую гамму и разрабатываем логотип.
+            </Paragraph>
+            <Paragraph>
+                Мы также планируем интерфейсы и определяем, какие элементы будут
+                находиться на каждой странице.
+            </Paragraph>
+          </>,
+          <>
+            <Paragraph>
+                разрабатываем структуру сайта, определяем дизайн и внешний вид,
+                выбираем цветовую гамму и разрабатываем логотип.
+            </Paragraph>
+            <Paragraph>
+                Мы также планируем интерфейсы и определяем, какие элементы будут
+                находиться на каждой странице.
+            </Paragraph>
+          </>,
+          <>
+            <Paragraph>
+                тестируем структуру сайта, определяем дизайн и внешний вид,
+                выбираем цветовую гамму и разрабатываем логотип.
+            </Paragraph>
+            <Paragraph>
+                Мы также планируем интерфейсы и определяем, какие элементы будут
+                находиться на каждой странице.
+            </Paragraph>
+          </>,
+          <>
+            <Paragraph>
+                запускаем структуру сайта, определяем дизайн и внешний вид,
+                выбираем цветовую гамму и разрабатываем логотип.
+            </Paragraph>
+            <Paragraph>
+                Мы также планируем интерфейсы и определяем, какие элементы будут
+                находиться на каждой странице.
+            </Paragraph>
+          </>,
+        ]}
+      />
     </div>
   );
 };

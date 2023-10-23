@@ -39,7 +39,7 @@
   color: $main-text-color;
 }
 
-@media (max-width: $mobile) {
+@media (max-width: $tablet) {
   .team-container {
     max-width: 400px;
   }

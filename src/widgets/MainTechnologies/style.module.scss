@@ -46,9 +46,12 @@
   backdrop-filter: blur(10px);
   border-radius: 20px;
   border: 2px solid $border-card-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-@media (max-width: $mobile) {
+@media (max-width: $tablet) {
   .pictures {
     flex-direction: row;
     row-gap: 20px;

@@ -7,7 +7,7 @@
 }
 
 .footer-container {
-  padding: 70px 0 100px 0;
+  padding: 70px 15px 100px 15px;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
@@ -106,7 +106,7 @@
   }
 }
 
-@media (max-width: $mobile) {
+@media (max-width: $tablet) {
   .text {
     font-size: 15px;
     margin-bottom: 15px;
@@ -117,7 +117,7 @@
   }
 
   .footer-container {
-    padding: 40px 0 100px 0;
+    padding: 40px 15px 100px 15px;
     align-items: start;
     justify-content: start;
     display: grid;
