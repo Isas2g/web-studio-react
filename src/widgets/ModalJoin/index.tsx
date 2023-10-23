@@ -22,14 +22,14 @@ const ModalJoin = () => {
           label={
             'Обучаешься ли ты в Московском Политехе? Если да, укажи номер группы'
           }
-          type={'state'}
+          type={'text'}
           placeholder="201-72X"
           name="state"
         />
         <Input
           id="tg"
           label={'Telegram'}
-          type={'tg'}
+          type={'text'}
           placeholder="@example (telegram)"
           name="tg"
         />
@@ -38,7 +38,7 @@ const ModalJoin = () => {
           label={
             'Расскажи о своем опыте веб-разработки, участия в хакатонах, других проектах - все, что посчитаешь нужным'
           }
-          type={'exp'}
+          type={'text'}
           placeholder="В качестве курсовой работы в прошлом семестре я делал веб-сайт... с использованием технологий..."
           name="exp"
           isMultiline
@@ -48,7 +48,7 @@ const ModalJoin = () => {
           label={
             'Опиши свой предпочитаемый стек технологий (стек, который уже использовал в работе или который готов изучать в течение семестра параллельно с интенсивной работой над проектом)'
           }
-          type={'technologies'}
+          type={'text'}
           placeholder="React"
           name="technologies"
         />
@@ -86,6 +86,15 @@ const ModalJoin = () => {
             value={'Маркетинг'}
           />
         </div>
+        <Input
+          id="github"
+          label={
+            'Ссылка на GitHub / любой другой сервис с твоим портфолио (если нет, написать "нет" в поле для ответа)'
+          }
+          type={'url'}
+          placeholder="https://github.com/"
+          name="github"
+        />
         {/*<div className={classes['marketing-radio']}>*/}
         {/*  <p*/}
         {/*    className={classes['checkbox-title']}*/}

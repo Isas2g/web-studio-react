@@ -18,21 +18,21 @@ const ModalCommission = () => {
         <Input
           id="contacts"
           label={'Контактные данные (Любой предпочительный способ связи)'}
-          type={'contacts'}
+          type={'text'}
           placeholder="+79xxxxxxxxx / @example (telegram) / example@example.com"
           name="contacts"
         />
         <Input
           id="goal"
           label={'Цель разработки сайта'}
-          type={'goal'}
+          type={'text'}
           placeholder="Онлайн-магазин музыкальных инструментов..."
           name="goal"
         />
         <Input
           id="description"
           label={'Короткое описание ожидаемого функционала сайта'}
-          type={'description'}
+          type={'text'}
           placeholder="На сайте можно совершать и оплачивать покупки..."
           name="description"
           isMultiline
@@ -40,21 +40,21 @@ const ModalCommission = () => {
         <Input
           id="deadlines"
           label={'Требования к времени выполнения задачи (при наличии)'}
-          type={'deadlines'}
+          type={'text'}
           placeholder="4 месяца на разработку"
           name="deadlines"
         />
         <Input
           id="technologies"
           label={'Требования к стеку технологий (при наличии)'}
-          type={'technologies'}
+          type={'text'}
           placeholder="React, Node.JS + Express..."
           name="technologies"
         />
         <Input
           id="additional"
           label={'Поле для дополнительной информации (при наличии)'}
-          type={'additional'}
+          type={'text'}
           placeholder="Поле для дополнительной информации (при наличии)"
           name="additional"
           isMultiline
