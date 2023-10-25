@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import classes from './style.module.scss';
 import { Link } from 'react-router-dom';
 import Button from 'shared/ui/Button';
+import Modal from '../Modal';
+import ModalJoin from '../../../widgets/ModalJoin';
 
 const Footer = () => {
+  const [activeModal, setActiveModal] = useState(false);
+
   const socialsStyle = {
     padding: '18px 23px',
     borderRadius: 22,
@@ -29,10 +33,6 @@ const Footer = () => {
     {
       text: 'Контакты',
       link: 'https://vk.com/aboutweb',
-    },
-    {
-      text: 'Хочу в команду',
-      link: 'https://forms.gle/t2wx3ZyqpV8QYMFWA',
     },
     {
       text: 'Авторизация',
@@ -88,11 +88,18 @@ const Footer = () => {
               );
             })}
           </ul>
+          <button
+            className={classes['join']}
+            onClick={() => setActiveModal(true)}
+          >
+            Хочу в команду
+          </button>
         </div>
         <Link to="/" className={classes['logo']}>
           AW
         </Link>
       </div>
+      <ModalJoin active={activeModal} setActive={setActiveModal} />
     </div>
   );
 };

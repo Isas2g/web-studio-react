@@ -2,6 +2,8 @@ import classes from './style.module.scss';
 import Button from 'shared/ui/Button';
 import { Link, useLocation } from 'react-router-dom';
 import { useState } from 'react';
+import Modal from '../Modal';
+import ModalCommission from '../../../widgets/ModalCommission';
 
 const Header = () => {
   const menu = [
@@ -20,6 +22,7 @@ const Header = () => {
   ];
 
   const [isActiveMenu, setActiveMenu] = useState(false);
+  const [activeModal, setActiveModal] = useState(false);
 
   const changeMenuStatus = (status: boolean) => {
     setActiveMenu(status);
@@ -48,17 +51,11 @@ const Header = () => {
             );
           })}
         </ul>
-        <div className={classes['link-style']}>
-          <Link
-            to={'https://forms.gle/Bu5C4LxvTiaNn6wUA'}
-            className={classes['lnk']}
-          >
-            <Button
-              style={{ position: 'absolute', right: '0px', top: '20px' }}
-              text={'Обсудить проект'}
-            />
-          </Link>
-        </div>
+        <Button
+          style={{ position: 'absolute', right: '0px', top: '20px' }}
+          text={'Обсудить проект'}
+          onClick={() => setActiveModal(true)}
+        />
       </div>
       <div className={classes['header-mob']}>
         <div className={classes['header-mob__logo']}>
@@ -138,6 +135,7 @@ const Header = () => {
           />
         </ul>
       </div>
+      <ModalCommission active={activeModal} setActive={setActiveModal} />
     </header>
   );
 };
