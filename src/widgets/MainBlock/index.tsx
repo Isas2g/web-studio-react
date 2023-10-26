@@ -1,10 +1,14 @@
-import React from 'react';
+import { useState } from 'react';
 import HeroTitle from 'shared/ui/HeroTitle';
 import classes from './style.module.scss';
 import Button from 'shared/ui/Button';
-import { Link } from 'react-router-dom';
+import ModalCommission from '../ModalCommission';
+import ModalJoin from '../ModalJoin';
 
 const MainBlock = () => {
+  const [activeJoinModal, setActiveJoinModal] = useState(false);
+  const [activeCommissionModal, setActiveCommissionModal] = useState(false);
+
   return (
     <div className={`${classes['block-container']} `}>
       <HeroTitle>
@@ -18,21 +22,25 @@ const MainBlock = () => {
         Политеха
       </p>
       <div className={classes['buttons-container']}>
-        <Link
-          to={'https://forms.gle/Bu5C4LxvTiaNn6wUA'}
-          className={classes['lnk']}
-          target="_blank"
-        >
-          <Button isAction text={'Заказать проект'} />
-        </Link>
-        <Link
-          to={'https://forms.gle/ZvEJqXSKFJtUHABb6'}
-          className={classes['lnk']}
-          target="_blank"
-        >
-          <Button text={'Хочу в команду!'} />
-        </Link>
+        <Button
+          isAction
+          text={'Заказать проект'}
+          onClick={() => {
+            setActiveCommissionModal(true);
+          }}
+        />
+        <Button
+          text={'Хочу в команду!'}
+          onClick={() => {
+            setActiveJoinModal(true);
+          }}
+        />
       </div>
+      <ModalCommission
+        active={activeCommissionModal}
+        setActive={setActiveCommissionModal}
+      />
+      <ModalJoin active={activeJoinModal} setActive={setActiveJoinModal} />
     </div>
   );
 };
