@@ -1,7 +1,9 @@
 import classes from './style.module.scss';
 import Button from 'shared/ui/Button';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useState } from 'react';
+import Modal from '../Modal';
+import ModalCommission from '../../../widgets/ModalCommission';
 
 const Header = () => {
   const menu = [
@@ -15,15 +17,18 @@ const Header = () => {
     },
     {
       text: 'Контакты',
-      link: '/about',
+      link: 'https://vk.com/aboutweb',
     },
   ];
 
   const [isActiveMenu, setActiveMenu] = useState(false);
+  const [activeModal, setActiveModal] = useState(false);
 
   const changeMenuStatus = (status: boolean) => {
     setActiveMenu(status);
   };
+
+  const location = useLocation();
 
   return (
     <header className={`${classes['header__wrapper']} container`}>
@@ -35,14 +40,21 @@ const Header = () => {
           {menu.map((item) => {
             return (
               <li key={item.text}>
-                <Link to={item.link}>{item.text}</Link>
+                {location.pathname === item.link ? (
+                  <Link to={item.link} style={{ fontWeight: 'bold' }}>
+                    {item.text}
+                  </Link>
+                ) : (
+                  <Link to={item.link}>{item.text}</Link>
+                )}
               </li>
             );
           })}
         </ul>
         <Button
-          style={{ position: 'absolute', right: '0px' }}
-          text={'Заполнить бриф'}
+          style={{ position: 'absolute', right: '0px', top: '20px' }}
+          text={'Обсудить проект'}
+          onClick={() => setActiveModal(true)}
         />
       </div>
       <div className={classes['header-mob']}>
@@ -123,6 +135,7 @@ const Header = () => {
           />
         </ul>
       </div>
+      <ModalCommission active={activeModal} setActive={setActiveModal} />
     </header>
   );
 };

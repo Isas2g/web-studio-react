@@ -1,9 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import HeroTitle from 'shared/ui/HeroTitle';
 import classes from './style.module.scss';
 import Button from 'shared/ui/Button';
+import { Link } from 'react-router-dom';
+import Modal from '../../shared/ui/Modal';
+import ModalCommission from '../ModalCommission';
+import ModalJoin from '../ModalJoin';
 
 const MainBlock = () => {
+  const [activeJoinModal, setActiveJoinModal] = useState(false);
+  const [activeCommissionModal, setActiveCommissionModal] = useState(false);
+
   return (
     <div className={`${classes['block-container']} container`}>
       <HeroTitle>
@@ -17,9 +24,25 @@ const MainBlock = () => {
         Политеха
       </p>
       <div className={classes['buttons-container']}>
-        <Button isAction text={'Заказать проект'} />
-        <Button text={'Хочу в команду!'} />
+        <Button
+          isAction
+          text={'Заказать проект'}
+          onClick={() => {
+            setActiveCommissionModal(true);
+          }}
+        />
+        <Button
+          text={'Хочу в команду!'}
+          onClick={() => {
+            setActiveJoinModal(true);
+          }}
+        />
       </div>
+      <ModalCommission
+        active={activeCommissionModal}
+        setActive={setActiveCommissionModal}
+      />
+      <ModalJoin active={activeJoinModal} setActive={setActiveJoinModal} />
     </div>
   );
 };

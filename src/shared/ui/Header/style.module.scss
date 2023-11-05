@@ -3,7 +3,7 @@
 
 .header {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   padding: 38px 0;
   position: relative;
@@ -15,7 +15,7 @@
   color: $main-text-color;
   text-decoration: none;
   position: absolute;
-  left: 0px;
+  left: 0;
 }
 
 .menu {
@@ -23,6 +23,7 @@
   justify-content: center;
   list-style: none;
   font-size: 20px;
+  margin: 0 0 0 118px;
   padding: 0;
 
   li {
