@@ -17,6 +17,7 @@ interface Props {
   name: string;
   defaultValue?: string;
   onChange?: (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
+  onClick?: () => void;
 }
 
 const Input = (props: Props) => {
@@ -38,7 +39,10 @@ const Input = (props: Props) => {
             <span
               className={classes['check-designed']}
               role="presentation"
-              onClick={() => setIsChecked(!isChecked)}
+              onClick={() => {
+                setIsChecked(!isChecked);
+                if (props.onClick) props.onClick();
+              }}
             ></span>
             {value}
           </label>

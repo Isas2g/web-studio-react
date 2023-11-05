@@ -27,7 +27,9 @@ const ProjectForm = ({ handler, project }: Props) => {
         type="text"
         id="project-title"
         name="project-title"
-        defaultValue={project?.title || ''}
+        defaultValue={project?.title}
+        value={newProject?.title}
+        onChange={(e) => setNewProject({...newProject, title: e.currentTarget.value})}
       />
       <Input
         label="ПЕРИОД РАЗРАБОТКИ"
@@ -52,6 +54,8 @@ const ProjectForm = ({ handler, project }: Props) => {
         style={{ minHeight: 200 }}
         isMultiline
         defaultValue={project?.description || ''}
+        value={newProject?.description}
+        onChange={(e) => setNewProject({...newProject, description: e.currentTarget.value})}
       />
 
       <p className={classes['sub-title']}>стек технологий</p>
@@ -82,6 +86,8 @@ const ProjectForm = ({ handler, project }: Props) => {
         id="project-link"
         name="project-link"
         defaultValue={project?.link || ''}
+        value={newProject?.link}
+        onChange={(e) => setNewProject({...newProject, link: e.currentTarget.value})}
       />
 
       <p className={classes['sub-title']}>документы</p>

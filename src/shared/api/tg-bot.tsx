@@ -6,6 +6,11 @@ const tgBotInstance = axios.create({
   headers: {
     'Content-Type': 'application/json',
   },
+  proxy: {
+    host: 'http://localhost',
+    port: 8080,
+    protocol: 'http',
+  },
 });
 
 export default tgBotInstance;
