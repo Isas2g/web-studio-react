@@ -1,5 +1,5 @@
 import classes from './style.module.scss';
-import { Button, Input } from 'shared/ui';
+import { Button, Input, FileInput } from 'shared/ui';
 import { Button as ProjectFormButton, Document } from './components';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
@@ -86,11 +86,10 @@ const ProjectForm = ({ handler, project }: Props) => {
 
       <p className={classes['sub-title']}>документы</p>
       <div>
-        <Button text={'Загрузить'} />
-      </div>
-      <div className={classes['docs-container']}>
-        <Document title={'document.docx'} />
-        <Document title={'doc2.docx'} />
+        <FileInput
+          maxFileQuantity={ 5 }
+          maxFileSize={ 5242880 }
+        />
       </div>
       <div className={classes['buttons-container']}>
         <Button

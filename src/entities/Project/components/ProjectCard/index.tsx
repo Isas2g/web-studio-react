@@ -12,7 +12,7 @@ interface Props {
 
 const ProjectCard = ({ title, years, description, isAdminPage, id }: Props) => {
   return (
-    <div className={classes['card-container']}>
+    <div className={`${classes['card-container']} ${(isAdminPage) ? classes['card-extend'] : ''}`}>
       <Link className={classes['card-body']} to={`/projects/${id}`}>
         <p className={classes['card-title']}>{title}</p>
         <p className={classes['card-years']}>{years}</p>
