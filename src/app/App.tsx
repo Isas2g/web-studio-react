@@ -1,4 +1,6 @@
 import 'shared/styles/fonts.scss';
+import 'shared/styles/variables.scss';
+import 'shared/styles/screens.scss';
 import './App.scss';
 import { BrowserRouter } from 'react-router-dom';
 import { Header, Footer } from 'shared/ui';

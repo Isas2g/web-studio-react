@@ -54,7 +54,7 @@
   transform: rotate(40deg);
 }
 
-@media (max-width: $mobile) {
+@media (max-width: $tablet) {
   .error-container {
     max-width: 400px;
     padding: 165px 0 150px 0;

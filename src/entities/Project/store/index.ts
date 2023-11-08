@@ -8,7 +8,6 @@ export const fetchAPIProjects = createAsyncThunk(
     try {
       const res = await instance.get('/projects');
       const data = await res.data;
-
       return data;
     } catch (e) {
       console.log('Произошла ошибка');
@@ -46,6 +45,7 @@ export const createProject = createAsyncThunk(
       const res = await instance.post(`/projects`, project, {
         headers: {
           'x-csrf-token': localStorage.getItem('csrfToken'),
+          'X-Session-ID': localStorage.getItem('sessionID'),
           'Content-Type': 'Application/json',
         },
       });

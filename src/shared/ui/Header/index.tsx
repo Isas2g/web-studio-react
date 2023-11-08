@@ -18,6 +18,7 @@ const Header = () => {
     {
       text: 'Контакты',
       link: 'https://vk.com/aboutweb',
+      target: '__blank'
     },
   ];
 
@@ -45,7 +46,7 @@ const Header = () => {
                     {item.text}
                   </Link>
                 ) : (
-                  <Link to={item.link}>{item.text}</Link>
+                  <Link target={item.target} to={item.link}>{item.text}</Link>
                 )}
               </li>
             );

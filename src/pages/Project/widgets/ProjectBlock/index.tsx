@@ -4,6 +4,9 @@ import Button from 'shared/ui/Button';
 import SecondButton from 'shared/ui/SecondButton';
 import { Project } from 'entities/Project/types';
 import { Link } from 'react-router-dom';
+import ProjectImage1 from 'shared/assets/images/project-image-1.png';
+import ProjectImage2 from 'shared/assets/images/project-image-2.png';
+import ProjectImage3 from 'shared/assets/images/project-image-3.png';
 
 interface Props {
   project: Project;
@@ -43,7 +46,11 @@ const ProjectBlock = ({ project }: Props) => {
             </a>
           </div>
         </div>
-        <div className={classes['left-block']}></div>
+        <div className={classes['left-block']}>
+          {project.id === 7 && <img src={ProjectImage1} alt="" />}
+          {project.id === 8 && <img src={ProjectImage2} alt="" />}
+          {project.id === 9 && <img src={ProjectImage3} alt="" />}
+        </div>
       </div>
     </div>
   );
