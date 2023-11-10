@@ -47,9 +47,15 @@ const ProjectBlock = ({ project }: Props) => {
           </div>
         </div>
         <div className={classes['left-block']}>
-          {project.id === 7 && <img src={ProjectImage1} alt="" />}
-          {project.id === 8 && <img src={ProjectImage2} alt="" />}
-          {project.id === 9 && <img src={ProjectImage3} alt="" />}
+          {project.id === 7 && (
+            <img src={ProjectImage1} alt="" className={classes['pic']} />
+          )}
+          {project.id === 8 && (
+            <img src={ProjectImage2} alt="" className={classes['pic']} />
+          )}
+          {project.id === 9 && (
+            <img src={ProjectImage3} alt="" className={classes['pic']} />
+          )}
         </div>
       </div>
     </div>
