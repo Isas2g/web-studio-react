@@ -1,35 +1,19 @@
-import React, { useEffect, useState } from 'react';
 import classes from './style.module.scss';
-import Title from 'shared/ui/Title';
-import Subtitle from 'shared/ui/Subtitle';
-import arrow from 'shared/assets/icons/arrow.svg';
 import floatingImage from 'shared/assets/icons/floating-image-2.svg';
 import ProjectsList from './components/ProjectsList';
-import { useAppDispatch } from 'shared/store';
-import { fetchAPIProjects } from 'entities/Project/store';
+import { Project } from 'entities/Project';
 
-const OurProjects = () => {
-  const dispatch = useAppDispatch();
+interface Props {
+  projects: Project[],
+}
 
-  useEffect(() => {
-    dispatch(fetchAPIProjects());
-  }, [dispatch]);
+
+const OurProjects = ({projects}: Props) => {
 
   return (
     <div className={`${classes['our-projects']} container`}>
-      {/*<img className={classes['floating-image']} src={floatingImage} alt={''} />*/}
-      {/*<Title>проекты</Title>*/}
-      {/*<Subtitle>*/}
-      {/*  Последние решения, которые нам удалось успешно реализовать.*/}
-      {/*</Subtitle>*/}
-      {/*<button*/}
-      {/*  // onClick={addProject}*/}
-      {/*  className={classes['filter']}*/}
-      {/*>*/}
-      {/*  Готовые проекты*/}
-      {/*  <img src={arrow} className={classes['arrow']} alt={''} />*/}
-      {/*</button>*/}
-      <ProjectsList />
+      <img className={classes['floating-image']} src={floatingImage} alt={''} />
+      <ProjectsList projects={projects} />
     </div>
   );
 };

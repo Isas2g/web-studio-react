@@ -4,6 +4,7 @@ import classes from './style.module.scss';
 import Button from 'shared/ui/Button';
 import { Link } from 'react-router-dom';
 import Modal from '../../shared/ui/Modal';
+
 import ModalCommission from '../ModalCommission';
 import ModalJoin from '../ModalJoin';
 
@@ -12,7 +13,7 @@ const MainBlock = () => {
   const [activeCommissionModal, setActiveCommissionModal] = useState(false);
 
   return (
-    <div className={`${classes['block-container']} container`}>
+    <div className={`${classes['block-container']} `}>
       <HeroTitle>
         Разрабатываем сайты от &#123;
         <span className={classes['pink-gradient']}>идеи</span>

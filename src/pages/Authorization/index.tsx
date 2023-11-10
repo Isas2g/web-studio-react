@@ -16,7 +16,7 @@ const Authorization = () => {
   const navigate = useNavigate();
 
   const signInHandler = async ({login, password}: Credentials) => {
-    if (login === '' || password === 'password') {
+    if (login === '' || password === '') {
       return alert('Введите данные нормальноË');
     };
 

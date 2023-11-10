@@ -25,9 +25,14 @@ const EditProject = () => {
     dispatch(updateProject({ ...newProject, id: Number(id) }));
   };
 
+  
+
   return (
     <div className={classes['container']}>
-      <ProjectForm handler={updateProjectHandler} project={project} />
+      <ProjectForm 
+        handler={updateProjectHandler}
+        project={project}
+      />
     </div>
   );
 };

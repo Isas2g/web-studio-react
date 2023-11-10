@@ -27,7 +27,7 @@ const AdminProjects = () => {
       </Link>
 
       <div className={classes['projects-container']}>
-        {projects.map((project) => (
+        {projects?.map((project) => (
           <ProjectCard
             key={project.id}
             id={project.id}

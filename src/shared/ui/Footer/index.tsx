@@ -23,16 +23,17 @@ const Footer = () => {
       text: 'О студии',
       link: '/about',
     },
-    {
-      text: 'История',
-      link: '',
-    },
+    // {
+    //   text: 'История',
+    //   link: '',
+    // },
   ];
 
   const footerSecondMenu = [
     {
       text: 'Контакты',
       link: 'https://vk.com/aboutweb',
+      target: '__blank',
     },
     {
       text: 'Авторизация',
@@ -49,7 +50,11 @@ const Footer = () => {
           </p>
           <p className={classes['text-bold']}>aboutweb@gmail.com</p>
           <div className={classes['btn-container']}>
-            <Link to={'https://vk.com/aboutweb'} className={classes['lnk']}>
+            <Link
+              to={'https://vk.com/aboutweb'}
+              className={classes['lnk']}
+              target="__blank"
+            >
               <Button style={socialsStyle} text={'VK'} />
             </Link>
             <Link to={''} className={classes['lnk']}>
@@ -81,6 +86,7 @@ const Footer = () => {
                   <Link
                     to={item.link}
                     style={{ color: '#D8D8E3', margin: '0' }}
+                    target={item.target}
                   >
                     {item.text}
                   </Link>

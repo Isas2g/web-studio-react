@@ -3,6 +3,7 @@ import classes from './style.module.scss';
 import Title from '../../../../shared/ui/Title';
 import Subtitle from '../../../../shared/ui/Subtitle';
 import List from '../../../../shared/ui/List';
+import { SliderBlock } from 'widgets/';
 
 const TeamBlock = () => {
   const team = ['Софья Яблонская', 'Денис Камчатов'];
@@ -15,7 +16,58 @@ const TeamBlock = () => {
           принимали участие в разработке проекта
         </Subtitle>
       </div>
-      <div className={classes['row']}>
+      <SliderBlock 
+        menuList={[
+          '[продакт,',
+          'маркетинг,',
+          'дизайн,',
+          'frontend,',
+          'backend]',
+        ]}
+        textContents={[
+          <>
+            <p className={classes['team-items']}>
+              Продакт менеджер раз
+            </p>
+            <p className={classes['team-items']}>
+              Продакт менеджер два
+            </p>
+          </>,
+          <>
+            <p className={classes['team-items']}>
+              Маркетолог раз
+            </p>
+            <p className={classes['team-items']}>
+              Маркетолог два
+            </p>
+          </>,
+          <>
+            <p className={classes['team-items']}>
+              Дизайнер раз
+            </p>
+            <p className={classes['team-items']}>
+              Дизайнер два
+            </p>
+          </>,
+          <>
+            <p className={classes['team-items']}>
+              Фронтендер раз
+            </p>
+            <p className={classes['team-items']}>
+              Фронтендер два
+            </p>
+          </>,
+          <>
+            <p className={classes['team-items']}>
+              Бэкендер раз
+            </p>
+            <p className={classes['team-items']}>
+              Бэкендер два
+            </p>
+          </>,
+        ]}
+      />
+      {/* <div className={classes['row']}>
         <div className={classes['left-side']}>
           {team.map((item, index) => (
             <p className={classes['team-items']} key={index}>
@@ -34,7 +86,7 @@ const TeamBlock = () => {
             ]}
           />
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

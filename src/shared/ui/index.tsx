@@ -10,6 +10,7 @@ import SecondButton from "./SecondButton";
 import Subtitle from "./Subtitle";
 import Title from "./Title";
 import TitleCenter from "./TitleCenter";
+import FileInput from "./FileInput";
 
 export {
   Button,
@@ -24,4 +25,5 @@ export {
   Subtitle,
   Title,
   TitleCenter,
+  FileInput,
 }
