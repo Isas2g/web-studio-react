@@ -14,9 +14,8 @@ interface Props {
 }
 
 const ProjectCard = ({ title, years, description, isAdminPage, id }: Props) => {
-
-  return (//card-admin-container
-    <div className={classes['card-container'] + ' ' + (isAdminPage ? classes['card-admin-container'] : '')}>
+  return (
+    <div className={`${classes['card-container']} ${(isAdminPage) ? classes['card-extend'] : ''}`}>
       <Link className={classes['card-body']} to={`/projects/${id}`}>
         {id === 7 && <img src={ProjectImage1} alt="" />}
         {id === 8 && <img src={ProjectImage2} alt="" />}
