@@ -6,6 +6,7 @@ import MainSecondBlock from "./MainSecondBlock";
 import MainTechnologies from "./MainTechnologies";
 import OurProjects from "./OurProjects";
 import ProjectForm from "./ProjectForm";
+import SliderBlock from "./SliderBlock/components/BlockComponent";
 
 export {
   Application,
@@ -16,4 +17,5 @@ export {
   MainTechnologies,
   OurProjects,
   ProjectForm,
+  SliderBlock,
 }

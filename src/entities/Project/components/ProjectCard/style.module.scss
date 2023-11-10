@@ -20,6 +20,10 @@
   color: #EDEDF5;
   font-weight: 500;
 
+  img {
+    width: 100%;
+  }
+
   .card-title {
     font-size: 32px;
   }
@@ -61,7 +65,7 @@
   }
 }
 
-.card-container:hover {
+.card-admin-container:hover {
   border: 2px solid #EDEDF5;
 }
 
@@ -70,7 +74,7 @@
   height: 709px;
 }
 
-@media (max-width: $mobile) {
+@media (max-width: $tablet) {
   .card-container {
     height: fit-content;
     max-width: 400px;

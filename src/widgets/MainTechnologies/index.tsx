@@ -4,6 +4,13 @@ import classes from './style.module.scss';
 import Subtitle from 'shared/ui/Subtitle';
 import Paragraph from 'shared/ui/Paragraph';
 
+import PythonIcon from 'shared/assets/icons/python.svg';
+import ReactIcon from 'shared/assets/icons/react.svg';
+import BehanceIcon from 'shared/assets/icons/behance.svg';
+import VueIcon from 'shared/assets/icons/vue.svg';
+import GolangIcon from 'shared/assets/icons/golang.svg';
+import FigmaIcon from 'shared/assets/icons/figma.svg';
+
 const MainTechnologies = () => {
   return (
     <div className={'container'}>
@@ -30,12 +37,24 @@ const MainTechnologies = () => {
           </div>
         </div>
         <div className={classes['pictures']}>
-          <div className={classes['picture']}></div>
-          <div className={classes['picture']}></div>
-          <div className={classes['picture']}></div>
-          <div className={classes['picture']}></div>
-          <div className={classes['picture']}></div>
-          <div className={classes['picture']}></div>
+          <div className={classes['picture']}>
+            <img src={PythonIcon} alt="python-language-icon" />
+          </div>
+          <div className={classes['picture']}>
+            <img src={ReactIcon} alt="react-language-icon" />
+          </div>
+          <div className={classes['picture']}>
+            <img src={BehanceIcon} alt="behance-language-icon" />
+          </div>
+          <div className={classes['picture']}>
+            <img src={VueIcon} alt="vue-language-icon" />
+          </div>
+          <div className={classes['picture']}>
+            <img src={GolangIcon} alt="golang-language-icon" />
+          </div>
+          <div className={classes['picture']}>
+            <img src={FigmaIcon} alt="figma-language-icon" />
+          </div>
         </div>
       </div>
     </div>

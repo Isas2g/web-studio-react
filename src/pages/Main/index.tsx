@@ -10,8 +10,19 @@ import floatingImage1 from 'shared/assets/icons/floating-image-1.svg';
 import floatingImage2 from 'shared/assets/icons/floating-image-2.svg';
 import floatingImage3 from 'shared/assets/icons/floating-image-3.svg';
 import floatingImage4 from 'shared/assets/icons/floating-image-4.svg';
+import { Project, fetchAPIProjects } from 'entities/Project';
+import { useAppDispatch, useAppSelector } from 'shared/store';
+import { useEffect } from 'react';
 
 const Main = () => {
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    dispatch(fetchAPIProjects());
+  }, [dispatch]);
+
+  const projects = useAppSelector((state) => state.projects.value) || [];
+
   return (
     <div className={classes['main-page-container']}>
       <img
@@ -36,7 +47,7 @@ const Main = () => {
       />
       <MainBlock />
       <MainSecondBlock />
-      <MainProjects />
+      <MainProjects projects={projects.slice(0, 3)} />
       <MainTechnologies />
       <Application />
     </div>

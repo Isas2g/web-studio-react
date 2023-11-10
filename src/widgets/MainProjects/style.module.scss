@@ -23,10 +23,11 @@ a {
   display: block;
 }
 
-@media (max-width: 480px) {
+@media (max-width: $tablet) {
   .projects-list-container {
     display: flex;
     flex-direction: column;
+    align-items: center;
     row-gap: 20px;
     padding: 0 0 10px 0;
   }
