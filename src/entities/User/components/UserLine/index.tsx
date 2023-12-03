@@ -3,7 +3,7 @@ import classes from './style.module.scss';
 
 interface Props {
   userName: string;
-  role: 'ФРОНТЕНД' | 'ТИМ-ЛИД' | 'ДИЗАЙН' | 'МЕНЕДЖЕР' | 'БЭКЕНД';
+  role: 'ФРОНТЕНД' | 'ТИМ-ЛИД' | 'ДИЗАЙН' | 'МЕНЕДЖЕР' | 'БЭКЕНД' | string;
 }
 
 const UserLine = ({ userName, role }: Props) => {
@@ -23,6 +23,9 @@ const UserLine = ({ userName, role }: Props) => {
       roleColor = 'rgba(177, 213, 255, 1)';
       break;
     case 'БЭКЕНД':
+      roleColor = 'rgba(177, 213, 255, 1)';
+      break;
+    default:
       roleColor = 'rgba(177, 213, 255, 1)';
       break;
   }
