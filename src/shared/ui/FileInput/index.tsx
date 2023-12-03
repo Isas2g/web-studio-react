@@ -9,7 +9,7 @@ interface Props {
 }
 
 const FileInput = (props: Props) => {
-    const [filesList, setFiles] = useState<any[]>([]) // сюда класть файлы проекта
+    const [filesList, setFiles] = useState<File[]>([]) // сюда класть файлы проекта
     const [cumSize, setCumSize] = useState(0)
     const [numFiles, setNumFiles] = useState(0)
     
@@ -17,7 +17,7 @@ const FileInput = (props: Props) => {
         const files = event.target.files
         for (let i = 0; i < files!.length; i++) {
             const file = files?.item(i)
-            if (cumSize + file!.size < props.maxFileSize && numFiles < props.maxFileQuantity) {
+            if (file && cumSize + file!.size < props.maxFileSize && numFiles < props.maxFileQuantity) {
                 setFiles([...filesList, file])
                 setCumSize(c => c + file!.size)
                 setNumFiles(n => n + 1)
@@ -29,7 +29,7 @@ const FileInput = (props: Props) => {
         const temp = filesList
         const el = temp.splice(index, 1)
 
-        setCumSize(c => c - el.size)
+        setCumSize(c => c - el.length)
         setNumFiles(n => n - 1)
         setFiles([...temp])
     }
