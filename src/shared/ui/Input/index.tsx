@@ -1,6 +1,8 @@
 import React, {
-  ChangeEvent,
+  ChangeEventHandler,
   HTMLInputTypeAttribute,
+  useRef,
+  ChangeEvent,
   useState,
 } from 'react';
 import classes from './style.module.scss';
@@ -16,7 +18,9 @@ interface Props {
   isMultiline?: boolean;
   name: string;
   defaultValue?: string;
-  onChange?: (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
+  onChange?: (
+    event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => void;
   onClick?: () => void;
 }
 
