@@ -1,0 +1,19 @@
+@import 'shared/styles/variables.scss';
+@import 'shared/styles/screens.scss';
+
+.paragraph {
+    font-family: 'Onest';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 160%;
+    color: $main-text-color;
+    margin: 0 0 5% 0;
+}
+
+@media (max-width: $tablet) {
+    .paragraph {
+        font-size: 15px;
+    }
+}
+

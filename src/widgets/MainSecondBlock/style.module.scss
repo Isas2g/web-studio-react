@@ -1,0 +1,57 @@
+@import '/src/shared/styles/screens.scss';
+
+.text-container {
+  text-align: start;
+  padding: 5% 0 0 0;
+}
+
+.list-container {
+  display: flex;
+  padding: 40px 0 0 0;
+  flex-direction: column;
+}
+
+.paragraphs {
+  margin: 10% 0 0 0;
+  max-width: 393px;
+}
+
+.second-part {
+  display: flex;
+  flex-direction: row;
+}
+
+.block {
+  display: flex;
+  flex-direction: row;
+  gap: 350px;
+  text-align: start;
+}
+
+@media (max-width: $tablet) {
+  .text-container {
+    margin-bottom: 60px;
+  }
+
+  .block {
+    display: grid;
+    grid-template-areas:
+      'list'
+      'sc';
+    gap: 0;
+  }
+
+  .second-part {
+    grid-area: sc;
+    max-width: 400px;
+    padding: 0;
+  }
+
+  .list-container {
+    grid-area: list;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 10px;
+  }
+}

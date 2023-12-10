@@ -1,0 +1,36 @@
+@import 'shared/styles/screens.scss';
+
+.auth {
+  position: relative;
+}
+
+.floating-image-1 {
+  position: absolute;
+  right: 34%;
+  top: 3%;
+}
+
+.floating-image-2 {
+  position: absolute;
+  right: 22%;
+  top: 80%;
+}
+.floating-image-4 {
+  position: absolute;
+  left: 33%;
+  top: 70%;
+}
+.floating-image-5 {
+  position: absolute;
+  left: 0;
+  top: 15%;
+}
+
+@media (max-width: $tablet) {
+  .floating-image-5 {
+    width: 50%;
+  }
+  .auth {
+    padding: 60px 0 0 0;
+  }
+}

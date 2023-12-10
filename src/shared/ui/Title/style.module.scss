@@ -1,0 +1,23 @@
+@import 'shared/styles/variables.scss';
+@import '/src/shared/styles/screens.scss';
+
+.second-title {
+  font-family: 'Consolas';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 23px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: $new-main-color;
+  margin-bottom: 2%;
+}
+
+@media (max-width: $tablet) {
+  .second-title {
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    padding: 0 0 20px 0;
+  }
+}

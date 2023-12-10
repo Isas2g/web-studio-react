@@ -1,0 +1,94 @@
+@import 'shared/styles/variables.scss';
+@import 'shared/styles/screens.scss';
+
+.card-container {
+  background: $card-background;
+  border-radius: 50px;
+  border: 2px solid rgb(90 101 136 / 40%);
+  overflow: hidden;
+  transition: .3s;
+  max-height: 500px;
+  height: 500px;
+}
+
+.card-body {
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  padding: 45px;
+  color: #EDEDF5;
+  font-weight: 500;
+
+  img {
+    width: 100%;
+  }
+
+  .card-title {
+    font-size: 32px;
+  }
+  .card-years {
+    margin-top: 8px;
+    font-size: 20px;
+    opacity: .5;
+  }
+  .card-description {
+    font-weight: 400;
+    color: #D8D8E3;
+    margin-top: 24px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow-y: hidden;
+  }
+}
+
+.buttons-container {
+  padding: 0 45px;
+  display: flex;
+  flex-direction: column;
+  height: 0;
+
+  .card-button {
+    color: #EDEDF5;
+    border: 2px solid rgb(90 101 136 / 40%);
+    padding: 20px;
+    margin: unset;
+    max-width: unset;
+    margin: 0 45px 35px;
+    text-align: center;
+    border-radius: 100px;
+    transition: .3s;
+  }
+  .card-button:hover {
+    border: 2px solid #EDEDF5;
+  }
+}
+
+.card-admin-container:hover {
+  border: 2px solid #EDEDF5;
+}
+
+.card-extend:hover {
+  max-height: 709px;
+  height: 709px;
+}
+
+@media (max-width: $tablet) {
+  .card-container {
+    height: fit-content;
+    max-width: 400px;
+  }
+
+  .card-title {
+    font-size: 24px;
+  }
+
+  .card-years {
+    font-size: 15px;
+  }
+
+  .card-description {
+    font-size: 15px;
+  }
+}

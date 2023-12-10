@@ -1,0 +1,151 @@
+@import 'shared/styles/variables.scss';
+@import 'shared/styles/screens.scss';
+
+.project-container {
+  text-align: start;
+  padding: 0 0 190px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.btn-back {
+  display: flex;
+  align-self: flex-start;
+  padding: 3% 0 3% 0;
+}
+
+.lnk {
+  display: flex;
+  align-self: flex-start;
+}
+
+.left-block {
+  width: 500px;
+  height: 550px;
+  background: $card-background;
+  border-radius: 50px;
+  border: 2px solid var(--back, rgba(200, 138, 249, 0.2));
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 100%
+  }
+}
+
+.project-info {
+  display: flex;
+  flex-direction: row;
+  //column-gap: 123px;
+  justify-content: space-between;
+}
+
+.right-block {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  max-width: 605px;
+}
+
+.project-title {
+  font-family: 'Onest';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 41px;
+  color: $main-text-color;
+  padding: 5% 0 5% 0;
+}
+
+.project-years {
+  font-family: 'Onest';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 25px;
+  color: $paragraph-text-color;
+  padding: 0 0 5% 0;
+}
+
+.project-description {
+  font-family: 'Onest';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 25px;
+  color: $main-text-color;
+  padding: 0 0 3% 0;
+}
+
+.project-stack {
+  display: flex;
+  flex-direction: row;
+  column-gap: 25px;
+  padding: 7% 0 3% 0;
+}
+
+.btn-container {
+  align-self: start;
+  bottom: 0px;
+}
+
+
+@media (max-width: $tablet) {
+  .project-container {
+    padding: 0 0 150px 0;
+    margin: 0;
+  }
+  .project-info {
+    display: block;
+  }
+  .right-block {
+    display: grid;
+    grid-area: right;
+    row-gap: 0;
+    grid-template-areas: "title . years"
+                        "desc desc desc"
+                        "stack stack stack"
+                        "btn btn btn";
+  }
+  .left-block {
+    gap: 10px;
+    position: absolute;
+    width: 86%;
+    height: 439px;
+    left: 7%;
+    top: 230px;
+  }
+  .project-title {
+    grid-area: title;
+    font-size: 24px;
+    margin: 0 0 450px 0;
+    padding: 0 0 60px 0;
+  }
+  .project-years {
+    grid-area: years;
+    font-size: 15px;
+    margin: 0;
+    padding: 8px 30px 0 0;
+    text-align: end;
+  }
+  .project-description {
+    grid-area: desc;
+    font-size: 15px;
+    max-width: 400px;
+    padding: 0 0 35px 0;
+    margin: 0;
+  }
+  .project-stack {
+    grid-area: stack;
+    font-size: 15px;
+    padding: 0 0 80px 0;
+  }
+  .btn-container {
+    grid-area: btn;
+  }
+  .btn-back {
+    padding: 60px 0 50px 0px;
+  }
+}

@@ -1,0 +1,63 @@
+@import 'shared/styles/variables.scss';
+@import '/src/shared/styles/screens.scss';
+
+.button {
+  padding: 18px 44px;
+  background-color: $bg-color;
+  color: #fff;
+  border-radius: 100px;
+  font-size: 20px;
+  border: 1px solid #53587b;
+  position: relative;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: .3s background-color;
+
+  $border: 2px;
+  color: #fff;
+  background-clip: padding-box;
+  border: solid $border transparent;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    margin: -$border;
+    border-radius: inherit;
+    background: linear-gradient(to right, #554d7c, #525b7b);
+  }
+}
+
+.action-button {
+  padding: 20px 46px;
+  background-color: $new-main-color;
+  border: none;
+  border-radius: 100px;
+  color: $action-button-text-color;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+@media (max-width: $tablet) {
+  .button {
+    max-width: 400px;
+    width: 100%;
+    font-size: 15px;
+    height: fit-content;
+    line-height: 19px;
+    padding: 13px 33px;
+  }
+
+  .action-button {
+    max-width: 400px;
+    width: 100%;
+    font-size: 15px;
+    height: fit-content;
+    line-height: 19px;
+    padding: 13px 33px;
+  }
+}

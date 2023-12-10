@@ -1,0 +1,35 @@
+@import 'shared/styles/variables.scss';
+
+.input-element {
+    display: none;
+
+    &:checked {
+        + .gradient-wrapper {
+            background: $form-button-gradient;
+
+            .check-text {
+                -webkit-text-fill-color: $bg-color;
+            }
+        }
+    }
+}
+
+.check-button {
+    background: $form-button-gradient;
+    padding: 2px;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.gradient-wrapper {
+    background: $bg-color;
+    padding: 12px 36px;
+    border-radius: 30px;
+}
+
+.check-text {
+    background: $form-button-text-gradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    user-select: none;
+}

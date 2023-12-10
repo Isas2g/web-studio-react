@@ -1,0 +1,23 @@
+.admin-projects-container {
+  margin-top: 62px;
+  padding-left: 100px;
+  padding-right: 100px;
+  text-align: left;
+  min-height: 1000px;
+}
+
+.projects-container {
+  -ms-flex-line-pack: 3;
+  grid-gap: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.gradient-link {
+  margin: 0;
+  margin-bottom: 62px;
+
+  button {
+    background-image: linear-gradient(97deg, #F48AF9 -74.81%, #B1D5FF 104.8%);
+  }
+}

@@ -1,0 +1,58 @@
+@import 'shared/styles/variables.scss';
+@import 'shared/styles/screens.scss';
+
+.block-container {
+  max-width: 724px;
+  margin: 120px auto 190px;
+}
+
+.pink-gradient {
+  background: $pink-color;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+.lnk {
+  display: flex;
+  align-self: flex-start;
+  margin: 0;
+}
+
+.blue-gradient {
+  background: $new-main-color;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.main-block-text {
+  text-align: center;
+  max-width: 444px;
+  margin: 0 auto 80px;
+  line-height: 32px;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+
+@media (max-width: $tablet) {
+  .block-container {
+    display: flex;
+    flex-direction: column;
+    margin: 140px auto 150px;
+  }
+
+  .main-block-text {
+    max-width: 333px;
+    font-size: 15px;
+  }
+
+  .buttons-container {
+    gap: 20px;
+    max-width: 400px;
+    align-self: center;
+  }
+}

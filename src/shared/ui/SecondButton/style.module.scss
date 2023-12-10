@@ -1,0 +1,22 @@
+@import 'shared/styles/variables.scss';
+@import 'shared/styles/screens.scss';
+
+.back-btn {
+  font-family: 'Consolas';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 23px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: $new-main-color;
+  background: none;
+  border: none  ;
+  padding: 3% 0 3% 0;
+}
+
+@media (max-width: $tablet) {
+  .back-btn {
+    font-size: 15px;
+  }
+}

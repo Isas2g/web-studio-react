@@ -1,0 +1,24 @@
+@import '/src/shared/styles/screens.scss';
+
+.title-container {
+  max-width: 730px;
+  margin: 0 auto;
+  margin-bottom: 55px;
+}
+
+
+.title {
+  font-size: 64px;
+  text-align: center;
+}
+
+@media (max-width: $tablet) {
+  .title-container {
+    max-width: 385px;
+  }
+
+  .title {
+    font-size: 34px;
+    text-align: center;
+  }
+}

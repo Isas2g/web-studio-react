@@ -1,0 +1,33 @@
+@import 'shared/styles/screens.scss';
+
+.goals-container {
+  display: flex;
+  flex-direction: row;
+  //column-gap: 136px;
+  justify-content: space-between;
+  padding: 0 0 190px 0;
+}
+
+.left-block {
+  display: flex;
+  flex-direction: column;
+  max-width: 605px;
+  align-content: start;
+}
+
+.right-block {
+  max-width: 495px;
+}
+
+@media (max-width: $tablet) {
+  .goals-container {
+    flex-direction: column;
+    column-gap: 0;
+    padding: 0 0 150px 0;
+    max-width: 400px;
+  }
+
+  .left-block {
+    padding: 0 0 30px 0;
+  }
+}

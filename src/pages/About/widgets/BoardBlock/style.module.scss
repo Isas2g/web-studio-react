@@ -1,0 +1,29 @@
+@import 'shared/styles/variables.scss';
+@import 'shared/styles/screens.scss';
+
+.board-container {
+  display: flex;
+  flex-direction: column;
+  padding: 0 0 190px 0;
+}
+
+.board {
+  width: 100%;
+  height: 506px;
+  background: $board-gradient;
+  backdrop-filter: blur(10px);
+  border-radius: 50px;
+  border: 2px solid var(--back, rgba(200, 138, 249, 0.2));
+  align-self: center;
+}
+
+@media (max-width: $tablet) {
+  .board {
+    max-width: 393px;
+    height: 506px;
+  }
+
+  .board-container {
+    padding: 0 0 150px 0;
+  }
+}

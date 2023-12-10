@@ -1,0 +1,187 @@
+@import 'shared/styles/variables.scss';
+@import 'shared/styles/screens.scss';
+
+.footer-wrapper {
+  margin-top: 100px;
+  border-top: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-container {
+  padding: 70px 15px 100px 15px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.btn-container {
+  display: flex;
+}
+
+.lnk {
+  display: flex;
+  align-self: flex-start;
+  margin: 0;
+}
+
+.line {
+  border-top-width: 2px;
+  border-top-color: $footer-border;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 32px;
+  color: $main-text-color;
+  text-decoration: none;
+  margin: 0;
+}
+
+.first-block {
+  width: 366px;
+  text-align: start;
+}
+
+.second-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.third-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.text-bold {
+  padding: 0 0 55px 0;
+}
+
+.join {
+  background: none;
+  border: none;
+  font-family: 'Onest';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 160%;
+  color: $main-text-color;
+  padding: 0;
+}
+
+@media (min-width: 0) {
+  .text {
+    font-family: 'Onest';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 160%;
+    color: $main-text-color;
+    padding: 0 0 5% 0;
+  }
+
+  .text-bold {
+    font-family: 'Onest';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 160%;
+    color: $main-text-color;
+  }
+
+  .join {
+    font-family: 'Onest';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 160%;
+    color: $main-text-color;
+    padding: 0 0 5% 0;
+  }
+
+  .list {
+    list-style: none;
+    font-size: 10px;
+    text-align: start;
+    li {
+      cursor: pointer;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+@media (min-width: $tablet-landscape) {
+  .text {
+    font-size: 20px;
+  }
+
+  .text-bold {
+    font-size: 20px;
+  }
+
+  .list {
+    font-size: 20px;
+    li {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+@media (max-width: $tablet) {
+  .text {
+    font-size: 15px;
+    margin-bottom: 15px;
+  }
+
+  .text-bold {
+    font-size: 15px;
+  }
+
+  .footer-container {
+    padding: 40px 15px 100px 15px;
+    align-items: start;
+    justify-content: start;
+    display: grid;
+    grid-template-areas:
+      'logo .'
+      'second third'
+      'first first';
+  }
+
+  .second-block {
+    grid-area: second;
+    padding: 0 0 60px 0;
+  }
+
+  .first-block {
+    grid-area: first;
+    max-width: 275px;
+  }
+
+  .third-block {
+    grid-area: third;
+    padding: 0 0 35px 0;
+  }
+
+  .logo {
+    grid-area: logo;
+    padding: 0 0 40px 0;
+  }
+
+  .list {
+    list-style: none;
+    font-size: 15px;
+    text-align: start;
+    li {
+      cursor: pointer;
+      margin-bottom: 15px;
+    }
+  }
+
+  .btn-container {
+    display: flex;
+    flex-direction: row;
+    max-width: 196px;
+  }
+}

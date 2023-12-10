@@ -1,0 +1,44 @@
+@import 'shared/styles/variables.scss';
+@import 'shared/styles/screens.scss';
+
+.list-container1 {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.tracing {
+  background: $gradient-tracing;
+  border-radius: 28px;
+  width: 671px;
+}
+
+.text-active {
+  font-family: 'Consolas';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  color: #ededf5;
+  padding: 5px 0 5px 50px;
+}
+
+.text {
+  font-family: 'Consolas';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  color: $paragraph-text-color;
+  padding: 5px 0 5px 50px;
+}
+
+@media (max-width: $tablet) {
+  .list-container1 {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .text {
+    font-size: 24px;
+  }
+
+}
