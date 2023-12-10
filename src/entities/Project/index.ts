@@ -4,7 +4,8 @@ import {
   fetchAPIProjects, 
   fetchProject, 
   fetchProjects, 
-  updateProject
+  updateProject,
+  getCategories
 } from "./store";
 import { Project } from "./types";
 
@@ -15,6 +16,7 @@ export {
   createProject,
   fetchProject,
   fetchProjects,
+  getCategories
 }
 
 export type {

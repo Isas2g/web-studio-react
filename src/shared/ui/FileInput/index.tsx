@@ -5,7 +5,8 @@ import crossIcon from 'shared/assets/icons/cross.svg';
 interface Props {
     maxFileSize: number,
     maxFileQuantity: number,
-    fileList?: FileList
+    fileList?: FileList,
+    onInput?: CallableFunction
 }
 
 const FileInput = (props: Props) => {
