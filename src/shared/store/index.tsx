@@ -2,10 +2,12 @@ import { configureStore } from '@reduxjs/toolkit';
 // eslint-disable-next-line import/named
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 import projectsReducer from 'entities/Project/store';
+import usersReducer from 'entities/User/store';
 
 const store = configureStore({
   reducer: {
     projects: projectsReducer,
+    users: usersReducer,
   },
 });
 

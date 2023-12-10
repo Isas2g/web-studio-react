@@ -2,6 +2,9 @@ import { useState } from 'react';
 import HeroTitle from 'shared/ui/HeroTitle';
 import classes from './style.module.scss';
 import Button from 'shared/ui/Button';
+import { Link } from 'react-router-dom';
+import Modal from '../../shared/ui/Modal';
+
 import ModalCommission from '../ModalCommission';
 import ModalJoin from '../ModalJoin';
 

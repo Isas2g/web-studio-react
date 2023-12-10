@@ -12,14 +12,13 @@ interface Props {
 }
 
 const ModalCommission = ({ active, setActive }: Props) => {
-
   const [requestInfo, setRequestInfo] = useState<ProjectRequest>({
     fullName: '',
     contact: '',
   });
   const dispatch = useAppDispatch();
 
-  const sendRequestHandler = async(e: FormEvent) => {
+  const sendRequestHandler = async (e: FormEvent) => {
     e.preventDefault();
     if (requestInfo.fullName === '' || requestInfo.contact === '') {
       return;
@@ -27,10 +26,10 @@ const ModalCommission = ({ active, setActive }: Props) => {
     try {
       await dispatch(createProjectRequest(requestInfo));
       alert('Данные отправлены. Спасибо!');
-    } catch(e) {
+    } catch (e) {
       alert('Произошла ошибка. Попробуйте позже.');
     }
-  }
+  };
 
   return (
     <Modal active={active} setActive={setActive}>
@@ -45,7 +44,12 @@ const ModalCommission = ({ active, setActive }: Props) => {
               placeholder="ФИО"
               name="name"
               value={requestInfo?.fullName}
-              onChange={(e) => setRequestInfo({...requestInfo, fullName: e.currentTarget.value})}
+              onChange={(e) =>
+                setRequestInfo({
+                  ...requestInfo,
+                  fullName: e.currentTarget.value,
+                })
+              }
             />
             <Input
               id="contacts"
@@ -54,7 +58,12 @@ const ModalCommission = ({ active, setActive }: Props) => {
               placeholder="+79xxxxxxxxx / @example (telegram) / example@example.com"
               name="contacts"
               value={requestInfo?.contact}
-              onChange={(e) => setRequestInfo({...requestInfo, contact: e.currentTarget.value})}
+              onChange={(e) =>
+                setRequestInfo({
+                  ...requestInfo,
+                  contact: e.currentTarget.value,
+                })
+              }
             />
           </div>
           {/* <Input
@@ -93,6 +102,7 @@ const ModalCommission = ({ active, setActive }: Props) => {
             placeholder="Поле для дополнительной информации (при наличии)"
             name="additional"
             isMultiline
+          />
           /> */}
           <Button
             style={{

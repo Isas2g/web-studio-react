@@ -1,0 +1,31 @@
+@import 'shared/styles/variables.scss';
+
+.dropdown-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.dropdown-label {
+  color: #FFF;
+  font-size: 20px;
+  display: block;
+  margin-bottom: 12px;
+  margin-top: 33px;
+}
+
+.dropdown-gradient {
+  background-image: $input-gradient;
+  border-radius: 22px;
+  padding: 2px;
+}
+
+select {
+  width: 100%;
+  border: none;
+  border-radius: 22px;
+  background-color: $bg-color;
+  color: #fff;
+  padding: 12px;
+  resize: none;
+}
