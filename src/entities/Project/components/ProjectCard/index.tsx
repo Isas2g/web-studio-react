@@ -21,11 +21,6 @@ const ProjectCard = ({ title, years, description, isAdminPage, id }: Props) => {
       }`}
     >
       <Link className={classes['card-body']} to={`/projects/${id}`}>
-<<<<<<< HEAD
-        {id === 7 && <img src={ProjectImage1} alt="" />}
-        {id === 8 && <img src={ProjectImage2} alt="" />}
-        {id === 9 && <img src={ProjectImage3} alt="" />}
-=======
         {id === 7 && (
           <img src={ProjectImage1} alt="" className={classes['card-pic']} />
         )}
@@ -35,7 +30,6 @@ const ProjectCard = ({ title, years, description, isAdminPage, id }: Props) => {
         {id === 9 && (
           <img src={ProjectImage3} alt="" className={classes['card-pic']} />
         )}
->>>>>>> origin/dev
         <p className={classes['card-title']}>{title}</p>
         <p className={classes['card-years']}>{years}</p>
         <p className={classes['card-description']}>{description}</p>
