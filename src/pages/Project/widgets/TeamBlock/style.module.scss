@@ -13,12 +13,14 @@
 .row {
   display: flex;
   flex-direction: row;
-  column-gap: 430px;
+  //column-gap: 430px;
+  justify-content: space-between;
 }
 
 .right-side {
   display: flex;
   flex-direction: column;
+  margin-right: 20%;
 }
 
 .left-side {
@@ -37,7 +39,7 @@
   color: $main-text-color;
 }
 
-@media (max-width: $mobile) {
+@media (max-width: $tablet) {
   .team-container {
     max-width: 400px;
   }

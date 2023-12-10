@@ -1,7 +1,8 @@
-import React from 'react';
 import classes from './style.module.scss';
-import Button from 'shared/ui/Button';
-import Paragraph from 'shared/ui/Paragraph';
+import { 
+  Button,
+  Paragraph 
+} from 'shared/ui';
 import floatingImage1 from 'shared/assets/icons/floating-image-1.svg';
 import floatingImage2 from 'shared/assets/icons/floating-image-2.svg';
 import floatingImage4 from 'shared/assets/icons/floating-image-4.svg';

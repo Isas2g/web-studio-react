@@ -1,22 +1,33 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ProjectsList from 'widgets/OurProjects';
 import classes from './style.module.scss';
 import Button from 'shared/ui/Button';
+import { Project } from 'entities/Project';
 
-const ProjectsShow = () => {
+interface Props {
+  projects: Project[],
+}
+
+
+const ProjectsShow = ({projects}: Props) => {
+
+  const buttonList = ['Все проекты', 'Интернет-магазин', 'Лэндинг', 'Информационный сервис', 'Личный блог', 'Сайт-потфолио', 'Корпоративный портал', 'Агрегатор'];
+  const [activeIndex, setActiveIndex] = useState(0);
+
   return (
     <div className={`${classes['projects-show']} container`}>
       <div className={classes['btns-row']}>
-        <Button text={'Все проекты'} isAction={true} />
-        <Button text={'Все проекты'} />
-        <Button text={'Все проекты'} />
-        <Button text={'Все проекты'} />
-        <Button text={'Все проекты'} />
-        <Button text={'Все проекты'} />
-        <Button text={'Все проекты'} />
-        <Button text={'Все проекты'} />
+        {
+          buttonList.map((item, index) => <Button 
+            key={item} 
+            text={item} 
+            isAction={activeIndex === index}
+            onClick={() => {setActiveIndex(index)}}
+          />)
+        }
+        
       </div>
-      <ProjectsList />
+      <ProjectsList projects={projects} />
     </div>
   );
 };

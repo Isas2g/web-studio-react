@@ -6,8 +6,13 @@ import Subtitle from 'shared/ui/Subtitle';
 import ProjectCard from 'entities/Project/components/ProjectCard';
 import Button from 'shared/ui/Button';
 import { Link } from 'react-router-dom';
+import { Project } from 'entities/Project';
 
-const MainProjects = () => {
+interface Props {
+  projects: Project[];
+}
+
+const MainProjects = ({projects}: Props) => {
   return (
     <div className={'container'}>
       <div className={classes['main-projects-container']}>
@@ -18,7 +23,16 @@ const MainProjects = () => {
           </Subtitle>
         </div>
         <div className={classes['projects-list-container']}>
-          <ProjectCard
+          {
+            projects.map(project => <ProjectCard
+              key={project.id}
+              id={project.id}
+              title={project.title}
+              years={`${new Date(project.startedAt).getFullYear()} - ${new Date(project.endedAt).getFullYear()}`}
+              description={project.description}
+            />)
+          }
+          {/* <ProjectCard
             id={1}
             title={'About Web'}
             years={'2021-2023'}
@@ -44,7 +58,7 @@ const MainProjects = () => {
               'Информационный портал\n' +
               'для заказчиков и сотрудников веб-студии. Вы сейчас здесь.'
             }
-          />
+          /> */}
         </div>
         <Link to="/projects">
           <Button text={'Смотреть все проекты'} />

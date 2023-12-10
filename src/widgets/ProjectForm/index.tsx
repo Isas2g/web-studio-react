@@ -1,52 +1,35 @@
 import classes from './style.module.scss';
-import Input from 'shared/ui/Input';
-import Button from 'shared/ui/Button';
-import ProjectFormButton from './components/Button';
-import Document from './components/Document';
-import { useAppDispatch, useAppSelector } from 'shared/store';
-import { useEffect, useState } from 'react';
-import { fetchProject, updateProject } from 'entities/Project/store';
+import { Button, Input, FileInput } from 'shared/ui';
+import { Button as ProjectFormButton, Document } from './components';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+
 import { Project } from 'entities/Project/types';
 
 interface Props {
-  id: number;
+  handler: (project: Project) => void;
+  project?: Project;
 }
 
-const ProjectForm = ({ id }: Props) => {
-  const dispatch = useAppDispatch();
-  const project = useAppSelector((state) => state.projects.project);
-  const [newProject, setNewProject] = useState<Project>(project);
-  const isLoading = useAppSelector((state) => state.projects.isLoading);
-
-  if (isLoading) {
-    return <p style={{ marginTop: 200 }}>{'loading...'}</p>;
-  }
-  // console.log(isLoading);
-  // if (!isLoading) {
-  //   setNewProject(project);
-  // }
-
-  const updateProjectHandler = () => {
-    // console.log(newProject);
-    dispatch(updateProject({ ...newProject, id }));
-  };
+const ProjectForm = ({ handler, project }: Props) => {
+  const [newProject, setNewProject] = useState<
+    Project | Record<string, string>
+  >(project || {});
 
   return (
-    <div className={classes['']}>
+    <div>
+      <Link className={classes['return-link']} to="/admin-projects">
+        &lt; к проектам
+      </Link>
       <Input
         label="Название проекта"
         placeholder="Название проекта"
         type="text"
         id="project-title"
         name="project-title"
-        containerStyle={{ marginBottom: 33 }}
-        defaultValue={project.title}
-        onChange={(event) => {
-          setNewProject({
-            ...newProject,
-            title: event.target.value,
-          });
-        }}
+        defaultValue={project?.title}
+        value={newProject?.title}
+        onChange={(e) => setNewProject({...newProject, title: e.currentTarget.value})}
       />
       <Input
         label="ПЕРИОД РАЗРАБОТКИ"
@@ -54,16 +37,13 @@ const ProjectForm = ({ id }: Props) => {
         type="text"
         id="project-years"
         name="project-years"
-        containerStyle={{ marginBottom: 33 }}
-        value={`${new Date(project.startedAt).getFullYear()} - ${new Date(
-          project.endedAt
-        ).getFullYear()}`}
-        onChange={(event) => {
-          // setNewProject({
-          //   ...newProject,
-          //   title: event.target.value
-          // })
-        }}
+        value={
+          project
+            ? `${new Date(project.startedAt).getFullYear()} - ${new Date(
+                project.endedAt
+              ).getFullYear()}`
+            : ''
+        }
       />
       <Input
         label="ОПИСАНИЕ ПРОЕКТА"
@@ -71,33 +51,32 @@ const ProjectForm = ({ id }: Props) => {
         type="text"
         id="project-description"
         name="project-description"
-        containerStyle={{ marginBottom: 33 }}
         style={{ minHeight: 200 }}
         isMultiline
-        defaultValue={project.description}
-        onChange={(event) => {
-          setNewProject({
-            ...newProject,
-            description: event.target.value,
-          });
-        }}
+        defaultValue={project?.description || ''}
+        value={newProject?.description}
+        onChange={(e) => setNewProject({...newProject, description: e.currentTarget.value})}
       />
 
       <p className={classes['sub-title']}>стек технологий</p>
       <div className={classes['buttons-container']}>
-        <ProjectFormButton text={'VUE.JS'} />
-        <ProjectFormButton text={'REACT.JS'} isAction />
-        <ProjectFormButton text={'ANGULAR.JS'} />
-        <ProjectFormButton text={'DOCKER'} isAction />
-        <ProjectFormButton text={'FIGMA'} isAction />
-        <ProjectFormButton text={'TYPESCRIPT'} isAction />
-        <ProjectFormButton text={'REDUX'} isAction />
-        <ProjectFormButton text={'REDUX TOOLKIT'} isAction />
-        <ProjectFormButton text={'RTK QUERY'} />
-        <ProjectFormButton text={'FSD ARCHITECHTURE'} />
-        <ProjectFormButton text={'VUETIFY'} />
-        <ProjectFormButton text={'POSTGRESQL'} />
-        <ProjectFormButton text={'GOLANG'} />
+        <ProjectFormButton identifier="vue" text={'VUE.JS'} />
+        <ProjectFormButton identifier="react" text={'REACT.JS'} isAction />
+        <ProjectFormButton identifier="angular" text={'ANGULAR.JS'} />
+        <ProjectFormButton identifier="docker" text={'DOCKER'} isAction />
+        <ProjectFormButton identifier="figma" text={'FIGMA'} isAction />
+        <ProjectFormButton identifier="ts" text={'TYPESCRIPT'} isAction />
+        <ProjectFormButton identifier="redux" text={'REDUX'} isAction />
+        <ProjectFormButton
+          identifier="redux-tk"
+          text={'REDUX TOOLKIT'}
+          isAction
+        />
+        <ProjectFormButton identifier="rtk" text={'RTK QUERY'} />
+        <ProjectFormButton identifier="fsd" text={'FSD ARCHITECHTURE'} />
+        <ProjectFormButton identifier="vuetify" text={'VUETIFY'} />
+        <ProjectFormButton identifier="psql" text={'POSTGRESQL'} />
+        <ProjectFormButton identifier="go" text={'GOLANG'} />
       </div>
 
       <Input
@@ -106,27 +85,24 @@ const ProjectForm = ({ id }: Props) => {
         type="text"
         id="project-link"
         name="project-link"
-        containerStyle={{ marginBottom: 40 }}
-        defaultValue={project.link}
-        onChange={(event) => {
-          setNewProject({
-            ...newProject,
-            link: event.target.value,
-          });
-        }}
+        defaultValue={project?.link || ''}
+        value={newProject?.link}
+        onChange={(e) => setNewProject({...newProject, link: e.currentTarget.value})}
       />
 
       <p className={classes['sub-title']}>документы</p>
       <div>
-        <Button text={'Загрузить'} />
+        <FileInput
+          maxFileQuantity={ 5 }
+          maxFileSize={ 5242880 }
+        />
       </div>
-      <div className={classes['docs-container']}>
-        <Document title={'document.docx'} />
-        <Document title={'doc2.docx'} />
-      </div>
-
       <div className={classes['buttons-container']}>
-        <Button onClick={updateProjectHandler} text={'Сохранить'} isAction />
+        <Button
+          onClick={() => handler(newProject as Project)}
+          text={'Сохранить'}
+          isAction
+        />
       </div>
     </div>
   );

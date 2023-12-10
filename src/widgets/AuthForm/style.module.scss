@@ -45,7 +45,7 @@
   cursor: pointer;
 }
 
-@media (max-width: $mobile) {
+@media (max-width: $tablet) {
   .form {
     display: flex;
     flex-direction: column;

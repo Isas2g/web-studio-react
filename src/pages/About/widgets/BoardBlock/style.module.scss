@@ -13,10 +13,11 @@
   background: $board-gradient;
   backdrop-filter: blur(10px);
   border-radius: 50px;
+  border: 2px solid var(--back, rgba(200, 138, 249, 0.2));
   align-self: center;
 }
 
-@media (max-width: $mobile) {
+@media (max-width: $tablet) {
   .board {
     max-width: 393px;
     height: 506px;

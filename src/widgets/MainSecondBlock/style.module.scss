@@ -28,9 +28,9 @@
   text-align: start;
 }
 
-@media (max-width: $mobile) {
+@media (max-width: $tablet) {
   .text-container {
-    max-width: 400px;
+    margin-bottom: 60px;
   }
 
   .block {
@@ -44,7 +44,7 @@
   .second-part {
     grid-area: sc;
     max-width: 400px;
-    padding: 0 0 150px 0;
+    padding: 0;
   }
 
   .list-container {

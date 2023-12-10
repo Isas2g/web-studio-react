@@ -2,71 +2,79 @@
 @import 'shared/styles/screens.scss';
 
 .card-container {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 278px 45px 45px;
-  gap: 10px;
-  max-height: 500px;
   background: $card-background;
-  backdrop-filter: blur(10px);
   border-radius: 50px;
-  border: 2px solid;
-  border-color: $border-card-color;
-  text-align: start;
-  transition: 0.3s;
-  max-width: 450px;
+  border: 2px solid rgb(90 101 136 / 40%);
+  overflow: hidden;
+  transition: .3s;
+  max-height: 500px;
+  height: 500px;
 }
 
-.card-title {
-  font-family: 'Onest';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 32px;
-  line-height: 41px;
-}
-
-.card-years {
-  font-family: 'Onest';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 25px;
-  color: $paragraph-text-color;
-}
-
-.card-description {
-  font-family: 'Onest';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 25px;
-  color: $main-text-color;
-}
-
-.buttons-container {
-  transition: 0.4s;
-  max-height: 0;
-  opacity: 0;
-  pointer-events: none;
-  margin: 45px auto 0;
+.card-body {
+  height: 500px;
   display: flex;
-  width: 80%;
   flex-direction: column;
-  align-items: stretch;
-}
+  justify-content: end;
+  padding: 45px;
+  color: #EDEDF5;
+  font-weight: 500;
 
-.card-container:hover {
-  max-height: 1000px;
+  img {
+    width: 100%;
+  }
 
-  .buttons-container {
-    max-height: 400px;
-    opacity: 1;
-    pointer-events: unset;
+  .card-title {
+    font-size: 32px;
+  }
+  .card-years {
+    margin-top: 8px;
+    font-size: 20px;
+    opacity: .5;
+  }
+  .card-description {
+    font-weight: 400;
+    color: #D8D8E3;
+    margin-top: 24px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow-y: hidden;
   }
 }
 
-@media (max-width: $mobile) {
+.buttons-container {
+  padding: 0 45px;
+  display: flex;
+  flex-direction: column;
+  height: 0;
+
+  .card-button {
+    color: #EDEDF5;
+    border: 2px solid rgb(90 101 136 / 40%);
+    padding: 20px;
+    margin: unset;
+    max-width: unset;
+    margin: 0 45px 35px;
+    text-align: center;
+    border-radius: 100px;
+    transition: .3s;
+  }
+  .card-button:hover {
+    border: 2px solid #EDEDF5;
+  }
+}
+
+.card-admin-container:hover {
+  border: 2px solid #EDEDF5;
+}
+
+.card-extend:hover {
+  max-height: 709px;
+  height: 709px;
+}
+
+@media (max-width: $tablet) {
   .card-container {
     height: fit-content;
     max-width: 400px;

@@ -1,68 +1,73 @@
 @import 'shared/styles/variables.scss';
 
-.input-container {
-  display: flex;
-  flex-direction: column;
-}
-
-.label {
-  font-family: 'Consolas';
+.input-label {
+  color: #FFF;
   font-size: 20px;
+  display: block;
   margin-bottom: 12px;
-  text-transform: uppercase;
-  text-align: left;
+  margin-top: 33px;
 }
 
-.input {
-  // needs to be relative so the :focus span is positioned correctly
-  position: relative;
-
-  // bigger font size for demo purposes
-  font-size: 20px;
-
-  // the border gradient
-  background: $input-gradient;
-
-  // the width of the input border
+.input-gradient {
+  background-image: $input-gradient;
+  border-radius: 22px;
   padding: 2px;
+}
 
-  // we want inline fields by default
-  display: inline-block;
+.checkbox-container {
+  display: flex;
+  flex-direction: row;
+}
 
-  // we want rounded corners no matter the size of the field
-  border-radius: 9999em;
+.checkbox-label {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 12px;
+  margin-top: 10px;
+}
 
-  // style of the actual input field
-  *:not(span) {
-    background-color: $bg-color;
-    font-family: 'Consolas';
-    color: #fff;
-    position: relative;
-    display: inherit;
-    width: 100%;
-    border-radius: inherit;
-    margin: 0;
-    border: none;
-    outline: none;
-    padding: 9px 27px 13px;
-    transition: background 0.5s;
-    z-index: 1; // needs to be above the :focus span
+input[type="checkbox"] {
+  //display: none;
+  position: absolute;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
 
-    // summon fancy shadow styles when focussed
-    &:focus {
-      background: $focus-input-gradient;
-    }
-    &:focus::-webkit-input-placeholder {
-      color: #fff;
-    }
-    &:focus::-moz-placeholder {
-      color: #fff;
-    }
-    &:focus:-moz-placeholder {
-      color: #fff;
-    }
-    &:focus:-ms-input-placeholder {
-      color: #fff;
-    }
-  }
+.check-designed {
+  position: relative;
+  display: flex;
+  width: 20px;
+  height: 20px;
+  margin: 2px 10px 0 0;
+  background-color: #0d0d2b;
+  border: 2px solid rgb(90 101 136 / 40%);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.check-designed::before {
+  content: '\2713';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 12px;
+  color: #d8d8e3;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
+input[type="checkbox"]:checked + .check-designed::before {
+  opacity: 1;
+}
+
+input, textarea {
+  width: 100%;
+  border-radius: 22px;
+  border: none;
+  background-color: $bg-color;
+  color: #fff;
+  padding: 12px;
+  resize: none;
 }
