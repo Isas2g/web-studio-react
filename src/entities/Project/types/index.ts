@@ -6,4 +6,8 @@ export interface Project {
   startedAt: string;
   endedAt: string;
   link: string;
+  isActive: boolean;
+  technologies?: Array<string>;
+  updatedAt: string;
+  category_id: string;
 }

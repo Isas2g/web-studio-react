@@ -34,6 +34,20 @@ export const updateProject = createAsyncThunk(
   }
 );
 
+export const getCategories = createAsyncThunk(
+  'projects/categories',
+  async () => {
+    try {
+      const res = await instance.get(`/projects/categories`);
+      const data = await res.data;
+      return data;
+    } catch (e) {
+      console.log('Произошла ошибка');
+      console.log(e);
+    }
+  }
+);
+
 export const createProject = createAsyncThunk(
   'projects/createProject',
   async (project: Project) => {
@@ -84,7 +98,7 @@ export const projectsSlice = createSlice({
   reducers: {
     fetchProjects: (state, action) => {
       state.value.push(action.payload);
-    },
+    }
   },
   extraReducers: (builder) => {
     builder.addCase(fetchAPIProjects.pending, (state) => {

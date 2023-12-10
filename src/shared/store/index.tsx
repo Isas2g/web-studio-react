@@ -5,7 +5,7 @@ import projectsReducer from 'entities/Project/store';
 
 const store = configureStore({
   reducer: {
-    projects: projectsReducer,
+    projects: projectsReducer
   },
 });
 
