@@ -29,7 +29,6 @@ export const fetchAPIUsers = createAsyncThunk('/users', async () => {
   try {
     const res = await instance.get('/users');
     const data = await res.data;
-    console.log(data);
     return data;
   } catch (e) {
     console.log('Произошла ошибка');
@@ -64,6 +63,20 @@ export const updateUser = createAsyncThunk(
           'Content-Type': 'Application/json',
         },
       });
+      const data = await res.data;
+      return data;
+    } catch (e) {
+      console.log('Произошла ошибка');
+      console.log(e);
+    }
+  }
+);
+
+export const deleteUser = createAsyncThunk(
+  'user/deleteUser',
+  async (id: number | undefined) => {
+    try {
+      const res = await instance.delete(`/users/${id}`);
       const data = await res.data;
       return data;
     } catch (e) {
@@ -130,6 +143,13 @@ export const usersSlice = createSlice({
       state.isLoading = true;
     });
     builder.addCase(createUser.fulfilled, (state, action) => {
+      state.isLoading = false;
+      state.user = action.payload;
+    });
+    builder.addCase(deleteUser.pending, (state) => {
+      state.isLoading = true;
+    });
+    builder.addCase(deleteUser.fulfilled, (state, action) => {
       state.isLoading = false;
       state.user = action.payload;
     });

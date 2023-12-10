@@ -2,8 +2,10 @@ export interface User {
   id?: number;
   name: string;
   surname?: string;
-  role: number;
-  roleName: string;
+  username?: string;
+  password?: string;
+  role?: number;
+  roleName?: string;
   isTeamLead?: boolean;
   email?: string;
   createdAt?: string;

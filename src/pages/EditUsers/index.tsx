@@ -46,8 +46,6 @@ const EditUsers = () => {
 
   const users = useAppSelector((state) => state.users.value) || [];
 
-  console.log(users);
-
   return (
     <main className={classes['admin-projects-container']}>
       <Button
@@ -61,8 +59,12 @@ const EditUsers = () => {
 
       <div>
         {users.map((user, index) => (
-          // <UserLine key={index} userName={user.userName} role={user.role} />
-          <UserLine key={index} userName={user.name} role={user.roleName} />
+          <UserLine
+            key={index}
+            id={user.id}
+            userName={user.name}
+            role={user.roleName}
+          />
         ))}
       </div>
 

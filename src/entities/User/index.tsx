@@ -7,6 +7,7 @@ import {
   createUser,
   updateUser,
   fetchUser,
+  deleteUser,
 } from './store';
 
 import { User } from './types';
@@ -19,6 +20,7 @@ export {
   createUser,
   updateUser,
   fetchUser,
+  deleteUser,
 };
 
 export type { Credentials };
