@@ -1,0 +1,39 @@
+.resources {
+    .resources__image {
+        max-width: 500px;
+        height: 40vw;
+        max-height: 550px;
+        margin: 0 auto;
+
+        border-radius: 50px;
+        border: 2px solid #C88AF9;
+        background: linear-gradient(120deg, rgba(174, 138, 249, 0.10) -11.68%, rgba(95, 222, 222, 0.10) 93.52%);
+        backdrop-filter: blur(10px);
+    }
+
+    .resources__upload {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+        margin: 70px 0 0 0;
+    }
+
+    .resources__upload-name {
+        font-family: Onest;
+        font-size: 20px;
+        font-weight: 400;
+
+        color: #EDEDF5;
+    }
+    .resources__upload-size {
+        margin: 10px 0 0 0;
+
+        font-family: Onest;
+        font-size: 20px;
+        font-weight: 400;
+
+        color: rgba(237, 237, 245, 0.50);
+    }
+}
+
