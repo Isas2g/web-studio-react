@@ -1,9 +1,12 @@
 import classes from './style.module.scss';
 import { Button, Input, FileInput } from 'shared/ui';
 import { Button as ProjectFormButton } from './components';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Project } from 'entities/Project/types';
+import { useAppDispatch, useAppSelector } from 'shared/store';
+import { getCategories } from 'entities/Project';
+import { uploadProjectFiles } from 'entities/Project/store';
 
 interface Props {
   handler: (project: Project) => void;
@@ -12,16 +15,32 @@ interface Props {
 
 const ProjectForm = ({ handler, project }: Props) => {
   const [newProject, setNewProject] = useState<
-    Project | Record<string, string>
+    Project | any
   >(project || {});
-
+  const [filesList, setFiles] = useState<File[]>([]) // сюда класть файлы проекта
+  const categories = useAppSelector((state) => state.projects.categories);
+  const dispatch = useAppDispatch();
+  
   let years = ''
   if (project?.startedAt && project?.endedAt) {
     years = project?.startedAt.split('-')[0] + '-' + project?.endedAt.split('-')[0]
   }
 
+  useEffect(() => {
+    dispatch(getCategories());
+  }, []);
+
   const hadleFileInput = () => {
-    return
+    if (project && filesList.length > 0) {
+      dispatch(uploadProjectFiles({
+        projectId: project.id,
+        files: filesList
+      }));
+    }
+  }
+
+  const handleFile = () => {
+    return;
   }
 
   return (
@@ -65,8 +84,11 @@ const ProjectForm = ({ handler, project }: Props) => {
       <select 
         name="category_id" 
         id="category_id" 
-        onChange={(e) => setNewProject({...newProject, category_id: '5'})}>
-        <option value="5">Интернет-магазин</option> { /* TODO: Настроить подгрузку категорий */ }
+        onChange={(e) => setNewProject({...newProject, category_id: e.currentTarget.value})}>
+          <option disabled defaultChecked>Выбрать категорию проекта</option>
+        {
+          categories.map(category => <option key={category.id} value={category.id}>{category.name}</option> )
+        }
       </select>
 
       <p className={classes['sub-title']}>стек технологий</p>
@@ -101,18 +123,23 @@ const ProjectForm = ({ handler, project }: Props) => {
         onChange={(e) => setNewProject({...newProject, link: e.currentTarget.value})}
       />
 
-      <p className={classes['sub-title']}>документы</p>
-      <div>
-        <FileInput
-          onInput={hadleFileInput}
-          maxFileQuantity={ 5 }
-          maxFileSize={ 5242880 }
-        />
-      </div>
+      {project && <>
+        <p className={classes['sub-title']}>документы</p>
+        <div>
+          <FileInput
+            onInput={handleFile}
+            maxFileQuantity={ 5 }
+            maxFileSize={ 5242880 }
+            filesList={filesList}
+            setFiles={setFiles}
+          />
+        </div>
+      </>}
       <div className={classes['buttons-container']}>
         <Button
           onClick={() => {
-            handler(newProject as Project)
+            handler(newProject as Project);
+            hadleFileInput();
           }}
           text={'Сохранить'}
           isAction
