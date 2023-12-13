@@ -33,7 +33,7 @@ const Footer = () => {
     {
       text: 'Контакты',
       link: 'https://vk.com/aboutweb',
-      target: '__blank'
+      target: '__blank',
     },
     {
       text: 'Авторизация',
@@ -50,7 +50,11 @@ const Footer = () => {
           </p>
           <p className={classes['text-bold']}>aboutweb@gmail.com</p>
           <div className={classes['btn-container']}>
-            <Link to={'https://vk.com/aboutweb'} className={classes['lnk']} target='__blank'>
+            <Link
+              to={'https://vk.com/aboutweb'}
+              className={classes['lnk']}
+              target="__blank"
+            >
               <Button style={socialsStyle} text={'VK'} />
             </Link>
             <Link to={''} className={classes['lnk']}>

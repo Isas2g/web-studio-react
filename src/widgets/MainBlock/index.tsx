@@ -2,6 +2,7 @@ import { useState } from 'react';
 import HeroTitle from 'shared/ui/HeroTitle';
 import classes from './style.module.scss';
 import Button from 'shared/ui/Button';
+
 import ModalCommission from '../ModalCommission';
 import ModalJoin from '../ModalJoin';
 

@@ -1,5 +1,5 @@
 export interface Project {
-  id?: number;
+  id: number;
   teamID?: number;
   title: string;
   description: string;
@@ -9,5 +9,5 @@ export interface Project {
   isActive: boolean;
   technologies?: Array<string>;
   updatedAt: string;
-  category_id: string;
+  category_id: number;
 }

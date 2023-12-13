@@ -4,12 +4,10 @@ import ProjectsList from './components/ProjectsList';
 import { Project } from 'entities/Project';
 
 interface Props {
-  projects: Project[],
+  projects: Project[];
 }
 
-
-const OurProjects = ({projects}: Props) => {
-
+const OurProjects = ({ projects }: Props) => {
   return (
     <div className={`${classes['our-projects']} container`}>
       <img className={classes['floating-image']} src={floatingImage} alt={''} />

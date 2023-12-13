@@ -15,8 +15,8 @@
   height: 500px;
   display: flex;
   flex-direction: column;
-  justify-content: end;
-  padding: 45px;
+  //justify-content: end;
+  padding: 15px 40px;
   color: #EDEDF5;
   font-weight: 500;
 
@@ -26,7 +26,9 @@
 
   .card-title {
     font-size: 32px;
+    padding: 15px 0 0 0;
   }
+
   .card-years {
     margin-top: 8px;
     font-size: 20px;
@@ -41,6 +43,16 @@
     -webkit-box-orient: vertical;
     overflow-y: hidden;
   }
+
+  .card-pic {
+    padding: 0;
+  }
+}
+
+
+.card-container:hover {
+  background: $active-card-color;
+  border: 2px solid var(--back, rgba(200, 138, 249, 0.4));
 }
 
 .buttons-container {

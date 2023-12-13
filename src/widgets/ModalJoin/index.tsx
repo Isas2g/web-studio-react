@@ -12,7 +12,6 @@ interface Props {
 }
 
 const ModalJoin = ({ active, setActive }: Props) => {
-
   const [requestInfo, setRequestInfo] = useState<UserRequest>({
     fullName: '',
     groupNumber: '',
@@ -29,7 +28,7 @@ const ModalJoin = ({ active, setActive }: Props) => {
   });
   const dispatch = useAppDispatch();
 
-  const sendRequestHandler = async(e: FormEvent) => {
+  const sendRequestHandler = async (e: FormEvent) => {
     e.preventDefault();
     if (requestInfo.fullName === '' || requestInfo.telegram === '') {
       return;
@@ -37,10 +36,10 @@ const ModalJoin = ({ active, setActive }: Props) => {
     try {
       await dispatch(createUserRequest(requestInfo));
       alert('Данные отправлены. Спасибо!');
-    } catch(e) {
+    } catch (e) {
       alert('Произошла ошибка. Попробуйте позже.');
     }
-  }
+  };
 
   return (
     <Modal active={active} setActive={setActive}>
@@ -56,7 +55,12 @@ const ModalJoin = ({ active, setActive }: Props) => {
             placeholder="ФИО"
             name="name"
             value={requestInfo?.fullName}
-            onChange={(e) => setRequestInfo({...requestInfo, fullName: e.currentTarget.value})}
+            onChange={(e) =>
+              setRequestInfo({
+                ...requestInfo,
+                fullName: e.currentTarget.value,
+              })
+            }
           />
           <Input
             id="state"
@@ -67,7 +71,12 @@ const ModalJoin = ({ active, setActive }: Props) => {
             placeholder="201-72X"
             name="state"
             value={requestInfo?.groupNumber}
-            onChange={(e) => setRequestInfo({...requestInfo, groupNumber: e.currentTarget.value})}
+            onChange={(e) =>
+              setRequestInfo({
+                ...requestInfo,
+                groupNumber: e.currentTarget.value,
+              })
+            }
           />
           <Input
             id="tg"
@@ -76,7 +85,12 @@ const ModalJoin = ({ active, setActive }: Props) => {
             placeholder="@example (telegram)"
             name="tg"
             value={requestInfo?.telegram}
-            onChange={(e) => setRequestInfo({...requestInfo, telegram: e.currentTarget.value})}
+            onChange={(e) =>
+              setRequestInfo({
+                ...requestInfo,
+                telegram: e.currentTarget.value,
+              })
+            }
           />
           <Input
             id="exp"
@@ -88,7 +102,12 @@ const ModalJoin = ({ active, setActive }: Props) => {
             name="exp"
             isMultiline
             value={requestInfo?.expirience}
-            onChange={(e) => setRequestInfo({...requestInfo, expirience: e.currentTarget.value})}
+            onChange={(e) =>
+              setRequestInfo({
+                ...requestInfo,
+                expirience: e.currentTarget.value,
+              })
+            }
           />
           <Input
             id="technologies"
@@ -99,7 +118,12 @@ const ModalJoin = ({ active, setActive }: Props) => {
             placeholder="React"
             name="technologies"
             value={requestInfo?.technologies}
-            onChange={(e) => setRequestInfo({...requestInfo, technologies: e.currentTarget.value})}
+            onChange={(e) =>
+              setRequestInfo({
+                ...requestInfo,
+                technologies: e.currentTarget.value,
+              })
+            }
           />
           <div className={classes['role-checkbox']}>
             <p
@@ -113,42 +137,72 @@ const ModalJoin = ({ active, setActive }: Props) => {
               id="frontend"
               name="frontend"
               value={'Frontend-разработка'}
-              onClick={() => setRequestInfo({...requestInfo, isFrontend: !requestInfo.isFrontend})}
+              onClick={() =>
+                setRequestInfo({
+                  ...requestInfo,
+                  isFrontend: !requestInfo.isFrontend,
+                })
+              }
             />
             <Input
               type={'checkbox'}
               id="backend"
               name="backend"
               value={'Backend-разработка'}
-              onClick={() => setRequestInfo({...requestInfo, isBackend: !requestInfo.isBackend})}
+              onClick={() =>
+                setRequestInfo({
+                  ...requestInfo,
+                  isBackend: !requestInfo.isBackend,
+                })
+              }
             />
             <Input
               type={'checkbox'}
               id="design"
               name="design"
               value={'Дизайн'}
-              onClick={() => setRequestInfo({...requestInfo, isDesign: !requestInfo.isDesign})}
+              onClick={() =>
+                setRequestInfo({
+                  ...requestInfo,
+                  isDesign: !requestInfo.isDesign,
+                })
+              }
             />
             <Input
               type={'checkbox'}
               id="manager"
               name="manager"
               value={'Менеджмент'}
-              onClick={() => setRequestInfo({...requestInfo, isManagment: !requestInfo.isManagment})}
+              onClick={() =>
+                setRequestInfo({
+                  ...requestInfo,
+                  isManagment: !requestInfo.isManagment,
+                })
+              }
             />
             <Input
               type={'checkbox'}
               id="devops"
               name="devops"
               value={'DevOps'}
-              onClick={() => setRequestInfo({...requestInfo, isDevOps: !requestInfo.isDevOps})}
+              onClick={() =>
+                setRequestInfo({
+                  ...requestInfo,
+                  isDevOps: !requestInfo.isDevOps,
+                })
+              }
             />
             <Input
               type={'checkbox'}
               id="marketing"
               name="marketing"
               value={'Маркетинг'}
-              onClick={() => setRequestInfo({...requestInfo, isMarketing: !requestInfo.isMarketing})}
+              onClick={() =>
+                setRequestInfo({
+                  ...requestInfo,
+                  isMarketing: !requestInfo.isMarketing,
+                })
+              }
             />
           </div>
           <Input
@@ -160,17 +214,13 @@ const ModalJoin = ({ active, setActive }: Props) => {
             placeholder="https://github.com/"
             name="github"
             value={requestInfo?.portfolioLink}
-            onChange={(e) => setRequestInfo({...requestInfo, portfolioLink: e.currentTarget.value})}
+            onChange={(e) =>
+              setRequestInfo({
+                ...requestInfo,
+                portfolioLink: e.currentTarget.value,
+              })
+            }
           />
-          {/*<div className={classes['marketing-radio']}>*/}
-          {/*  <p*/}
-          {/*    className={classes['checkbox-title']}*/}
-          {/*    style={{ marginTop: 33, marginBottom: 10 }}*/}
-          {/*  >*/}
-          {/*    Готов ли заниматься маркетингом помимо основных обязанностей?*/}
-          {/*  </p>*/}
-          {/*  <Input type="radio" id="ratio_1" name="pos" value="Да" />*/}
-          {/*</div>*/}
           <Button
             style={{
               padding: 15,

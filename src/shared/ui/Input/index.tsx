@@ -16,7 +16,9 @@ interface Props {
   isMultiline?: boolean;
   name: string;
   defaultValue?: string;
-  onChange?: (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
+  onChange?: (
+    event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => void;
   onClick?: () => void;
 }
 
