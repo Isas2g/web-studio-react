@@ -12,6 +12,7 @@ import { fetchProject } from 'entities/Project';
 import { getProjectDocuments } from 'entities/Project/store';
 import classes from './style.module.scss';
 
+
 const Project = () => {
   const { id } = useParams();
   const project = useAppSelector((state) => state.projects.project);

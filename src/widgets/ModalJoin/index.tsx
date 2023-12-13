@@ -221,15 +221,6 @@ const ModalJoin = ({ active, setActive }: Props) => {
               })
             }
           />
-          {/*<div className={classes['marketing-radio']}>*/}
-          {/*  <p*/}
-          {/*    className={classes['checkbox-title']}*/}
-          {/*    style={{ marginTop: 33, marginBottom: 10 }}*/}
-          {/*  >*/}
-          {/*    Готов ли заниматься маркетингом помимо основных обязанностей?*/}
-          {/*  </p>*/}
-          {/*  <Input type="radio" id="ratio_1" name="pos" value="Да" />*/}
-          {/*</div>*/}
           <Button
             style={{
               padding: 15,

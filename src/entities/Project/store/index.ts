@@ -136,15 +136,19 @@ export const projectsSlice = createSlice({
     project: {} as Project,
     isLoading: false,
     error: null as null | undefined | string,
+
     categories: [] as {id: number, name: string}[],
     documents: [] as File[],
+
   },
   reducers: {
     fetchProjects: (state, action) => {
       state.value.push(action.payload);
+
     },
     fetchCategories: (state, action) => {
       state.categories.push(action.payload);
+
     }
   },
   extraReducers: (builder) => {
@@ -180,12 +184,14 @@ export const projectsSlice = createSlice({
       state.isLoading = false;
       state.project = action.payload;
     });
+
     builder.addCase(getCategories.fulfilled, (state, action) => {
       state.categories = action.payload;
     });
     builder.addCase(getProjectDocuments.fulfilled, (state, action) => {
       state.documents = action.payload;
     })
+
   },
 });
 

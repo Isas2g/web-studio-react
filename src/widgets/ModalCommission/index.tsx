@@ -102,6 +102,7 @@ const ModalCommission = ({ active, setActive }: Props) => {
             placeholder="Поле для дополнительной информации (при наличии)"
             name="additional"
             isMultiline
+
           />
           /> */}
           <Button

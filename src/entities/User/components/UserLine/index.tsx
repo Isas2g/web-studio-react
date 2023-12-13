@@ -1,5 +1,6 @@
 import { Button } from 'shared/ui';
 import classes from './style.module.scss';
+
 import { deleteUser } from '../../store';
 import { useAppDispatch } from '../../../../shared/store';
 
@@ -10,6 +11,7 @@ interface Props {
 }
 
 const UserLine = ({ userName, role, id }: Props) => {
+
   let roleColor = 'rgba(177, 213, 255, 1)';
 
   switch (role) {
@@ -25,6 +27,7 @@ const UserLine = ({ userName, role, id }: Props) => {
     case 'БЭКЕНД':
       roleColor = 'rgba(177, 213, 255, 1)';
       break;
+
     default:
       roleColor = 'rgba(177, 213, 255, 1)';
       break;

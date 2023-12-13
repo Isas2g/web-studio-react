@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import instance from 'shared/api';
+
 import { User } from '../types';
 
 export interface Credentials {
@@ -23,6 +24,7 @@ export const signIn = createAsyncThunk(
       console.log(e);
     }
   }
+
 );
 
 export const fetchAPIUsers = createAsyncThunk('/users', async () => {
@@ -159,3 +161,4 @@ export const usersSlice = createSlice({
 export const { fetchUsers } = usersSlice.actions;
 
 export default usersSlice.reducer;
+
