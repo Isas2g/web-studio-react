@@ -1,8 +1,6 @@
 import React, {
-  ChangeEventHandler,
-  HTMLInputTypeAttribute,
-  useRef,
   ChangeEvent,
+  HTMLInputTypeAttribute,
   useState,
 } from 'react';
 import classes from './style.module.scss';

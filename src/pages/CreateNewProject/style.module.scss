@@ -1,0 +1,46 @@
+.container {
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.return-link {
+    margin: 50px 0 0 0;
+
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-family: Consolas;
+
+    color: #B4FFE8;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 75px 0 0 0;
+}
+
+.title {
+    font-family: Onest;
+    font-size: 40px;
+    font-weight: 400;
+
+    color: #EDEDF5;
+}
+.project-name {
+    font-family: Onest;
+    font-size: 64px;
+    font-weight: 400;
+
+    color: #EDEDF5;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: 30% minmax(100px, 800px);
+    grid-gap: 50px;
+    justify-content: space-between;
+    margin: 100px 0 0 0;
+}

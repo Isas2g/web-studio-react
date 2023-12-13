@@ -10,6 +10,7 @@ interface Props {
 const OurProjects = ({ projects }: Props) => {
   return (
     <div className={`${classes['our-projects']} container`}>
+      <img className={classes['floating-image']} src={floatingImage} alt={''} />
       <ProjectsList projects={projects} />
     </div>
   );
