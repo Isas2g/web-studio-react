@@ -56,7 +56,6 @@ export const createProject = createAsyncThunk(
       return;
     }
     try {
-      console.log(project);
       const res = await instance.post(`/projects`, project, {
         headers: {
           'x-csrf-token': localStorage.getItem('csrfToken'),
@@ -138,7 +137,7 @@ export const projectsSlice = createSlice({
     isLoading: false,
     error: null as null | undefined | string,
     categories: [] as {id: number, name: string}[],
-    documents: [] as any,
+    documents: [] as File[],
   },
   reducers: {
     fetchProjects: (state, action) => {
