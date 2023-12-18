@@ -1,6 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import instance from 'shared/api';
 import { Project } from '../types';
+import { useAppDispatch } from 'shared/store';
 
 export const fetchAPIProjects = createAsyncThunk(
   'projects/fetchProjects',
@@ -129,6 +130,20 @@ export const getProjectDocuments = createAsyncThunk(
   }
 )
 
+export const removeProject = createAsyncThunk(
+  'projects/remove-project',
+  async (projectId: number) => {
+    try {
+      const res = await instance.delete(`/projects/${projectId}`);
+      const data = await res.data;
+      return data;
+    } catch (e) {
+      console.log('Произошла ошибка');
+      console.log(e);
+    }
+  }
+)
+
 export const projectsSlice = createSlice({
   name: 'Projects',
   initialState: {
@@ -179,7 +194,11 @@ export const projectsSlice = createSlice({
     builder.addCase(createProject.fulfilled, (state, action) => {
       state.isLoading = false;
       state.project = action.payload;
+      window.location.replace('/admin-projects');
     });
+    // builder.addCase(removeProject.fulfilled, (state, action) => {
+    //   fetchAPIProjects();
+    // });
     builder.addCase(getCategories.fulfilled, (state, action) => {
       state.categories = action.payload;
     });

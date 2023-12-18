@@ -65,7 +65,7 @@ const ProjectForm = ({ handler, project }: Props) => {
         id="project-years"
         name="project-years"
         defaultValue={years}
-        onChange={(e) => setNewProject({...newProject, startedAt: e.currentTarget.value.split('-')[0] + '-01-01T00:00:00Z', endedAt: e.currentTarget.value.split('-')[1] + '-01-01T00:00:00Z'})} // приведение к апишному виду
+        onChange={(e) => setNewProject({...newProject, startedAt: (e.currentTarget.value.split('-')[0] + '-01-01T00:00:00Z').replaceAll(' ', ''), endedAt: (e.currentTarget.value.split('-')[1] + '-01-01T00:00:00Z').replaceAll(' ', '')})} // приведение к апишному виду
       />
       <Input
         label="ОПИСАНИЕ ПРОЕКТА"
@@ -84,7 +84,7 @@ const ProjectForm = ({ handler, project }: Props) => {
       <select 
         name="category_id" 
         id="category_id" 
-        onChange={(e) => setNewProject({...newProject, category_id: e.currentTarget.value})}>
+        onChange={(e) => setNewProject({...newProject, category_id: Number(e.currentTarget.value)})}>
           <option disabled defaultChecked>Выбрать категорию проекта</option>
         {
           categories.map(category => <option key={category.id} value={category.id}>{category.name}</option> )

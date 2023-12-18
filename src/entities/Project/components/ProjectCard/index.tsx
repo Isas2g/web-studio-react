@@ -4,16 +4,28 @@ import { Link } from 'react-router-dom';
 import ProjectImage1 from 'shared/assets/images/project-image-1.png';
 import ProjectImage2 from 'shared/assets/images/project-image-2.png';
 import ProjectImage3 from 'shared/assets/images/project-image-3.png';
+import { useAppDispatch } from 'shared/store';
+import { fetchAPIProjects, removeProject } from 'entities/Project/store';
 
 interface Props {
   title: string;
   years: string;
   description: string;
   isAdminPage?: boolean;
-  id?: number;
+  id: number;
 }
 
 const ProjectCard = ({ title, years, description, isAdminPage, id }: Props) => {
+  const dispatch = useAppDispatch();
+
+  const onRemoveProject = async() => {
+    const isOk = confirm('Вы уверены?');
+    if (isOk) {
+      await dispatch(removeProject(id));
+      await dispatch(fetchAPIProjects());
+    }
+  };
+
   return (
     <div
       className={`${classes['card-container']} ${
@@ -44,9 +56,9 @@ const ProjectCard = ({ title, years, description, isAdminPage, id }: Props) => {
               >
                 Редактировать
               </Link>
-              <Link className={classes['card-button']} to={'#'}>
+              <button className={classes['card-button']} onClick={onRemoveProject}>
                 Удалить
-              </Link>
+              </button>
             </>
           )}
         </div>

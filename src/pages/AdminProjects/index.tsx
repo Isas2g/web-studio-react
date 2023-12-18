@@ -33,7 +33,7 @@ const AdminProjects = () => {
             id={project.id}
             isAdminPage
             title={project.title}
-            years={'2021 — 2021'}
+            years={`${new Date(project.startedAt).getFullYear()} — ${new Date(project.endedAt).getFullYear()}`}
             description={project.description}
           />
         ))}
