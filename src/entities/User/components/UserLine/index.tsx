@@ -1,7 +1,7 @@
 import { Button } from 'shared/ui';
 import classes from './style.module.scss';
 import { deleteUser } from '../../store';
-import { useAppDispatch } from '../../../../shared/store';
+import { useAppDispatch } from 'shared/store';
 
 interface Props {
   userName: string;

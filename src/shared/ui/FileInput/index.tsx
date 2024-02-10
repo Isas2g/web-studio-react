@@ -1,15 +1,18 @@
-import React, { ChangeEvent, ChangeEventHandler, HTMLInputTypeAttribute, useRef, useState } from 'react';
+import React, { ChangeEvent, ChangeEventHandler, HTMLInputTypeAttribute, SetStateAction, useRef, useState } from 'react';
 import classes from './style.module.scss';
 import crossIcon from 'shared/assets/icons/cross.svg';
 
 interface Props {
     maxFileSize: number,
     maxFileQuantity: number,
-    fileList?: FileList
+    fileList?: FileList,
+    onInput?: CallableFunction,
+    filesList: File[], 
+    setFiles: (files: File[]) => void,
 }
 
 const FileInput = (props: Props) => {
-    const [filesList, setFiles] = useState<File[]>([]) // сюда класть файлы проекта
+    const {filesList, setFiles} = props;
     const [cumSize, setCumSize] = useState(0)
     const [numFiles, setNumFiles] = useState(0)
     

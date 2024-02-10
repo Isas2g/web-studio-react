@@ -1,0 +1,80 @@
+@import 'shared/styles/variables.scss';
+@import '/src/shared/styles/screens.scss';
+
+.directions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    .direction {
+        position: relative;
+        padding: 18px 44px;
+
+        font-size: 20px;
+
+        background-color: $bg-color;
+        color: #fff;
+
+        border: 1px solid #53587b;
+        border-radius: 100px;
+        box-sizing: border-box;
+        cursor: pointer;
+        transition: .3s background-color;
+        $border: 2px;
+        background-clip: padding-box;
+        border: solid $border transparent;
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: -1;
+            margin: -$border;
+
+            background: linear-gradient(to right, #554d7c, #525b7b);
+
+            border-radius: inherit;
+        }
+
+        &--active {
+            padding: 20px 46px;
+
+            font-size: 20px;
+
+            color: $action-button-text-color;
+            background-color: $new-main-color;
+            
+            border: none;
+            border-radius: 100px;
+            cursor: pointer;
+        }
+    }
+}
+
+.checkboxes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 110px 0 0 0;
+
+    label {
+        font-family: Onest;
+        font-size: 20px;
+        font-weight: 400;
+
+        color: #FFF;
+
+        input {
+            width: fit-content;
+        }
+
+    }
+}
+
+.teammates__footer-text {
+    margin: 100px 0 0 0;
+}

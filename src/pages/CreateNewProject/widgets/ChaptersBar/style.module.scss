@@ -1,0 +1,28 @@
+.left-bar {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    list-style: none;
+}
+
+.left-bar, .chapter {
+    margin: 0;
+    padding: 0;
+}
+
+.chapter {
+    font-family: Onest;
+    font-size: 32px;
+    font-weight: 400;
+
+    color: rgba(237, 237, 245, 0.50);
+
+    cursor: pointer;
+
+    &--active {
+        font-size: 32px;
+
+        color: #EDEDF5;
+    }
+}

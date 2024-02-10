@@ -1,10 +1,12 @@
 import classes from './style.module.scss';
 import { Button, Input, FileInput } from 'shared/ui';
-import { Button as ProjectFormButton, Document } from './components';
-import { useState } from 'react';
+import { Button as ProjectFormButton } from './components';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-
 import { Project } from 'entities/Project/types';
+import { useAppDispatch, useAppSelector } from 'shared/store';
+import { getCategories } from 'entities/Project';
+import { uploadProjectFiles } from 'entities/Project/store';
 
 interface Props {
   handler: (project: Project) => void;
@@ -13,8 +15,33 @@ interface Props {
 
 const ProjectForm = ({ handler, project }: Props) => {
   const [newProject, setNewProject] = useState<
-    Project | Record<string, string>
+    Project | any
   >(project || {});
+  const [filesList, setFiles] = useState<File[]>([]) // сюда класть файлы проекта
+  const categories = useAppSelector((state) => state.projects.categories);
+  const dispatch = useAppDispatch();
+  
+  let years = ''
+  if (project?.startedAt && project?.endedAt) {
+    years = project?.startedAt.split('-')[0] + '-' + project?.endedAt.split('-')[0]
+  }
+
+  useEffect(() => {
+    dispatch(getCategories());
+  }, []);
+
+  const hadleFileInput = () => {
+    if (project && filesList.length > 0) {
+      dispatch(uploadProjectFiles({
+        projectId: project.id,
+        files: filesList
+      }));
+    }
+  }
+
+  const handleFile = () => {
+    return;
+  }
 
   return (
     <div>
@@ -37,13 +64,8 @@ const ProjectForm = ({ handler, project }: Props) => {
         type="text"
         id="project-years"
         name="project-years"
-        value={
-          project
-            ? `${new Date(project.startedAt).getFullYear()} - ${new Date(
-                project.endedAt
-              ).getFullYear()}`
-            : ''
-        }
+        defaultValue={years}
+        onChange={(e) => setNewProject({...newProject, startedAt: e.currentTarget.value.split('-')[0] + '-01-01T00:00:00Z', endedAt: e.currentTarget.value.split('-')[1] + '-01-01T00:00:00Z'})} // приведение к апишному виду
       />
       <Input
         label="ОПИСАНИЕ ПРОЕКТА"
@@ -58,11 +80,22 @@ const ProjectForm = ({ handler, project }: Props) => {
         onChange={(e) => setNewProject({...newProject, description: e.currentTarget.value})}
       />
 
+      <p className={classes['sub-title']}>Категория проекта</p>
+      <select 
+        name="category_id" 
+        id="category_id" 
+        onChange={(e) => setNewProject({...newProject, category_id: e.currentTarget.value})}>
+          <option disabled defaultChecked>Выбрать категорию проекта</option>
+        {
+          categories.map(category => <option key={category.id} value={category.id}>{category.name}</option> )
+        }
+      </select>
+
       <p className={classes['sub-title']}>стек технологий</p>
       <div className={classes['buttons-container']}>
-        <ProjectFormButton identifier="vue" text={'VUE.JS'} />
+        <ProjectFormButton identifier="vue" text={'VUE.JS'} isAction />
         <ProjectFormButton identifier="react" text={'REACT.JS'} isAction />
-        <ProjectFormButton identifier="angular" text={'ANGULAR.JS'} />
+        <ProjectFormButton identifier="angular" text={'ANGULAR.JS'} isAction />
         <ProjectFormButton identifier="docker" text={'DOCKER'} isAction />
         <ProjectFormButton identifier="figma" text={'FIGMA'} isAction />
         <ProjectFormButton identifier="ts" text={'TYPESCRIPT'} isAction />
@@ -72,11 +105,11 @@ const ProjectForm = ({ handler, project }: Props) => {
           text={'REDUX TOOLKIT'}
           isAction
         />
-        <ProjectFormButton identifier="rtk" text={'RTK QUERY'} />
-        <ProjectFormButton identifier="fsd" text={'FSD ARCHITECHTURE'} />
-        <ProjectFormButton identifier="vuetify" text={'VUETIFY'} />
-        <ProjectFormButton identifier="psql" text={'POSTGRESQL'} />
-        <ProjectFormButton identifier="go" text={'GOLANG'} />
+        <ProjectFormButton identifier="rtk" text={'RTK QUERY'} isAction />
+        <ProjectFormButton identifier="fsd" text={'FSD ARCHITECHTURE'} isAction />
+        <ProjectFormButton identifier="vuetify" text={'VUETIFY'} isAction />
+        <ProjectFormButton identifier="psql" text={'POSTGRESQL'} isAction />
+        <ProjectFormButton identifier="go" text={'GOLANG'} isAction />
       </div>
 
       <Input
@@ -90,16 +123,24 @@ const ProjectForm = ({ handler, project }: Props) => {
         onChange={(e) => setNewProject({...newProject, link: e.currentTarget.value})}
       />
 
-      <p className={classes['sub-title']}>документы</p>
-      <div>
-        <FileInput
-          maxFileQuantity={ 5 }
-          maxFileSize={ 5242880 }
-        />
-      </div>
+      {project && <>
+        <p className={classes['sub-title']}>документы</p>
+        <div>
+          <FileInput
+            onInput={handleFile}
+            maxFileQuantity={ 5 }
+            maxFileSize={ 5242880 }
+            filesList={filesList}
+            setFiles={setFiles}
+          />
+        </div>
+      </>}
       <div className={classes['buttons-container']}>
         <Button
-          onClick={() => handler(newProject as Project)}
+          onClick={() => {
+            handler(newProject as Project);
+            hadleFileInput();
+          }}
           text={'Сохранить'}
           isAction
         />

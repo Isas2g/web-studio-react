@@ -34,6 +34,20 @@ export const updateProject = createAsyncThunk(
   }
 );
 
+export const getCategories = createAsyncThunk(
+  'projects/categories',
+  async () => {
+    try {
+      const res = await instance.get(`/projects/categories`);
+      const data = await res.data;
+      return data;
+    } catch (e) {
+      console.log('Произошла ошибка');
+      console.log(e);
+    }
+  }
+);
+
 export const createProject = createAsyncThunk(
   'projects/createProject',
   async (project: Project) => {
@@ -49,7 +63,6 @@ export const createProject = createAsyncThunk(
           'Content-Type': 'Application/json',
         },
       });
-      console.log(localStorage.getItem('csrfToken'));
       const data = await res.data;
       return data;
     } catch (e) {
@@ -73,6 +86,49 @@ export const fetchProject = createAsyncThunk(
   }
 );
 
+export const uploadProjectFiles = createAsyncThunk(
+  'projects/uploadProjectFiles', 
+  async ({projectId, files}: {projectId: number, files: File[]}) => {
+    if (!localStorage.getItem('csrfToken')) {
+      alert('Авторизация не выполнена');
+      return;
+    }
+    try {
+      const formData = new FormData();
+      for (const file of files) {
+        formData.append("file", file);
+      }
+      const res = await instance.post(`/projects/${projectId}/documents`, formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+          'x-csrf-token': localStorage.getItem('csrfToken'),
+          'X-Session-ID': localStorage.getItem('sessionID'),
+        }
+      });
+      const data = await res.data;
+      return data;
+    } 
+    catch (e) {
+      console.log('Произошла ошибка');
+      console.log(e);
+    }
+  }
+);
+
+export const getProjectDocuments = createAsyncThunk(
+  'projects/documents',
+  async (projectId: number) => {
+    try {
+      const res = await instance.get(`/projects/${projectId}/documents`);
+      const data = await res.data;
+      return data;
+    } catch (e) {
+      console.log('Произошла ошибка');
+      console.log(e);
+    }
+  }
+)
+
 export const projectsSlice = createSlice({
   name: 'Projects',
   initialState: {
@@ -80,11 +136,20 @@ export const projectsSlice = createSlice({
     project: {} as Project,
     isLoading: false,
     error: null as null | undefined | string,
+
+    categories: [] as {id: number, name: string}[],
+    documents: [] as File[],
+
   },
   reducers: {
     fetchProjects: (state, action) => {
       state.value.push(action.payload);
+
     },
+    fetchCategories: (state, action) => {
+      state.categories.push(action.payload);
+
+    }
   },
   extraReducers: (builder) => {
     builder.addCase(fetchAPIProjects.pending, (state) => {
@@ -119,6 +184,14 @@ export const projectsSlice = createSlice({
       state.isLoading = false;
       state.project = action.payload;
     });
+
+    builder.addCase(getCategories.fulfilled, (state, action) => {
+      state.categories = action.payload;
+    });
+    builder.addCase(getProjectDocuments.fulfilled, (state, action) => {
+      state.documents = action.payload;
+    })
+
   },
 });
 
