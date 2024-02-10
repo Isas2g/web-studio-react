@@ -6,6 +6,8 @@ import usersReducer from 'entities/User/store';
 
 import usersReducer from 'entities/User/store';
 
+import usersReducer from 'entities/User/store';
+
 const store = configureStore({
   reducer: {
     projects: projectsReducer,

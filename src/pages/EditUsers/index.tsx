@@ -13,7 +13,6 @@ const EditUsers = () => {
   }, [dispatch]);
 
   const [activeAddModal, setActiveAddModal] = useState(false);
-
   const users = useAppSelector((state) => state.users.value) || [];
 
   return (
