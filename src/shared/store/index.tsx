@@ -4,10 +4,6 @@ import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 import projectsReducer from 'entities/Project/store';
 import usersReducer from 'entities/User/store';
 
-import usersReducer from 'entities/User/store';
-
-import usersReducer from 'entities/User/store';
-
 const store = configureStore({
   reducer: {
     projects: projectsReducer,

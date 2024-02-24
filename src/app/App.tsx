@@ -5,14 +5,17 @@ import './App.scss';
 import { BrowserRouter } from 'react-router-dom';
 import { Header, Footer } from 'shared/ui';
 import { Routing } from 'pages/index';
+import AuthProvider from 'shared/components/AuthProvider';
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Header />
-        <Routing />
-        <Footer />
+        <AuthProvider>
+          <Header />
+          <Routing />
+          <Footer />
+        </AuthProvider>
       </BrowserRouter>
     </div>
   );

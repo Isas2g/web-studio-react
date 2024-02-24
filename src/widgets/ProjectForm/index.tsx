@@ -14,34 +14,34 @@ interface Props {
 }
 
 const ProjectForm = ({ handler, project }: Props) => {
-  const [newProject, setNewProject] = useState<
-    Project | any
-  >(project || {});
-  const [filesList, setFiles] = useState<File[]>([]) // сюда класть файлы проекта
+  const [newProject, setNewProject] = useState<Project | any>(project || {});
+  const [filesList, setFiles] = useState<File[]>([]); // сюда класть файлы проекта
   const categories = useAppSelector((state) => state.projects.categories);
   const dispatch = useAppDispatch();
-  
-  let years = ''
-  if (project?.startedAt && project?.endedAt) {
-    years = project?.startedAt.split('-')[0] + '-' + project?.endedAt.split('-')[0]
-  }
+
+  const years =
+    project?.startedAt && project?.endedAt
+      ? `${project.startedAt.split('-')[0]}-${project.endedAt.split('-')[0]}`
+      : '';
 
   useEffect(() => {
     dispatch(getCategories());
   }, []);
 
-  const hadleFileInput = () => {
+  const handleFileInput = () => {
     if (project && filesList.length > 0) {
-      dispatch(uploadProjectFiles({
-        projectId: project.id,
-        files: filesList
-      }));
+      dispatch(
+        uploadProjectFiles({
+          projectId: project.id,
+          files: filesList,
+        })
+      );
     }
-  }
+  };
 
   const handleFile = () => {
     return;
-  }
+  };
 
   return (
     <div>
@@ -56,7 +56,9 @@ const ProjectForm = ({ handler, project }: Props) => {
         name="project-title"
         defaultValue={project?.title}
         value={newProject?.title}
-        onChange={(e) => setNewProject({...newProject, title: e.currentTarget.value})}
+        onChange={(e) =>
+          setNewProject({ ...newProject, title: e.currentTarget.value })
+        }
       />
       <Input
         label="ПЕРИОД РАЗРАБОТКИ"
@@ -65,7 +67,13 @@ const ProjectForm = ({ handler, project }: Props) => {
         id="project-years"
         name="project-years"
         defaultValue={years}
-        onChange={(e) => setNewProject({...newProject, startedAt: e.currentTarget.value.split('-')[0] + '-01-01T00:00:00Z', endedAt: e.currentTarget.value.split('-')[1] + '-01-01T00:00:00Z'})} // приведение к апишному виду
+        onChange={(e) =>
+          setNewProject({
+            ...newProject,
+            startedAt: e.currentTarget.value.split('-')[0] + '-01-01T00:00:00Z',
+            endedAt: e.currentTarget.value.split('-')[1] + '-01-01T00:00:00Z',
+          })
+        } // приведение к апишному виду
       />
       <Input
         label="ОПИСАНИЕ ПРОЕКТА"
@@ -77,19 +85,37 @@ const ProjectForm = ({ handler, project }: Props) => {
         isMultiline
         defaultValue={project?.description || ''}
         value={newProject?.description}
-        onChange={(e) => setNewProject({...newProject, description: e.currentTarget.value})}
+        onChange={(e) =>
+          setNewProject({ ...newProject, description: e.currentTarget.value })
+        }
       />
 
       <p className={classes['sub-title']}>Категория проекта</p>
-      <select 
-        name="category_id" 
-        id="category_id" 
-        onChange={(e) => setNewProject({...newProject, category_id: e.currentTarget.value})}>
-          <option disabled defaultChecked>Выбрать категорию проекта</option>
-        {
-          categories.map(category => <option key={category.id} value={category.id}>{category.name}</option> )
-        }
-      </select>
+      {categories && categories.length > 0 ? (
+        <div>
+          <select
+            name="category_id"
+            id="category_id"
+            onChange={(e) =>
+              setNewProject({
+                ...newProject,
+                category_id: e.currentTarget.value,
+              })
+            }
+          >
+            <option disabled selected>
+              Выбрать категорию проекта
+            </option>
+            {categories.map((category) => (
+              <option key={category.id} value={category.id.toString()}>
+                {category.name}
+              </option>
+            ))}
+          </select>
+        </div>
+      ) : (
+        <p className={classes['warning']}>Категорий еще не было добавлено</p>
+      )}
 
       <p className={classes['sub-title']}>стек технологий</p>
       <div className={classes['buttons-container']}>
@@ -106,7 +132,11 @@ const ProjectForm = ({ handler, project }: Props) => {
           isAction
         />
         <ProjectFormButton identifier="rtk" text={'RTK QUERY'} isAction />
-        <ProjectFormButton identifier="fsd" text={'FSD ARCHITECHTURE'} isAction />
+        <ProjectFormButton
+          identifier="fsd"
+          text={'FSD ARCHITECHTURE'}
+          isAction
+        />
         <ProjectFormButton identifier="vuetify" text={'VUETIFY'} isAction />
         <ProjectFormButton identifier="psql" text={'POSTGRESQL'} isAction />
         <ProjectFormButton identifier="go" text={'GOLANG'} isAction />
@@ -120,26 +150,27 @@ const ProjectForm = ({ handler, project }: Props) => {
         name="project-link"
         defaultValue={project?.link || ''}
         value={newProject?.link}
-        onChange={(e) => setNewProject({...newProject, link: e.currentTarget.value})}
+        onChange={(e) =>
+          setNewProject({ ...newProject, link: e.currentTarget.value })
+        }
       />
-
-      {project && <>
+      <>
         <p className={classes['sub-title']}>документы</p>
         <div>
           <FileInput
             onInput={handleFile}
-            maxFileQuantity={ 5 }
-            maxFileSize={ 5242880 }
+            maxFileQuantity={5}
+            maxFileSize={5242880}
             filesList={filesList}
             setFiles={setFiles}
           />
         </div>
-      </>}
+      </>
       <div className={classes['buttons-container']}>
         <Button
           onClick={() => {
             handler(newProject as Project);
-            hadleFileInput();
+            handleFileInput();
           }}
           text={'Сохранить'}
           isAction
