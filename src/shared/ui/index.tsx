@@ -1,16 +1,16 @@
-import Button from "./Button";
-import Footer from "./Footer";
-import Header from "./Header";
-import HeroTitle from "./HeroTitle";
-import Input from "./Input";
-import List from "./List";
-import ListItems from "./ListItems";
-import Paragraph from "./Paragraph";
-import SecondButton from "./SecondButton";
-import Subtitle from "./Subtitle";
-import Title from "./Title";
-import TitleCenter from "./TitleCenter";
-import FileInput from "./FileInput";
+import Button from './Button';
+import Footer from './Footer';
+import Header from './Header';
+import HeroTitle from './HeroTitle';
+import Input from './Input';
+import List from './List';
+import ListItems from './ListItems';
+import Paragraph from './Paragraph';
+import SecondButton from './SecondButton';
+import Subtitle from './Subtitle';
+import Title from './Title';
+import TitleCenter from './TitleCenter';
+import FileInput from './FilesInput';
 
 export {
   Button,
@@ -26,4 +26,4 @@ export {
   Title,
   TitleCenter,
   FileInput,
-}
+};

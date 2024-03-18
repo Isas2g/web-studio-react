@@ -87,8 +87,8 @@ export const fetchProject = createAsyncThunk(
 );
 
 export const uploadProjectFiles = createAsyncThunk(
-  'projects/uploadProjectFiles', 
-  async ({projectId, files}: {projectId: number, files: File[]}) => {
+  'projects/uploadProjectFiles',
+  async ({ projectId, files }: { projectId: number; files: File[] }) => {
     if (!localStorage.getItem('csrfToken')) {
       alert('Авторизация не выполнена');
       return;
@@ -96,19 +96,22 @@ export const uploadProjectFiles = createAsyncThunk(
     try {
       const formData = new FormData();
       for (const file of files) {
-        formData.append("file", file);
+        formData.append('file', file);
       }
-      const res = await instance.post(`/projects/${projectId}/documents`, formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-          'x-csrf-token': localStorage.getItem('csrfToken'),
-          'X-Session-ID': localStorage.getItem('sessionID'),
+      const res = await instance.post(
+        `/projects/${projectId}/documents`,
+        formData,
+        {
+          headers: {
+            'Content-Type': 'multipart/form-data',
+            'x-csrf-token': localStorage.getItem('csrfToken'),
+            'X-Session-ID': localStorage.getItem('sessionID'),
+          },
         }
-      });
+      );
       const data = await res.data;
       return data;
-    } 
-    catch (e) {
+    } catch (e) {
       console.log('Произошла ошибка');
       console.log(e);
     }
@@ -127,7 +130,45 @@ export const getProjectDocuments = createAsyncThunk(
       console.log(e);
     }
   }
-)
+);
+
+export const setProjectImage = createAsyncThunk(
+  'projects/setProjectImage',
+  async ({
+    projectId,
+    projectImage,
+  }: {
+    projectId: number;
+    projectImage: File[];
+  }) => {
+    if (!localStorage.getItem('csrfToken')) {
+      alert('Авторизация не выполнена');
+      return;
+    }
+    try {
+      const formData = new FormData();
+      for (const file of projectImage) {
+        formData.append('file', file);
+      }
+      const res = await instance.post(
+        `/projects/${projectId}/image`,
+        projectImage,
+        {
+          headers: {
+            'Content-Type': 'multipart/form-data',
+            'x-csrf-token': localStorage.getItem('csrfToken'),
+            'X-Session-ID': localStorage.getItem('sessionID'),
+          },
+        }
+      );
+      const data = await res.data;
+      return data;
+    } catch (e) {
+      console.log('Произошла ошибка');
+      console.log(e);
+    }
+  }
+);
 
 export const projectsSlice = createSlice({
   name: 'Projects',
@@ -137,19 +178,17 @@ export const projectsSlice = createSlice({
     isLoading: false,
     error: null as null | undefined | string,
 
-    categories: [] as {id: number, name: string}[],
+    categories: [] as { id: number; name: string }[],
     documents: [] as File[],
-
+    image: File,
   },
   reducers: {
     fetchProjects: (state, action) => {
       state.value.push(action.payload);
-
     },
     fetchCategories: (state, action) => {
       state.categories.push(action.payload);
-
-    }
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(fetchAPIProjects.pending, (state) => {
@@ -184,14 +223,19 @@ export const projectsSlice = createSlice({
       state.isLoading = false;
       state.project = action.payload;
     });
-
+    builder.addCase(setProjectImage.pending, (state) => {
+      state.isLoading = true;
+    });
+    builder.addCase(setProjectImage.fulfilled, (state, action) => {
+      state.isLoading = false;
+      state.project = action.payload;
+    });
     builder.addCase(getCategories.fulfilled, (state, action) => {
       state.categories = action.payload;
     });
     builder.addCase(getProjectDocuments.fulfilled, (state, action) => {
       state.documents = action.payload;
-    })
-
+    });
   },
 });
 

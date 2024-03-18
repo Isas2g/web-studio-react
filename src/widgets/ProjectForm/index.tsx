@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import { Project } from 'entities/Project/types';
 import { useAppDispatch, useAppSelector } from 'shared/store';
 import { getCategories } from 'entities/Project';
-import { uploadProjectFiles } from 'entities/Project/store';
+import { uploadProjectFiles, setProjectImage } from 'entities/Project/store';
 
 interface Props {
   handler: (project: Project) => void;
@@ -16,6 +16,7 @@ interface Props {
 const ProjectForm = ({ handler, project }: Props) => {
   const [newProject, setNewProject] = useState<Project | any>(project || {});
   const [filesList, setFiles] = useState<File[]>([]); // сюда класть файлы проекта
+  const [image, setImage] = useState<File[]>([]);
   const categories = useAppSelector((state) => state.projects.categories);
   const dispatch = useAppDispatch();
 
@@ -34,6 +35,17 @@ const ProjectForm = ({ handler, project }: Props) => {
         uploadProjectFiles({
           projectId: project.id,
           files: filesList,
+        })
+      );
+    }
+  };
+
+  const handleProjectImageUpload = () => {
+    if (project && image) {
+      dispatch(
+        setProjectImage({
+          projectId: project.id,
+          projectImage: image,
         })
       );
     }
@@ -166,11 +178,24 @@ const ProjectForm = ({ handler, project }: Props) => {
           />
         </div>
       </>
+      <>
+        <p className={classes['sub-title']}>изображение проекта</p>
+        <div>
+          <FileInput
+            onInput={handleFile}
+            maxFileQuantity={1}
+            maxFileSize={5242880}
+            filesList={filesList}
+            setFiles={setImage}
+          />
+        </div>
+      </>
       <div className={classes['buttons-container']}>
         <Button
           onClick={() => {
             handler(newProject as Project);
             handleFileInput();
+            handleProjectImageUpload();
           }}
           text={'Сохранить'}
           isAction

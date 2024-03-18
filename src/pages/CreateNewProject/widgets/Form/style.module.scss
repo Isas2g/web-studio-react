@@ -2,6 +2,13 @@
     .select {
         position: relative;
         z-index: 5;
+        * {
+            scrollbar-width: none;
+        }
+
+        *::-webkit-scrollbar {
+            display: none;
+        }
     }
     .select__input {
         display: flex;
@@ -51,6 +58,12 @@
         padding: 10px 0;
 
         cursor: pointer;
+
+        &-disabled {
+            pointer-events: none;
+            color: red;
+            padding-bottom: 20px;
+        }
     }
 
     .inputs {
